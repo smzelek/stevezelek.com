@@ -1,0 +1,70 @@
+$header-height: 80px;
+$separator-height: 60px;
+$card-margin: 30px;
+
+.info-card {
+    max-width: 1400px;
+    width: 100%;
+    min-width: 1px;
+}
+
+.contact-card {
+    max-width: 1400px;
+    min-width: 1px;
+    width: 100%;
+}
+
+.separator {
+    height: $separator-height;
+    background: #e8e5e5;
+}
+
+header {
+    min-height: 80px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #84a1c5;
+
+    h1 {
+        font-size: 48px;
+        line-height: 48px;
+        margin: 0;
+        padding-left: 32px;
+        font-family: Cairo, sans-serif;
+        color: #fff;
+    }
+}
+
+main {
+    background: #e8e5e5;
+}
+
+.about-me:not(.mobile) main {
+    overflow-y: scroll;
+}
+
+.about-me {
+    display: flex;
+    height: 100vh;
+}
+
+.about-me {
+    width: 100%;
+    min-width: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile.about-me {
+    header {
+        justify-content: center;
+        h1 {
+            padding: 0;
+        }
+    }
+
+    .separator {
+        height: 20px;
+    }
+}
