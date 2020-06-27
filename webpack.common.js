@@ -9,7 +9,7 @@ module.exports = {
         index: './src/index.js',
     },
     output: {
-        path: path.resolve('build'),
+        path: path.resolve('public'),
         filename: '[name].js'
     },
     module: {
@@ -22,14 +22,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html',
+            template: './www/index.html',
             filename: 'index.html',
             inject: 'body'
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'public/assets', to: 'assets' }
+                { from: 'www/assets', to: 'assets' }
             ]
         })
     ]
