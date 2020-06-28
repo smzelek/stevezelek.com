@@ -36,11 +36,11 @@ class BlogGallery extends Component {
         return (
             <div className={`blog-gallery ${this.state.isMobile ? 'mobile' : ''}`}>
                 <header>
-                    <h1>blog</h1>
+                    <h2 className="title">blog</h2>
                 </header>
                 <main>
-                    <img src={construction} />
-                    <h1>Coming Soon</h1>
+                    <img src={construction} alt="Construction tools."/>
+                    <h3>Coming Soon</h3>
                 </main>
             </div>
         );

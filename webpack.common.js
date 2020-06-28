@@ -2,6 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     entry:
@@ -32,6 +33,9 @@ module.exports = {
             patterns: [
                 { from: 'www/assets', to: 'assets' }
             ]
+        }),
+        new CompressionPlugin({
+            test: /^index.js$/,
         })
     ]
 }

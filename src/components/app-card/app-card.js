@@ -39,7 +39,7 @@ class AppCard extends Component {
         return (
             <Link className={`app-card ${this.state.isMobile ? 'mobile' : ''}`} to="apps/tic-metac-toe">
                 <div className="img-wrapper">
-                    <img src={this.props.imgPath} />
+                    <img src={this.props.imgPath} alt={this.props.imgAltText}/>
                 </div>
                 <h3>
                     {this.props.header}

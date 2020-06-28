@@ -37,12 +37,14 @@ class AppsGallery extends Component {
         return (
             <div className={`apps-gallery ${this.state.isMobile ? 'mobile' : ''}`}>
                 <header>
-                    <h1>apps</h1>
+                    <h2 className="title">apps</h2>
                 </header>
                 <main>
                     <AppCard header="tic-metac-toe"
                         paragraphs={['A meta variant of tic-tac-toe featuring 9 boards and special rules.']}
-                        imgPath={tictactoe}></AppCard>
+                        imgPath={tictactoe}
+                        imgAltText="">
+                    </AppCard>
                 </main>
             </div>
         );

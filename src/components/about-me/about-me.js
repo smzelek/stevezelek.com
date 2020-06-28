@@ -5,9 +5,9 @@ import { MobileServiceFactory } from '../../services/mobile.service';
 import './about-me.scss';
 import InfoCard from '../info-card/info-card';
 import ContactCard from '../contact-card/contact-card';
-const pa = './assets/pa.jpg';
-const mu = './assets/mu.jpg';
-const bulb = './assets/bulb.jpg';
+const pa = './assets/pa.webp';
+const mu = './assets/mu.webp';
+const bulb = './assets/bulb.webp';
 
 class AboutMe extends Component {
     isDestroyed$ = new ReplaySubject(1);
@@ -40,7 +40,7 @@ class AboutMe extends Component {
         return (
             <div className={`about-me ${this.state.isMobile ? 'mobile' : ''}`}>
                 <header>
-                    <h1>about me</h1>
+                    <h2 className="title">about me</h2>
                 </header>
                 <main>
                     <div className="separator"></div>
@@ -52,7 +52,8 @@ class AboutMe extends Component {
                             `I've led short and long-term projects, and found ways to innovate in and out of tech.`,
                             `I'm a team player with endless work ethic who always wants to go above and beyond.`
                         ]}
-                        imgPath={pa}>
+                        imgPath={pa}
+                        imgAltText="The state seal of Pennsylvania.">
                     </InfoCard>
                     <div className="separator"></div>
                     <InfoCard
@@ -64,7 +65,8 @@ class AboutMe extends Component {
                             `I ran our Computer Science Club. We went to conferences and hosted tech meetups.`,
                             `I helped lead our Programming Team, and we won the regional contest two years in a row.`
                         ]}
-                        imgPath={mu}>
+                        imgPath={mu}
+                        imgAltText="The logo for Millersville University of Pennsylvania.">
                     </InfoCard>
                     <div className="separator"></div>
                     <InfoCard
@@ -76,7 +78,8 @@ class AboutMe extends Component {
                             `New developments in technology constantly present interesting problems to solve.`,
                             `Challenging work with a positive impact is what keeps me engaged.`
                         ]}
-                        imgPath={bulb}>
+                        imgPath={bulb}
+                        imgAltText="A lightbulb.">
                     </InfoCard>
                     <div className="separator"></div>
                     <ContactCard></ContactCard>

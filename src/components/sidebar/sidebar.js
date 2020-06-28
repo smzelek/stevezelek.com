@@ -4,7 +4,7 @@ import { take, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
 import { NavLink } from 'react-router-dom';
 import './sidebar.scss';
-const me = '../../assets/me.jpg';
+const me = '../../assets/me.webp';
 const gitlab = '../../assets/gitlab.svg';
 const linkedin = '../../assets/linkedin.svg';
 const bars = '../../assets/bars.svg';
@@ -29,10 +29,10 @@ class Sidebar extends Component {
     contactItems() {
         return (<div className="contact">
             <a href="https://www.linkedin.com/in/steve-zelek-022903107/" className="icon linkedin">
-                <img src={linkedin} />
+                <img src={linkedin} alt="" />
             </a>
             <a href="https://gitlab.com/smzelek/" className="icon gitlab">
-                <img src={gitlab} />
+                <img src={gitlab} alt="" />
             </a>
         </div>);
     }
@@ -144,22 +144,22 @@ class Sidebar extends Component {
 
         return (<div className={`sidebar ${this.state.isMobile ? 'mobile' : ''} ${this.isCondensed() ? 'condensed' : ''}`}>
             <div className="identifiers">
-                <img src={me} />
-                <h3 className="name">
+                <img src={me} alt="A headshot of Steve Zelek." />
+                <h1 className="name">
                     Steve Zelek
-                </h3>
-                <h4 className="title">
+                </h1>
+                <p className="title">
                     software maker
-                </h4>
+                </p>
             </div>
             {this.state.isMobile && this.contactItems()}
             <div className="navigation-wrapper"
                 ref={this.linkWrapperRef}>
                 {(!this.state.isMobile || this.state.isMobileMenuExpanded) && this.navigationItems()}
-                <button className="menu-toggle" type="button"
+                <button className="menu-toggle" type="button" aria-label="Show Navigation Menu"
                     onClick={() => this.toggleMobileMenu()}
                     onKeyDown={(e) => this.handleMenuToggleKeydown(e)}>
-                    <img src={bars} />
+                    <img src={bars} alt=""/>
                 </button>
             </div>
             <div className="spacer"></div>

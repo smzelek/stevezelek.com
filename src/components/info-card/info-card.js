@@ -49,7 +49,7 @@ class InfoCard extends Component {
                 <div className="collapsible-spacer">
                 </div>
                 <div className="img-wrapper">
-                    <img src={this.props.imgPath} />
+                    <img src={this.props.imgPath} alt={this.props.imgAltText}/>
                 </div>
                 <div className="collapsible-spacer"></div>
             </div>
