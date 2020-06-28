@@ -5,7 +5,6 @@
     width: 250px;
     flex-shrink: 0;
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
@@ -111,7 +110,7 @@
 }
 
 .sidebar:not(.mobile) {
-    height: 100vh;
+    height:100vh;
     .menu-toggle {
         display: none;
     }
@@ -172,9 +171,9 @@
     }
 
     .navigation-wrapper {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        flex-basis: 100%;
     }
 
     .identifiers {

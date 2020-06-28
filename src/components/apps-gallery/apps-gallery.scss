@@ -1,0 +1,59 @@
+.apps-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 1px;
+    height: 100vh;
+
+    header {
+        min-height: 80px;
+        max-height: 80px;
+        display: flex;
+        align-items: center;
+        background-color: #84a1c5;
+
+        h1 {
+            font-size: 48px;
+            line-height: 48px;
+            margin: 0;
+            padding-left: 32px;
+            font-family: Cairo, sans-serif;
+            color: #fff;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        background: #e8e5e5;
+        height: 100%;
+        padding: 30px;
+    }
+
+    .app-card {
+        max-height: 300px;
+        max-width: 300px;
+        margin: 30px;
+    }
+}
+
+.apps-gallery:not(.mobile) {
+    main {
+        overflow-y: auto;
+    }
+}
+
+.mobile.apps-gallery {
+    height: 100%;
+
+    header {
+        justify-content: center;
+        h1 {
+            padding: 0;
+        }
+    }
+
+    main {
+        justify-content: center;
+    }
+}

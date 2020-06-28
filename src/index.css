@@ -23,3 +23,9 @@ p {
     margin: 0;
 }
 
+html,
+body,
+#root,
+.layout {
+    min-height: 100%;
+}

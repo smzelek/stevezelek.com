@@ -1,0 +1,53 @@
+.app-card {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+    background: white;
+    text-align: center;
+
+    h3,
+    p {
+        color: #465061;
+    }
+
+    p {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 33px;
+    }
+
+    .img-wrapper {
+        height: 100%;
+        width: 100%;
+        min-height: 1px;
+        min-width: 1px;
+        display: flex;
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    &:focus-within {
+        box-shadow: 0 0 0px 3px #a2c0e6 inset;
+    }
+
+    &:focus,
+    &:hover,
+    &:focus-within {
+        background: #ecf1f8;
+        outline: none;
+
+        h3 {
+            text-decoration: underline;
+        }
+    }
+
+    text-decoration: none;
+    
+}
+
+// .mobile.app-card {
+    
+// }

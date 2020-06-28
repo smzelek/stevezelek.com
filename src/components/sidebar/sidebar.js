@@ -65,8 +65,8 @@ class Sidebar extends Component {
 
     isCondensed = () => {
         return [
-            '#/apps'
-        ].some(path => path === this.state.currentPath);
+            /\#\/apps\/.*/i
+        ].some(path => path.test(this.state.currentPath));
     }
 
     componentWillUnmount() {
@@ -122,24 +122,22 @@ class Sidebar extends Component {
             </li>
             <li>
                 <NavLink to="/apps"
-                    exact
                     activeClassName="active"
                     onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
                     apps
                 </NavLink>
             </li>
             <li>
-                <a href="/blog"
-                    onKeyDown={(e) => this.handleMenuItemKeydown(e)}
-                    className={`${this.state.currentPath.startsWith('/blog') ? 'active' : ''}`}>
+                <NavLink to="/blog"
+                    activeClassName="active"
+                    onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
                     blog
-                </a>
+                </NavLink>
             </li>
         </ul >)
     };
 
     render() {
-        console.log(this.state.currentPath)
         setTimeout(() => {
             this.onRender$.next();
         }, 0);
