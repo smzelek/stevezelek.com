@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app';
+import { unregister } from './sw';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -10,8 +11,4 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(function (registration) {
-        registration.unregister()
-    })
-}
+unregister();

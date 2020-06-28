@@ -7,6 +7,7 @@ module.exports = {
     entry:
     {
         index: './src/index.js',
+        sw: './src/sw.js'
     },
     output: {
         path: path.resolve('public'),
