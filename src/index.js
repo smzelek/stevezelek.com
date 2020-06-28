@@ -9,3 +9,11 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
+
+if (navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (let registration of registrations) {
+            registration.unregister()
+        }
+    })
+}
