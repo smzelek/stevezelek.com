@@ -19,7 +19,7 @@ class AppCard extends Component {
     isDestroyed$ = new ReplaySubject(1);
     mobileService = MobileServiceFactory.getInstance();
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(takeUntil(this.isDestroyed$))
             .subscribe((isMobile) => {

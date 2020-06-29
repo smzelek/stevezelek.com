@@ -18,7 +18,7 @@ class InfoCard extends Component {
     isDestroyed$ = new ReplaySubject(1);
     mobileService = MobileServiceFactory.getInstance();
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(takeUntil(this.isDestroyed$))
             .subscribe((isMobile) => {
@@ -49,7 +49,13 @@ class InfoCard extends Component {
                 <div className="collapsible-spacer">
                 </div>
                 <div className="img-wrapper">
-                    <img src={this.props.imgPath} alt={this.props.imgAltText}/>
+                    <picture>
+                        <source srcSet={this.props.webpPaths}
+                            type="image/webp" />
+                        <source srcSet={this.props.jpegPaths}
+                            type="image/jpeg" />
+                        <img src={this.props.jpegFallback} type="image/jpeg" alt={this.props.imgAltText} />
+                    </picture>
                 </div>
                 <div className="collapsible-spacer"></div>
             </div>

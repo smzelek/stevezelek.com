@@ -4,10 +4,9 @@ import { take, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
 import { NavLink } from 'react-router-dom';
 import './sidebar.scss';
-const me = '../../assets/me.webp';
-const gitlab = '../../assets/gitlab.svg';
-const linkedin = '../../assets/linkedin.svg';
-const bars = '../../assets/bars.svg';
+const gitlab = '../../assets/icons/gitlab.svg';
+const linkedin = '../../assets/icons/linkedin.svg';
+const bars = '../../assets/icons/bars.svg';
 
 class Sidebar extends Component {
 
@@ -29,15 +28,15 @@ class Sidebar extends Component {
     contactItems() {
         return (<div className="contact">
             <a href="https://www.linkedin.com/in/steve-zelek-022903107/" className="icon linkedin">
-                <img src={linkedin} alt="" />
+                <img src={linkedin} alt="Visit Steve Zelek on LinkedIn." />
             </a>
             <a href="https://gitlab.com/smzelek/" className="icon gitlab">
-                <img src={gitlab} alt="" />
+                <img src={gitlab} alt="Visit Steve Zelek on GitLab." />
             </a>
         </div>);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(
                 takeUntil(this.isDestroyed$),
@@ -144,7 +143,23 @@ class Sidebar extends Component {
 
         return (<div className={`sidebar ${this.state.isMobile ? 'mobile' : ''} ${this.isCondensed() ? 'condensed' : ''}`}>
             <div className="identifiers">
-                <img src={me} alt="A headshot of Steve Zelek." />
+                <picture>
+                    <source srcSet="
+                        ../../assets/me/me-3x.webp 3x,
+                        ../../assets/me/me-2x.webp 2x,
+                        ../../assets/me/me-1x.webp 1x,
+                        "
+                        type="image/webp" />
+                    <source srcSet="
+                        ../../assets/me/me-3x.jpg 3x,
+                        ../../assets/me/me-2x.jpg 2x,
+                        ../../assets/me/me-1x.jpg 1x,
+                        "
+                        type="image/jpeg" />
+                    <img src="../../assets/me/me-1x.jpg"
+                        type="image/jpeg"
+                        alt="A headshot of Steve Zelek." />
+                </picture>
                 <h1 className="name">
                     Steve Zelek
                 </h1>
@@ -159,7 +174,7 @@ class Sidebar extends Component {
                 <button className="menu-toggle" type="button" aria-label="Show Navigation Menu"
                     onClick={() => this.toggleMobileMenu()}
                     onKeyDown={(e) => this.handleMenuToggleKeydown(e)}>
-                    <img src={bars} alt=""/>
+                    <img src={bars} alt="" />
                 </button>
             </div>
             <div className="spacer"></div>

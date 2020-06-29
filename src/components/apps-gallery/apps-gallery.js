@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
 import './apps-gallery.scss';
 import AppCard from '../app-card/app-card';
-const tictactoe = '../../assets/times.svg';
+const tictactoe = '../../assets/icons/times.svg';
 
 class AppsGallery extends Component {
     isDestroyed$ = new ReplaySubject(1);
@@ -17,7 +17,7 @@ class AppsGallery extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(takeUntil(this.isDestroyed$))
             .subscribe((isMobile) => {

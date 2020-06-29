@@ -16,7 +16,7 @@ class ContactCard extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(takeUntil(this.isDestroyed$))
             .subscribe((isMobile) => {

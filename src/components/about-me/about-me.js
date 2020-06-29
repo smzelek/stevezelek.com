@@ -5,9 +5,6 @@ import { MobileServiceFactory } from '../../services/mobile.service';
 import './about-me.scss';
 import InfoCard from '../info-card/info-card';
 import ContactCard from '../contact-card/contact-card';
-const pa = './assets/pa.webp';
-const mu = './assets/mu.webp';
-const bulb = './assets/bulb.webp';
 
 class AboutMe extends Component {
     isDestroyed$ = new ReplaySubject(1);
@@ -20,7 +17,7 @@ class AboutMe extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(takeUntil(this.isDestroyed$))
             .subscribe((isMobile) => {
@@ -52,7 +49,19 @@ class AboutMe extends Component {
                             `I've led short and long-term projects, and found ways to innovate in and out of tech.`,
                             `I'm a team player with endless work ethic who always wants to go above and beyond.`
                         ]}
-                        imgPath={pa}
+                        webpPaths="
+                            ./assets/pa/pa-4x.webp 4x,
+                            ./assets/pa/pa-3x.webp 3x,
+                            ./assets/pa/pa-2x.webp 2x,
+                            ./assets/pa/pa-1x.webp 1x
+                        "
+                        jpegPaths="
+                            ./assets/pa/pa-4x.jpg 4x,
+                            ./assets/pa/pa-3x.jpg 3x,
+                            ./assets/pa/pa-2x.jpg 2x,
+                            ./assets/pa/pa-1x.jpg 1x 
+                        "
+                        jpegFallback="./assets/pa/pa-1x.jpg"
                         imgAltText="The state seal of Pennsylvania.">
                     </InfoCard>
                     <div className="separator"></div>
@@ -65,7 +74,19 @@ class AboutMe extends Component {
                             `I ran our Computer Science Club. We went to conferences and hosted tech meetups.`,
                             `I helped lead our Programming Team, and we won the regional contest two years in a row.`
                         ]}
-                        imgPath={mu}
+                        webpPaths="
+                            ./assets/mu/mu-4x.webp 4x,
+                            ./assets/mu/mu-3x.webp 3x,
+                            ./assets/mu/mu-2x.webp 2x,
+                            ./assets/mu/mu-1x.webp 1x
+                        "
+                        jpegPaths="
+                            ./assets/mu/mu-4x.jpg 4x,
+                            ./assets/mu/mu-3x.jpg 3x,
+                            ./assets/mu/mu-2x.jpg 2x,
+                            ./assets/mu/mu-1x.jpg 1x 
+                        "
+                        jpegFallback="./assets/mu/mu-1x.jpg"
                         imgAltText="The logo for Millersville University of Pennsylvania.">
                     </InfoCard>
                     <div className="separator"></div>
@@ -78,7 +99,19 @@ class AboutMe extends Component {
                             `New developments in technology constantly present interesting problems to solve.`,
                             `Challenging work with a positive impact is what keeps me engaged.`
                         ]}
-                        imgPath={bulb}
+                        webpPaths="
+                            ./assets/bulb/bulb-4x.webp 4x,
+                            ./assets/bulb/bulb-3x.webp 3x,
+                            ./assets/bulb/bulb-2x.webp 2x,
+                            ./assets/bulb/bulb-1x.webp 1x
+                        "
+                        jpegPaths="
+                            ./assets/bulb/bulb-4x.jpg 4x,
+                            ./assets/bulb/bulb-3x.jpg 3x,
+                            ./assets/bulb/bulb-2x.jpg 2x,
+                            ./assets/bulb/bulb-1x.jpg 1x 
+                        "
+                        jpegFallback="./assets/bulb/bulb-1x.jpg"
                         imgAltText="A lightbulb.">
                     </InfoCard>
                     <div className="separator"></div>

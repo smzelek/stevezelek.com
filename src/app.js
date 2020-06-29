@@ -22,7 +22,7 @@ class App extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(
                 takeUntil(this.isDestroyed$),

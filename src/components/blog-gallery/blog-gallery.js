@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
 import './blog-gallery.scss';
-const construction = '../../assets/construction.svg';
+const construction = '../../assets/icons/construction.svg';
 
 class BlogGallery extends Component {
     isDestroyed$ = new ReplaySubject(1);
@@ -16,7 +16,7 @@ class BlogGallery extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.mobileService.isMobile()
             .pipe(takeUntil(this.isDestroyed$))
             .subscribe((isMobile) => {
