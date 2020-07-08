@@ -63,7 +63,7 @@ module.exports = {
             ]
         }),
         new CompressionPlugin({
-            test: /^index.js$/,
+            test: /.*.js$/,
         })
     ]
 }

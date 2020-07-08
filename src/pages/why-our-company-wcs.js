@@ -26,6 +26,8 @@ const angularInterestUrl = "https://2019.stateofjs.com/front-end-frameworks/";
 const canIUseUrl = "https://caniuse.com/#feat=custom-elementsv1";
 const customElementsEverywhereUrl = "https://custom-elements-everywhere.com/";
 const webComponentsUrl = "https://www.webcomponents.org/introduction";
+const stencilJSUrl = "https://stenciljs.com/docs/introduction";
+const stencilRepoUrl = "https://gitlab.com/smzelek/example-web-component";
 
 function WhyOurCompanyWCs() {
     setTimeout(() => {
@@ -135,10 +137,6 @@ function WhyOurCompanyWCs() {
                 And at Chatham, we believe in giving our teams the freedom to make their own technical
                 decisions.
             </p>
-            {/* <blockquote>
-                "Freedom is a two-edged sword, of which one edge is Liberty, and the other, Responsibility … both edges are
-                exceedingly sharp." -Jack Parsons
-            </blockquote> */}
             <p>
                 So, is it possible for us to create a shared component library that supports every framework our teams
                 choose, without ever needing to update legacy apps? It almost sounds too good to be true. That's the riddle
@@ -182,9 +180,15 @@ function WhyOurCompanyWCs() {
             <h4>
                 An example you can try
             </h4>
+            <p>
+                One great option for building hassle-free Web Components is by using a compiler 
+                called <a href={stencilJSUrl}>StencilJS</a>. StencilJS uses familiar JSX syntax that looks and feels like 
+                writing code in React. Here's an example. 
+            </p>
             <pre className="line-numbers">
                 <code className="language-tsx">
-                    {`import { Component, h } from '@stencil/core';
+{
+`import { Component, h } from '@stencil/core';
 
 @Component({
     tag: 'my-component',
@@ -199,12 +203,45 @@ export class MyComponent {
             </button>
         );
     }
-}`}
+}`
+}
                 </code>
             </pre>
-            <iframe height="341"
-                style={{"width": "100%"}}
-                scrolling="no"
+            <p>
+                You can check out <a href={stencilRepoUrl}>the full code</a> for my example component.
+            </p>
+            <p>
+                Once you've built your Stencil components, you can distribute them as NPM packages or 
+                using <code className="basic-code">&lt;script&gt;</code> tags. At Chatham, we're distributing our 
+                Stencil component library using script tags. The huge benefit of this approach is that we can add 
+                a versioning scheme to the script tags. Whenever we make minor and patch versions changes to the 
+                component library, every single web app immediately gets the latest changes. 
+            </p>
+            <p>
+                Forget the days of updating, rebuilding, and redeploying every app. Now all it takes is a browser refresh! 
+            </p>
+            <p>
+                You can try using my example Web Component in any app via the script tag method. 
+                Below is the only code you need to add to your app.
+            </p>
+            <pre>
+                <code className="language-html">
+{
+`<head>
+    ...
+    <script type="module" src="https://smzelek.gitlab.io/example-web-component/example-web-component/example-web-component.esm.js">
+    </script>
+    ...
+</head>
+
+<my-component></my-component>`
+}
+                </code>
+            </pre>
+            <p>
+                If everything went well, you should see a shiny blue button added to your application.
+            </p>
+            <iframe scrolling="no"
                 title="MWKVxwj"
                 src="https://codepen.io/Kelez/embed/MWKVxwj?height=341&theme-id=dark&default-tab=result"
                 frameBorder="no"
@@ -213,7 +250,15 @@ export class MyComponent {
                 See the Pen <a href='https://codepen.io/Kelez/pen/MWKVxwj'>MWKVxwj</a> by Steve Zelek
                 (<a href='https://codepen.io/Kelez'>@Kelez</a>) on <a href='https://codepen.io'>CodePen</a>.
             </iframe>
-            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            <p>
+                Web Components! They're just that simple.
+            </p>
+            <h4>
+                Conclusion
+            </h4>
+            <p>
+                Stuff.
+            </p>
         </BlogPost >
     );
 }

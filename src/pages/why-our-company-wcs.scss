@@ -1,4 +1,17 @@
 pre {
-    max-width: 900px;
+    max-width: 100%;
     box-sizing: border-box;
+    display: inline-block;
+    font-size: 13px !important;
+    margin: 0 !important;
+    margin-top: 20px !important;
+    margin-bottom: -9px !important;
+    white-space: pre-wrap !important;
+}
+
+iframe {
+    width: 400px;
+    height: 340px;
+    margin-top: 20px;
+    margin-bottom: -10px;
 }
