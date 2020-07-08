@@ -9,12 +9,12 @@ export const WHY_OUR_COMPANY_META = {
     title: "Why our company needed web components – and yours might too",
     img: "assets/web-components-logo.png",
     imgAltText: "A logo for Web Components technology.",
-    date: "Jul 6th, 2020",
+    date: "Jul 8th, 2020",
     length: "10 min read",
     tags: ["frontend", "devops"],
     description: `
         Is it possible to create a shared component library that supports every framework our teams choose,
-        without ever needing to update legacy apps? That’s the riddle that a large company like ours faces.
+        without ever needing to update legacy apps? That's the riddle that a large company like ours faces.
     `,
     url: "/blog/why-our-company-needed-web-components"
 }
@@ -134,7 +134,7 @@ function WhyOurCompanyWCs() {
                 out <a href={angularInterestUrl}>this trendline</a> for developer interest in Angular.
             </p>
             <p>
-                And at Chatham, we believe in giving our teams the freedom to make their own technical
+                At Chatham, we believe in giving our teams the freedom to make their own technical
                 decisions.
             </p>
             <p>
@@ -181,14 +181,15 @@ function WhyOurCompanyWCs() {
                 An example you can try
             </h4>
             <p>
-                One great option for building hassle-free Web Components is by using a compiler 
-                called <a href={stencilJSUrl}>StencilJS</a>. StencilJS uses familiar JSX syntax that looks and feels like 
-                writing code in React. Here's an example. 
+                One great option for building hassle-free Web Components is by using a compiler
+                called <a href={stencilJSUrl}>StencilJS</a>. StencilJS uses familiar JSX syntax that looks and feels like
+                writing code in React. Here's an example.
             </p>
-            <pre className="line-numbers">
-                <code className="language-tsx">
-{
-`import { Component, h } from '@stencil/core';
+            <div className="code-block">
+                <pre className="line-numbers">
+                    <code className="language-tsx">
+                    {
+                        `import { Component, h } from '@stencil/core';
 
 @Component({
     tag: 'my-component',
@@ -204,30 +205,31 @@ export class MyComponent {
         );
     }
 }`
-}
-                </code>
-            </pre>
+                    }
+                    </code>
+                </pre>
+                <p className="caption">
+                    Check out <a href={stencilRepoUrl}>the full code</a> for this example component.
+                </p>
+            </div>
             <p>
-                You can check out <a href={stencilRepoUrl}>the full code</a> for my example component.
+                Once you've built your Stencil components, you can distribute them as NPM packages or
+                using <code className="basic-code">&lt;script&gt;</code> tags. At Chatham, we're distributing our
+                Stencil component library using script tags. The huge benefit of this approach is that we can add
+                a versioning scheme to the script tags. Whenever we make minor and patch versions changes to the
+                component library, every single web app immediately gets the latest changes.
             </p>
             <p>
-                Once you've built your Stencil components, you can distribute them as NPM packages or 
-                using <code className="basic-code">&lt;script&gt;</code> tags. At Chatham, we're distributing our 
-                Stencil component library using script tags. The huge benefit of this approach is that we can add 
-                a versioning scheme to the script tags. Whenever we make minor and patch versions changes to the 
-                component library, every single web app immediately gets the latest changes. 
+                Forget the days of updating, rebuilding, and redeploying every app. Now all it takes is a browser refresh!
             </p>
             <p>
-                Forget the days of updating, rebuilding, and redeploying every app. Now all it takes is a browser refresh! 
-            </p>
-            <p>
-                You can try using my example Web Component in any app via the script tag method. 
+                You can try using my example Web Component in any app via the script tag method.
                 Below is the only code you need to add to your app.
             </p>
             <pre>
                 <code className="language-html">
-{
-`<head>
+                    {
+                        `<head>
     ...
     <script type="module" src="https://smzelek.gitlab.io/example-web-component/example-web-component/example-web-component.esm.js">
     </script>
@@ -235,7 +237,7 @@ export class MyComponent {
 </head>
 
 <my-component></my-component>`
-}
+                    }
                 </code>
             </pre>
             <p>
@@ -257,7 +259,35 @@ export class MyComponent {
                 Conclusion
             </h4>
             <p>
-                Stuff.
+                Let's revisit the problems we talked about earlier.
+            </p>
+            <p>
+                Chatham has dozens of apps that make up our ChathamDirect platform. We wanted to create a shared
+                component library that could be used by every app. If that worked, then we could finally have a
+                consistent UI across Chatham.
+            </p>
+            <p>
+                The biggest problem standing in our way was that our apps run on different frameworks, and many
+                different versions of those frameworks. In the worst-case scenario, we would've needed to keep every
+                app on one framework, and one version. The maintenance and refactoring required would have made
+                that impossible. Plus, we like having the freedom to use different frameworks for different use cases.
+            </p>
+            <p>
+                Instead of requiring every app to be in sync, we decided to make our library
+                compatible with any app.
+            </p>
+            <p>
+                By using the new technology of Web Components, we let browsers do the hard work for us. We used
+                StencilJS, which made it simple and familiar to write the components. The Web Components we created
+                are compatible with every framework, regardless of their version.
+            </p>
+            <p>
+                Chatham finally has a shared component library that supports every framework our teams choose,
+                without ever needing to update legacy apps.
+            </p>
+            <p>
+                If your company is anything like ours, consider giving Web Components a try.
+                It could be the best tech decision you make all year.
             </p>
         </BlogPost >
     );

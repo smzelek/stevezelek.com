@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
-import { NavLink } from 'react-router-dom';
 import './sidebar.scss';
-const gitlab = './assets/icons/gitlab.svg';
-const linkedin = './assets/icons/linkedin.svg';
+import TwitterIcon from '../icons/twitter-icon';
+import LinkedInIcon from '../icons/linkedin-icon';
 const bars = './assets/icons/bars.svg';
 
 class Sidebar extends Component {
@@ -22,17 +21,6 @@ class Sidebar extends Component {
             isMobileMenuExpanded: false
         };
         this.linkWrapperRef = React.createRef();
-    }
-
-    contactItems() {
-        return (<div className="contact">
-            <a href="https://www.linkedin.com/in/steve-zelek-022903107/" className="icon linkedin">
-                <img src={linkedin} alt="Visit Steve Zelek on LinkedIn." />
-            </a>
-            <a href="https://gitlab.com/smzelek/" className="icon gitlab">
-                <img src={gitlab} alt="Visit Steve Zelek on GitLab." />
-            </a>
-        </div>);
     }
 
     componentDidMount() {
@@ -179,7 +167,12 @@ class Sidebar extends Component {
                 </button>
             </div>
             <div className="spacer"></div>
-            {!this.state.isMobile && this.contactItems()}
+            {!this.state.isMobile && (
+            <div className="contact">
+                <LinkedInIcon />
+                <TwitterIcon />
+            </div>
+            )}
         </div>)
     }
 }

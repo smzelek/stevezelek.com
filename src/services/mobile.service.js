@@ -9,7 +9,7 @@ export class MobileService {
         const resizeObserver = new ResizeObserver((entries) => {
             for (const entry of entries) {
                 const { width } = entry.contentRect;
-                this.isMobileView$.next(width <= 799);
+                this.isMobileView$.next(width < 800);
             }
         });
 

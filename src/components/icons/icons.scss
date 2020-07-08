@@ -1,0 +1,38 @@
+
+a.icon {
+    display: inline-block;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 5px 0;
+        box-sizing: border-box;
+    }
+}
+
+a.icon.linkedin {
+    background-color: #007bb6;
+    &:hover,
+    &:focus {
+        outline: none;
+        background: #006a9d;
+    }
+}
+
+a.icon:focus {
+    box-shadow: 0 0 0px 3px #a2c0e6;
+}
+
+a.icon.twitter {
+    background-color: #1da1f2;
+    &:hover,
+    &:focus {
+        outline: none;
+        background-color: #1a91da;
+    }
+}
