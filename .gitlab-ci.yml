@@ -1,17 +1,17 @@
 image: mhart/alpine-node:8
 
 stages:
-  - install&build
+  # - install&build
   - deploy
 
-install&build:
-  stage: install&build
-  script:
-    - npm install
-    - npm run build
-  artifacts:
-    paths:
-      - public
+# install&build:
+#   stage: install&build
+#   script:
+#     - npm install
+#     - npm run build
+#   artifacts:
+#     paths:
+#       - public
 
 pages:
   stage: deploy
@@ -20,7 +20,7 @@ pages:
   artifacts:
     paths:
       - public
-  dependencies:
-    - install&build
+  # dependencies:
+  #   - install&build
   only:
   - master
