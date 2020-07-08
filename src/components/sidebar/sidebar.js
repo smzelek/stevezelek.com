@@ -4,12 +4,11 @@ import { take, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
 import { NavLink } from 'react-router-dom';
 import './sidebar.scss';
-const gitlab = '../../assets/icons/gitlab.svg';
-const linkedin = '../../assets/icons/linkedin.svg';
-const bars = '../../assets/icons/bars.svg';
+const gitlab = './assets/icons/gitlab.svg';
+const linkedin = './assets/icons/linkedin.svg';
+const bars = './assets/icons/bars.svg';
 
 class Sidebar extends Component {
-
     linkWrapperRef;
     isDestroyed$ = new ReplaySubject(1);
     onRender$ = new Subject();
@@ -57,15 +56,19 @@ class Sidebar extends Component {
     handleNavigation = () => {
         this.setState({
             ...this.state,
-            currentPath: window.location.hash,
+            currentPath: window.location.pathname,
             isMobileMenuExpanded: false
         });
     }
 
     isCondensed = () => {
         return [
-            /\#\/apps\/.*/i
+            /^\/apps\/.+/i,
         ].some(path => path.test(this.state.currentPath));
+    }
+
+    isActive = (regex) => {
+        return regex.test(this.state.currentPath);
     }
 
     componentWillUnmount() {
@@ -112,26 +115,25 @@ class Sidebar extends Component {
     navigationItems() {
         return (<ul className="navigation">
             <li>
-                <NavLink to="/"
-                    exact
-                    activeClassName="active"
+                <a href="/"
+                    className={`${this.isActive(/^\/$/i) ? 'active' : ''}`}
                     onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
                     bio
-                </NavLink>
+                </a>
             </li>
             <li>
-                <NavLink to="/apps"
-                    activeClassName="active"
+                <a href="/apps"
+                    className={`${this.isActive(/^\/apps.*/i) ? 'active' : ''}`}
                     onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
                     apps
-                </NavLink>
+                </a>
             </li>
             <li>
-                <NavLink to="/blog"
-                    activeClassName="active"
+                <a href="/blog"
+                    className={`${this.isActive(/^\/blog.*/i) ? 'active' : ''}`}
                     onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
                     blog
-                </NavLink>
+                </a>
             </li>
         </ul >)
     };
@@ -145,18 +147,18 @@ class Sidebar extends Component {
             <div className="identifiers">
                 <picture>
                     <source srcSet="
-                        ../../assets/me/me-3x.webp 3x,
-                        ../../assets/me/me-2x.webp 2x,
-                        ../../assets/me/me-1x.webp 1x,
+                        ./assets/me/me-3x.webp 3x,
+                        ./assets/me/me-2x.webp 2x,
+                        ./assets/me/me-1x.webp 1x,
                         "
                         type="image/webp" />
                     <source srcSet="
-                        ../../assets/me/me-3x.jpg 3x,
-                        ../../assets/me/me-2x.jpg 2x,
-                        ../../assets/me/me-1x.jpg 1x,
+                        ./assets/me/me-3x.jpg 3x,
+                        ./assets/me/me-2x.jpg 2x,
+                        ./assets/me/me-1x.jpg 1x,
                         "
                         type="image/jpeg" />
-                    <img src="../../assets/me/me-1x.jpg"
+                    <img src="./assets/me/me-1x.jpg"
                         type="image/jpeg"
                         alt="A headshot of Steve Zelek." />
                 </picture>
@@ -167,7 +169,6 @@ class Sidebar extends Component {
                     software maker
                 </p>
             </div>
-            {this.state.isMobile && this.contactItems()}
             <div className="navigation-wrapper"
                 ref={this.linkWrapperRef}>
                 {(!this.state.isMobile || this.state.isMobileMenuExpanded) && this.navigationItems()}

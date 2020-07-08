@@ -1,9 +1,10 @@
-.apps-gallery {
+@import '../mixins';
+
+.blog {
     display: flex;
     flex-direction: column;
     width: 100%;
     min-width: 1px;
-    height: 100vh;
 
     header {
         min-height: 80px;
@@ -24,36 +25,36 @@
 
     main {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
-        background: #e8e5e5;
-        height: 100%;
-        padding: 30px;
-    }
-
-    .app-card {
-        max-height: 300px;
-        max-width: 300px;
-        margin: 30px;
+        justify-content: center;
     }
 }
 
-.apps-gallery:not(.mobile) {
-    main {
+@include smaller-than(mobile-screen) {
+    .blog {
+        header {
+            justify-content: center;
+            .title {
+                padding: 0;
+            }
+        }
+        
+        main {
+            justify-content: center;
+        }
+    }
+}
+
+@include larger-than(mobile-screen) {
+    .blog main {
         overflow-y: auto;
     }
 }
 
-.mobile.apps-gallery {
-    height: 100%;
-
-    header {
-        justify-content: center;
-        .title {
-            padding: 0;
-        }
-    }
-
-    main {
-        justify-content: center;
+@include larger-than(small-screen) {
+    .blog main {
+        padding: 15px;
+        justify-content: unset;
     }
 }

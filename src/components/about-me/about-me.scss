@@ -16,7 +16,6 @@ $card-margin: 30px;
 
 .separator {
     height: $separator-height;
-    background: #e8e5e5;
 }
 
 header {
@@ -36,17 +35,13 @@ header {
     }
 }
 
-main {
-    background: #e8e5e5;
-}
-
 .about-me:not(.mobile) main {
     overflow-y: scroll;
 }
 
 .about-me {
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 
 .about-me {

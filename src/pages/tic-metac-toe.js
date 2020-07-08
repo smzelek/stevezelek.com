@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import { render } from "react-dom";
 import { ReplaySubject } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
-import { MobileServiceFactory } from './services/mobile.service';
-import './app.scss';
-import { HashRouter, Switch, Route } from 'react-router-dom';
-import Sidebar from './components/sidebar/sidebar';
-import AboutMe from './components/about-me/about-me';
-import AppsGallery from './components/apps-gallery/apps-gallery';
-import BlogGallery from './components/blog-gallery/blog-gallery';
-import TicMetacToe from './components/tic-metac-toe/tic-metac-toe';
+import { MobileServiceFactory } from '../services/mobile.service';
+import Sidebar from '../components/sidebar/sidebar';
+import '../global.scss';
+import './tic-metac-toe.scss';
 
-class App extends Component {
+class TicMetacToe extends Component {
 
     isDestroyed$ = new ReplaySubject(1);
     mobileService = MobileServiceFactory.getInstance();
@@ -44,18 +41,19 @@ class App extends Component {
     render() {
         return (
             <div className={`layout ${this.state.isMobile ? 'mobile' : ''}`}>
-                <HashRouter>
-                    <Sidebar></Sidebar>
-                    <Switch>
-                        <Route exact path='/' component={AboutMe} />
-                        <Route exact path='/apps' component={AppsGallery} />
-                        <Route exact path='/blog' component={BlogGallery} />
-                        <Route exact path='/apps/tic-metac-toe' component={TicMetacToe} />
-                    </Switch>
-                </HashRouter>
+                <Sidebar></Sidebar>
+                <div className={`tic-tac-toe`}>
+                    <iframe src="https://tic-metac-toe.stevezelek.com"></iframe>
+                </div>
             </div>
         )
     }
 };
 
-export default App;
+
+render(
+    <React.StrictMode>
+        <TicMetacToe />
+    </React.StrictMode>,
+    document.getElementById("root")
+);

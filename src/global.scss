@@ -1,0 +1,49 @@
+@import './mixins';
+
+#root {
+    height: 100vh;
+}
+
+.layout {
+    height: 100%;
+    background: #e8e6e5;
+    display: flex;
+    @include smaller-than(mobile-screen) {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Cairo", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: "Cairo", sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+p {
+    margin: 0;
+}
+
+.basic-code {
+    color: #b71900;
+    background: #f3f3f3;
+    border: 1px solid gray;
+    padding: 1px;
+    border-radius: 3px;
+    font-size: 14px;
+}

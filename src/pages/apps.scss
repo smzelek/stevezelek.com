@@ -1,9 +1,8 @@
-.blog-gallery {
+.apps-gallery {
     display: flex;
     flex-direction: column;
     width: 100%;
     min-width: 1px;
-    height: 100vh;
 
     header {
         min-height: 80px;
@@ -24,33 +23,24 @@
 
     main {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #e8e5e5;
-        height: 100%;
-        padding: 60px;
+        flex-wrap: wrap;
+        padding: 30px;
     }
 
-    img {
-        background: #fdd955;
-        width: 250px;
-        padding: 30px;
-        height: 250px;
-        border-radius: 10px;
-        box-sizing: border-box;
+    .app-card {
+        max-height: 300px;
+        max-width: 300px;
+        margin: 30px;
     }
 }
 
-.blog-gallery:not(.mobile) {
+.apps-gallery:not(.mobile) {
     main {
         overflow-y: auto;
     }
 }
 
-.mobile.blog-gallery {
-    height: 100%;
-
+.mobile.apps-gallery {
     header {
         justify-content: center;
         .title {

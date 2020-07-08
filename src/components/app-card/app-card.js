@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
-import { Link } from 'react-router-dom';
 import './app-card.scss';
 
 class AppCard extends Component {
@@ -37,9 +36,9 @@ class AppCard extends Component {
 
     render() {
         return (
-            <Link className={`app-card ${this.state.isMobile ? 'mobile' : ''}`} to="apps/tic-metac-toe">
+            <a className={`app-card ${this.state.isMobile ? 'mobile' : ''}`} href={this.props.url}>
                 <div className="img-wrapper">
-                    <img src={this.props.imgPath} alt={this.props.imgAltText}/>
+                    <img src={this.props.imgPath} alt={this.props.imgAltText} />
                 </div>
                 <h3>
                     {this.props.header}
@@ -47,7 +46,7 @@ class AppCard extends Component {
                 {this.props.paragraphs.map((paragraph, i) =>
                     <p key={i}>{paragraph}</p>
                 )}
-            </Link>
+            </a>
         );
     }
 }
