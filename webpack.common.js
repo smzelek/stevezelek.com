@@ -62,6 +62,8 @@ module.exports = {
                 { from: 'assets', to: 'assets' }
             ]
         }),
-        new CompressionPlugin()
+        new CompressionPlugin({
+            test: /.*.js$/,
+        })
     ]
 }
