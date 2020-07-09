@@ -1,35 +1,12 @@
 import { h, Component } from 'preact';
-import { ReplaySubject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { MobileServiceFactory } from '../../services/mobile.service';
 import './contact-card.scss';
 
 class ContactCard extends Component {
-    isDestroyed$ = new ReplaySubject(1);
-    mobileService = MobileServiceFactory.getInstance();
-
     constructor(props) {
         super(props);
         this.state = {
-            isMobile: false,
             wasMessageSent: false
         };
-    }
-
-    componentDidMount() {
-        this.mobileService.isMobile()
-            .pipe(takeUntil(this.isDestroyed$))
-            .subscribe((isMobile) => {
-                this.setState({
-                    ...this.state,
-                    isMobile: isMobile
-                })
-            });
-    }
-
-    componentWillUnmount() {
-        this.isDestroyed$.next();
-        this.isDestroyed$.complete();
     }
 
     sentMessage() {
@@ -41,7 +18,7 @@ class ContactCard extends Component {
 
     render() {
         return (
-            <div className={`contact-card ${this.state.isMobile ? 'mobile' : ''}`}>
+            <div className="contact-card">
                 <div className="collapsible-spacer"></div>
                 <div className="content">
                     <h3>

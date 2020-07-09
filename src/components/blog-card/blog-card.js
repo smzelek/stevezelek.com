@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import './blog-card.scss';
 import Tag from '../tag/tag';
+import './blog-card.scss';
 
 function BlogCard(props) {
     return (

@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .apps-gallery {
     display: flex;
     flex-direction: column;
@@ -34,21 +36,26 @@
     }
 }
 
-.apps-gallery:not(.mobile) {
-    main {
-        overflow-y: auto;
+@include larger-than(mobile-screen) {
+    .apps-gallery {
+        main {
+            overflow-y: auto;
+        }
     }
 }
 
-.mobile.apps-gallery {
-    header {
-        justify-content: center;
-        .title {
-            padding: 0;
+@include smaller-than(mobile-screen) {
+    .apps-gallery {
+        header {
+            justify-content: center;
+        
+            .title {
+                padding: 0;
+            }
         }
-    }
-
-    main {
-        justify-content: center;
+        
+        main {
+            justify-content: center;
+        }
     }
 }

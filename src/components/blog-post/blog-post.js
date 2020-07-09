@@ -1,10 +1,10 @@
 import { h } from 'preact';
 import Sidebar from '../sidebar/sidebar';
 import Tag from '../tag/tag';
-import '../../global.scss';
-import './blog-post.scss';
 import TwitterIcon from '../icons/twitter-icon';
 import LinkedInIcon from '../icons/linkedin-icon';
+import '../../global.scss';
+import './blog-post.scss';
 
 function BlogPost(props) {
     return (
@@ -14,10 +14,10 @@ function BlogPost(props) {
                 <div className="blog-post">
                     <header>
                         <div className="img-wrapper">
-                            <img src={props.meta.img} />
+                            <img src={props.meta.img} alt={props.meta.imgAltText} />
                         </div>
                         <div className="text-wrapper">
-                            <h3 className="title">{props.meta.title}</h3>
+                            <h2 className="title">{props.meta.title}</h2>
                             <p className="meta">
                                 {props.meta.date} · {props.meta.length}
                             </p>
@@ -31,7 +31,7 @@ function BlogPost(props) {
                     </main>
                     <footer>
                         <div className="simple-sign-off">
-                            <h4>- steve zelek</h4>
+                            <h3>- steve zelek</h3>
                         </div>
                         <div className="detailed-sign-off">
                             <picture>
@@ -47,8 +47,8 @@ function BlogPost(props) {
                                         " type="image/jpeg" />
                                 <img src="./assets/me/me-1x.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
                             </picture>
-                            <h4>steve zelek</h4>
-                            <h5>software maker</h5>
+                            <h3>steve zelek</h3>
+                            <h4>software maker</h4>
                             <div className="contact">
                                 <LinkedInIcon />
                                 <TwitterIcon />

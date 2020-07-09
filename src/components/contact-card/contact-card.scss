@@ -1,3 +1,5 @@
+@import '../../mixins';
+
 .contact-card {
     background: #443f3f;
     color: #e3e2e6;
@@ -98,18 +100,21 @@
     }
 }
 
-.mobile.contact-card {
-    textarea {
-        box-sizing: border-box;
-        width: 100%;
+@include smaller-than(mobile-screen) {
+    .contact-card {
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        
+        .content {
+            width: 100%;
+        }
+
+        .collapsible-spacer,
+        .collapsible-spacer-2 {
+            display: none;
+        }
     }
 
-    .content {
-        width: 100%;
-    }
-
-    .collapsible-spacer,
-    .collapsible-spacer-2 {
-        display: none;
-    }
 }

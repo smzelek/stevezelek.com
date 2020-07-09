@@ -24,10 +24,8 @@ const TAG_TO_STYLES = {
     }
 }
 
-function Tag(props) {
+export default function Tag(props) {
     return (
         <li className="my-tag" style={TAG_TO_STYLES[props.name]}>{props.name}</li>
     );
 }
-
-export default Tag;

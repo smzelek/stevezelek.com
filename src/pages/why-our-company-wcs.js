@@ -35,7 +35,7 @@ function WhyOurCompanyWCs() {
 
     return (
         <BlogPost meta={WHY_OUR_COMPANY_META}>
-            <h4>A little bit of background</h4>
+            <h3>A little bit of background</h3>
             <p>
                 Hi! I'm Steve. I'm a full stack developer at Chatham Financial, where I've worked on webapps for the past 3
                 years. Chatham Financial is a global financial advisory and tech firm that specializes in debt and
@@ -53,9 +53,9 @@ function WhyOurCompanyWCs() {
                 Okay, that's enough background. We'll leave the marketing pitch behind and put on our tech hats now. When I
                 say "dozens of apps", you say "maintenance!"
             </p>
-            <h4>
+            <h3>
                 Maintaining dozens of apps is hard
-            </h4>
+            </h3>
             <p>
                 If your tech shop is anything like ours, you quickly got on board the framework train for building web apps.
                 What's not to love? Reliable updates, solid feature sets, clear patterns, and strong communities. Create
@@ -73,9 +73,9 @@ function WhyOurCompanyWCs() {
             <p>
                 There's just two problems.
             </p>
-            <h4>
+            <h3>
                 Problem 1: Frameworks
-            </h4>
+            </h3>
             <p>
                 I mentioned earlier that React and Angular are both wonderful frameworks for web app development. Well,
                 that's great ... and not so great. How do you pick between them? I won't deliberate over their individual
@@ -95,9 +95,9 @@ function WhyOurCompanyWCs() {
             <p>
                 But that's not all…
             </p>
-            <h4>
+            <h3>
                 Problem 2: Versioning
-            </h4>
+            </h3>
             <p>
                 If incompatibility between frameworks were not a large enough thorn in our side, we are confronted with
                 another issue. Breaking changes between major versions are common knowledge. If you started writing Angular
@@ -115,9 +115,9 @@ function WhyOurCompanyWCs() {
                 co-author of Create React App has said that there is (almost) <a href={reactSupportUrl}> no long term support </a> for
                 any former major versions.
             </p>
-            <h4>
+            <h3>
                 The solution that wouldn't work
-            </h4>
+            </h3>
             <p>
                 So with that knowledge in hand, let's consider the situation at our company again. Dozens of web apps, and
                 new major versions popping up about once a year. As we develop new apps, we inevitably leave some behind on
@@ -144,9 +144,9 @@ function WhyOurCompanyWCs() {
             <p>
                 Luckily, this riddle has an answer!
             </p>
-            <h4>
+            <h3>
                 The answer we've been waiting for
-            </h4>
+            </h3>
             <p>
                 In a sense, HTML is already a shared component library used by every web developer. When you write the
                 tag <code className="basic-code">&lt;input/&gt;</code> on the page, you know what to expect (with minor style differences).
@@ -176,9 +176,9 @@ function WhyOurCompanyWCs() {
                 The best part? Clever developers have already created tools to generate standards-based Web Components for
                 us. If you've ever used a modern framework, you can write a Web Component too.
             </p>
-            <h4>
+            <h3>
                 An example you can try
-            </h4>
+            </h3>
             <p>
                 One great option for building hassle-free Web Components is by using a compiler
                 called <a href={stencilJSUrl}>StencilJS</a>. StencilJS uses familiar JSX syntax that looks and feels like
@@ -254,9 +254,9 @@ export class MyComponent {
             <p>
                 Web Components! They're just that simple.
             </p>
-            <h4>
+            <h3>
                 Conclusion
-            </h4>
+            </h3>
             <p>
                 Let's revisit the problems we talked about earlier.
             </p>

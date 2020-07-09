@@ -1,7 +1,6 @@
 import { h, Component, createRef } from 'preact';
-import { ReplaySubject, Subject } from 'rxjs';
-import { take, takeUntil, distinctUntilChanged } from 'rxjs/operators';
-import { MobileServiceFactory } from '../../services/mobile.service';
+import { Subject } from 'rxjs';
+import { take } from 'rxjs/operators';
 import './sidebar.scss';
 import TwitterIcon from '../icons/twitter-icon';
 import LinkedInIcon from '../icons/linkedin-icon';
@@ -9,14 +8,11 @@ const bars = './assets/icons/bars.svg';
 
 class Sidebar extends Component {
     linkWrapperRef;
-    isDestroyed$ = new ReplaySubject(1);
     onRender$ = new Subject();
-    mobileService = MobileServiceFactory.getInstance();
 
     constructor(props) {
         super(props);
         this.state = {
-            isMobile: false,
             currentPath: null,
             isMobileMenuExpanded: false
         };
@@ -24,19 +20,6 @@ class Sidebar extends Component {
     }
 
     componentDidMount() {
-        this.mobileService.isMobile()
-            .pipe(
-                takeUntil(this.isDestroyed$),
-                distinctUntilChanged()
-            )
-            .subscribe((isMobile) => {
-                this.setState({
-                    ...this.state,
-                    isMobile: isMobile,
-                    isMobileMenuExpanded: false,
-                });
-            });
-
         window.addEventListener('popstate', this.handleNavigation);
         this.handleNavigation();
     }
@@ -60,8 +43,6 @@ class Sidebar extends Component {
     }
 
     componentWillUnmount() {
-        this.isDestroyed$.next();
-        this.isDestroyed$.complete();
         window.removeEventListener('popstate', this.handleNavigation);
     }
 
@@ -100,38 +81,12 @@ class Sidebar extends Component {
         return this.onRender$.pipe(take(1)).toPromise();
     }
 
-    navigationItems() {
-        return (<ul className="navigation">
-            <li>
-                <a href="/"
-                    className={`${this.isActive(/^\/$/i) ? 'active' : ''}`}
-                    onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
-                    bio
-                </a>
-            </li>
-            <li>
-                <a href="/apps"
-                    className={`${this.isActive(/^\/apps.*/i) ? 'active' : ''}`}
-                    onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
-                    apps
-                </a>
-            </li>
-            <li>
-                <a href="/blog"
-                    className={`${this.isActive(/^\/blog.*/i) ? 'active' : ''}`}
-                    onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
-                    blog
-                </a>
-            </li>
-        </ul >)
-    };
-
     render() {
         setTimeout(() => {
             this.onRender$.next();
         }, 0);
 
-        return (<div className={`sidebar ${this.state.isMobile ? 'mobile' : ''} ${this.isCondensed() ? 'condensed' : ''}`}>
+        return (<div className={`sidebar ${this.isCondensed() ? 'condensed' : ''}`}>
             <div className="identifiers">
                 <picture>
                     <source srcSet="
@@ -159,7 +114,29 @@ class Sidebar extends Component {
             </div>
             <div className="navigation-wrapper"
                 ref={this.linkWrapperRef}>
-                {(!this.state.isMobile || this.state.isMobileMenuExpanded) && this.navigationItems()}
+                <ul className={`navigation ${this.state.isMobileMenuExpanded ? 'mobile-expanded' : ''}`} >
+                    <li>
+                        <a href="/"
+                            className={`${this.isActive(/^\/$/i) ? 'active' : ''}`}
+                            onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
+                            bio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/apps"
+                            className={`${this.isActive(/^\/apps.*/i) ? 'active' : ''}`}
+                            onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
+                            apps
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/blog"
+                            className={`${this.isActive(/^\/blog.*/i) ? 'active' : ''}`}
+                            onKeyDown={(e) => this.handleMenuItemKeydown(e)}>
+                            blog
+                        </a>
+                    </li>
+                </ul>
                 <button className="menu-toggle" type="button" aria-label="Show Navigation Menu"
                     onClick={() => this.toggleMobileMenu()}
                     onKeyDown={(e) => this.handleMenuToggleKeydown(e)}>
@@ -167,12 +144,10 @@ class Sidebar extends Component {
                 </button>
             </div>
             <div className="spacer"></div>
-            {!this.state.isMobile && (
             <div className="contact">
                 <LinkedInIcon />
                 <TwitterIcon />
             </div>
-            )}
         </div>)
     }
 }

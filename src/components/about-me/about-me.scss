@@ -1,3 +1,5 @@
+@import '../../mixins';
+
 $header-height: 80px;
 $separator-height: 60px;
 $card-margin: 30px;
@@ -35,10 +37,6 @@ header {
     }
 }
 
-.about-me:not(.mobile) main {
-    overflow-y: scroll;
-}
-
 .about-me {
     display: flex;
     height: 100%;
@@ -51,11 +49,19 @@ header {
     flex-direction: column;
 }
 
-.mobile.about-me {
-    header {
-        justify-content: center;
-        .title {
-            padding: 0;
+@include smaller-than(mobile-screen) {
+    .about-me {
+        header {
+            justify-content: center;
+            .title {
+                padding: 0;
+            }
         }
+    }
+}
+
+@include larger-than(mobile-screen) {
+    .about-me main {
+        overflow-y: scroll;
     }
 }

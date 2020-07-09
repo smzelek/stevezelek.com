@@ -1,4 +1,4 @@
-// @import "src/global/app.scss";
+@import '../../mixins';
 
 .sidebar {
     z-index: 1;
@@ -84,114 +84,126 @@
     }
 }
 
-.sidebar:not(.mobile) {
-    height: 100%;
-
-    .menu-toggle {
-        display: none;
-    }
-}
-
-.mobile.condensed.sidebar {
-    .spacer,
-    .identifiers,
-    .contact {
-        display: none;
-    }
-}
-
-.condensed.sidebar:not(.mobile) {
-    width: 70px;
-
-    .identifiers {
-        display: flex;
-        justify-content: center;
-        margin: 10px 0;
-        picture {
-            width: 50px;
-            height: 50px;
-        }
-        .name,
-        .title {
+@include larger-than(mobile-screen) {
+    .sidebar {
+        height: 100%;
+    
+        .menu-toggle {
             display: none;
         }
     }
+}
 
-    .navigation a {
-        font-size: 16px;
-    }
-
-    .contact {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
-
-        .icon {
-            margin: 5px 0;
+@include smaller-than(mobile-screen) {
+    .condensed.sidebar {
+        .spacer,
+        .identifiers {
+            display: none;
         }
     }
 }
 
-.mobile.sidebar {
-    flex-direction: row;
-    justify-content: center;
-    max-width: 100%;
-    flex-wrap: wrap;
-    width: 100%;
+@include larger-than(mobile-screen) {
+    .condensed.sidebar {
+        width: 70px;
 
-    .contact {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
+        .identifiers {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            picture {
+                width: 50px;
+                height: 50px;
+            }
+            .name,
+            .title {
+                display: none;
+            }
+        }
+
+        .navigation a {
+            font-size: 16px;
+        }
+
+        .contact {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .icon {
+                margin: 5px 0;
+            }
+        }
     }
+}
 
-    .navigation-wrapper {
+@include smaller-than(mobile-screen) {
+    .sidebar {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 100%;
+        flex-wrap: wrap;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
+    
+        .contact {
+            display: none;
+        }
+    
+        .navigation-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .identifiers {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0px;
-
-        .title {
+        .navigation {
             display: none;
         }
 
-        .name {
-            text-transform: lowercase;
+        .mobile-expanded {
+            display: block;
         }
-    }
-
-    .menu-toggle {
-        width: 100%;
-        border: none;
-        background: none;
-        border-top: 2px solid #d6d6d6;
-        height: 70px;
-
-        &:hover,
-        &:focus {
-            background: #ecf1f8;
-            outline: none;
+    
+        .identifiers {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px;
+    
+            .title {
+                display: none;
+            }
+    
+            .name {
+                text-transform: lowercase;
+            }
         }
-
-        &:focus {
-            box-shadow: 0 0 0px 3px #a2c0e6 inset;
+    
+        .menu-toggle {
+            width: 100%;
+            border: none;
+            background: none;
+            border-top: 2px solid #d6d6d6;
+            height: 70px;
+    
+            &:hover,
+            &:focus {
+                background: #ecf1f8;
+                outline: none;
+            }
+    
+            &:focus {
+                box-shadow: 0 0 0px 3px #a2c0e6 inset;
+            }
+    
+            img {
+                width: 35px;
+                height: 35px;
+            }
         }
-
-        img {
-            width: 35px;
-            height: 35px;
+    
+        .spacer {
+            display: none;
         }
-    }
-
-    .spacer {
-        display: none;
     }
 }

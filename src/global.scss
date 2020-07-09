@@ -1,12 +1,14 @@
 @import './mixins';
 
 .layout {
-    height: 100%;
     background: #e8e6e5;
     display: flex;
     @include smaller-than(mobile-screen) {
         flex-direction: column;
         overflow-y: auto;
+    }
+    @include larger-than(mobile-screen) {
+        height: 100%;
     }
 }
 

@@ -1,3 +1,5 @@
+@import '../../mixins';
+
 .info-card {
     padding: 30px;
     margin: 0 auto;
@@ -44,18 +46,20 @@
     }
 }
 
-.mobile.info-card {
-    flex-direction: column-reverse;
+@include smaller-than(mobile-screen) {
+    .info-card {
+        flex-direction: column-reverse;
 
-    .img-wrapper {
-        max-width: 200px;
-        max-height: 200px;
-    }
-
-    .text {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-        padding: 0;
+        .img-wrapper {
+            max-width: 200px;
+            max-height: 200px;
+        }
+        
+        .text {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            padding: 0;
+        }
     }
 }
