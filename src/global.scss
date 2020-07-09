@@ -1,9 +1,5 @@
 @import './mixins';
 
-#root {
-    height: 100vh;
-}
-
 .layout {
     height: 100%;
     background: #e8e6e5;
@@ -18,6 +14,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Cairo", sans-serif;
+    height: 100vh;
 }
 
 h1,

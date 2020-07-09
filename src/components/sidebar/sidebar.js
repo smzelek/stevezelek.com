@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component, createRef } from 'preact';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';
@@ -20,7 +20,7 @@ class Sidebar extends Component {
             currentPath: null,
             isMobileMenuExpanded: false
         };
-        this.linkWrapperRef = React.createRef();
+        this.linkWrapperRef = createRef();
     }
 
     componentDidMount() {

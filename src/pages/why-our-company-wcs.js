@@ -1,5 +1,4 @@
-import React, { StrictMode } from 'react';
-import { render } from "react-dom";
+import { h, render } from 'preact';
 import BlogPost from '../components/blog-post/blog-post';
 import './why-our-company-wcs.scss';
 import '../global.scss';
@@ -294,8 +293,6 @@ export class MyComponent {
 }
 
 render(
-    <StrictMode>
-        <WhyOurCompanyWCs />
-    </StrictMode>,
-    document.getElementById("root")
+    <WhyOurCompanyWCs />,
+    document.body
 );

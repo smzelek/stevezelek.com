@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import Sidebar from '../sidebar/sidebar';
 import Tag from '../tag/tag';
 import '../../global.scss';

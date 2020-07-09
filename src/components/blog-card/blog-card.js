@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import './blog-card.scss';
 import Tag from '../tag/tag';
 

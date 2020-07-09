@@ -1,5 +1,4 @@
-import React from 'react';
-import { render } from "react-dom";
+import { h, render } from 'preact';
 import Sidebar from '../components/sidebar/sidebar';
 import BlogCard from '../components/blog-card/blog-card';
 import { WHY_OUR_COMPANY_META } from './why-our-company-wcs';
@@ -26,8 +25,6 @@ function Blog() {
 
 
 render(
-    <React.StrictMode>
-        <Blog />
-    </React.StrictMode>,
-    document.getElementById("root")
+    <Blog />,
+    document.body
 );

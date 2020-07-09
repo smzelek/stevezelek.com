@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import './icons.scss';
 const linkedin = './assets/icons/linkedin.svg';
 

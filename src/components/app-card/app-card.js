@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import { ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MobileServiceFactory } from '../../services/mobile.service';

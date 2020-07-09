@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import './icons.scss';
 const twitter = './assets/icons/twitter.svg';
 

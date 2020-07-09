@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import './tag.scss';
 
 const TAG_TO_STYLES = {

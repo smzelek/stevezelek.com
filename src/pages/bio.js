@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { render } from "react-dom";
+import { h, Component, render } from 'preact';
 import { ReplaySubject } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../services/mobile.service';
@@ -55,10 +54,4 @@ class Bio extends Component {
     }
 };
 
-
-render(
-    <React.StrictMode>
-        <Bio />
-    </React.StrictMode>,
-    document.getElementById("root")
-);
+render(<Bio />, document.body);

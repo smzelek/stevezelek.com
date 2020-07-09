@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { render } from "react-dom";
+import { h, Component, render } from 'preact';
 import { ReplaySubject } from 'rxjs';
 import { takeUntil, distinctUntilChanged } from 'rxjs/operators';
 import { MobileServiceFactory } from '../services/mobile.service';
@@ -64,8 +63,6 @@ class Apps extends Component {
 
 
 render(
-    <React.StrictMode>
-        <Apps />
-    </React.StrictMode>,
-    document.getElementById("root")
+    <Apps />,
+    document.body
 );
