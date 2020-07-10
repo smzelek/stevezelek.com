@@ -3,12 +3,13 @@ import BlogPost from '../components/blog-post/blog-post';
 import './why-our-company-wcs.scss';
 import '../global.scss';
 import Prism from 'prismjs';
+import EmphaticPoint from '../components/emphatic-point/emphatic-point';
 
 export const WHY_OUR_COMPANY_META = {
     title: "Why our company needed web components – and yours might too",
     img: "assets/web-components-logo.png",
     imgAltText: "A logo for Web Components technology.",
-    date: "Jul 8th, 2020",
+    date: "Jul 10th, 2020",
     length: "10 min read",
     tags: ["frontend", "devops"],
     description: `
@@ -37,8 +38,8 @@ function WhyOurCompanyWCs() {
         <BlogPost meta={WHY_OUR_COMPANY_META}>
             <h3>A little bit of background</h3>
             <p>
-                Hi! I'm Steve. I'm a full stack developer at Chatham Financial, where I've worked on webapps for the past 3
-                years. Chatham Financial is a global financial advisory and tech firm that specializes in debt and
+                Hi! I'm Steve. I'm a full stack developer at Chatham Financial, where I've worked on web apps for the past 3
+                years. Chatham is a global financial advisory and tech firm that specializes in debt and
                 derivatives. We're not a hedge fund; we don't invest. We provide tools and expertise to help our clients
                 manage their businesses' risk. A lot of those clients are big international firms you have definitely heard
                 of. A lot of them are regional banks that you definitely haven't heard of. Overall, our 700 person company
@@ -60,7 +61,7 @@ function WhyOurCompanyWCs() {
                 If your tech shop is anything like ours, you quickly got on board the framework train for building web apps.
                 What's not to love? Reliable updates, solid feature sets, clear patterns, and strong communities. Create
                 React App and the Angular CLI are both powerful tools for building web apps, offering out-of-the-box best
-                practices and the freedom to tinker and optimize to your hearts content. And if you only ever wrote one web
+                practices and the freedom to tinker and optimize to your heart's content. And if you only ever wrote one web
                 app, finished it, and never came back to it – well, that would be the happy ending to the story I'm
                 telling.
             </p>
@@ -70,8 +71,15 @@ function WhyOurCompanyWCs() {
                 our dozens of apps would have consistent look-and-feel, and ChathamDirect would seem like a single
                 application.
             </p>
+            <div class="emphatic-point-wrapper">
+                <EmphaticPoint
+                    icon="🏆"
+                    title=" Mission:"
+                    content="Create a shared component library we can use across all of Chatham.">
+                </EmphaticPoint>
+            </div>
             <p>
-                There's just two problems.
+                There's just two problems...
             </p>
             <h3>
                 Problem 1: Frameworks
@@ -84,13 +92,22 @@ function WhyOurCompanyWCs() {
                 we've mostly chosen Angular. But we impose few restrictions on technical decisions, and so there are several
                 apps written using React, and Vue, as well.
             </p>
+            <div class="emphatic-point-wrapper">
+                <EmphaticPoint content="At Chatham, we believe in giving our teams the freedom to make their own technical
+                    decisions.">
+                </EmphaticPoint>
+            </div>
             <p>
-                How can we create a component library that supports each framework? Most framework apps are compiled in some
+                How can we create a component library that supports all frameworks? Most framework apps are compiled in some
                 way, or require shipping with a compiler or interpreter. Suffice to say, frameworks don't play nicely together.
             </p>
             <p>
-                And what if we bet on the wrong horse with Angular? The elephant graveyard of past web technologies regards
-                us balefully on all sides as we peruse the internet over a morning coffee.
+                Sure, we could just write our component library in Angular, since it's the most common framework
+                at Chatham. But what if we stop using Angular someday? The elephant graveyard of past web technologies regards
+                us balefully on all sides as we peruse the internet over a morning coffee. I make no promises,
+                but it's a safe bet that by the time we all go into retirement, Angular will hobble along with
+                us as we discuss the fancy new tools the kids are using. If you don't believe me, check
+                out <a href={angularInterestUrl}>this trendline</a> for developer interest in Angular.
             </p>
             <p>
                 But that's not all…
@@ -105,15 +122,19 @@ function WhyOurCompanyWCs() {
                 of no backward compatibility. Even in less extreme circumstances, anyone who has been responsible for
                 upgrading an app from Angular 5 to 6 will remember the woes brought on by their RxJS major version bump.
             </p>
-            <p>
-                For any sufficiently large web app, a major version increase is bittersweet news.
-            </p>
+            <div class="emphatic-point-wrapper">
+                <EmphaticPoint content="For any sufficiently large web app, a major version increase is bittersweet news.">
+                </EmphaticPoint>
+            </div>
             <p>
                 Google, for their part, is not shy about their intention to forge bravely onwards into the web development
                 frontier; whether you come with them or not. The <a href={angularSupportUrl}> official Angular support policy</a> lists
                 long term support as a mere 18 months per major version. React has no official policy, but the
                 co-author of Create React App has said that there is (almost) <a href={reactSupportUrl}> no long term support </a> for
                 any former major versions.
+            </p>
+            <p>
+                Technology changes every day. We need to plan for that...
             </p>
             <h3>
                 The solution that wouldn't work
@@ -127,22 +148,22 @@ function WhyOurCompanyWCs() {
             </p>
             <p>
                 If we standardized and updated every app, it would require rewriting legacy code that hasn't seen the light
-                of a text editor in years. Besides being a terrible cost-benefit proposition, it's not future-proof. I make
-                no promises, but it's a safe bet that by the time we all go into retirement, Angular will hobble along with
-                us as we discuss the fancy new tools the kids are using. If you don't believe me, check
-                out <a href={angularInterestUrl}>this trendline</a> for developer interest in Angular.
+                of a text editor in years. Besides being a terrible cost-benefit proposition, we've already seen that it's
+                not future-proof. A new major version of Angular would come out in another 18 months and prompt another company-wide
+                rewrite (if we had even finished the previous rewrite!). Plus, we might not want to use Angular forever. One shudders
+                to think what that migration would look like.
             </p>
-            <p>
-                At Chatham, we believe in giving our teams the freedom to make their own technical
-                decisions.
-            </p>
+            <div class="emphatic-point-wrapper">
+                <EmphaticPoint content="Picking a single framework and version doesn't solve compatibility, it just guarantees technical debt.">
+                </EmphaticPoint>
+            </div>
             <p>
                 So, is it possible for us to create a shared component library that supports every framework our teams
-                choose, without ever needing to update legacy apps? It almost sounds too good to be true. That's the riddle
-                that a large company like ours faces.
+                choose, without ever needing to update legacy apps? At this point, it almost sounds too good to be true.
+                That's the kind of riddle that a large company like Chatham faces.
             </p>
             <p>
-                Luckily, this riddle has an answer!
+                Luckily, we solved this riddle!
             </p>
             <h3>
                 The answer we've been waiting for
@@ -169,9 +190,14 @@ function WhyOurCompanyWCs() {
                 work in <a href={canIUseUrl}>every browser</a> and <a href={customElementsEverywhereUrl}>every framework</a>.
                 Since Web Components don't rely on a framework, we no longer need to worry about framework and version
                 compatibility. Talk about two birds with one stone! Often, in web development, it can feel like browsers are
-                our enemies in a battle for consistent layouts. But,  refreshingly, browsers have cut this Gordian knot for us.
-                Web Component technology paves our path to simple shared components.
+                our enemies in a battle for consistent layouts. But, refreshingly, browsers have
+                cut this <a href="https://www.history.com/news/what-was-the-gordian-knot">Gordian knot</a> for us.
             </p>
+            <div class="emphatic-point-wrapper">
+                <EmphaticPoint
+                    content="Web Components pave the way to simple shared components.">
+                </EmphaticPoint>
+            </div>
             <p>
                 The best part? Clever developers have already created tools to generate standards-based Web Components for
                 us. If you've ever used a modern framework, you can write a Web Component too.
@@ -187,8 +213,8 @@ function WhyOurCompanyWCs() {
             <div className="code-block">
                 <pre className="line-numbers">
                     <code className="language-tsx">
-                    {
-                        `import { Component, h } from '@stencil/core';
+                        {
+                            `import { Component, h } from '@stencil/core';
 
 @Component({
     tag: 'my-component',
@@ -204,7 +230,7 @@ export class MyComponent {
         );
     }
 }`
-                    }
+                        }
                     </code>
                 </pre>
                 <p className="caption">
@@ -215,7 +241,7 @@ export class MyComponent {
                 Once you've built your Stencil components, you can distribute them as NPM packages or
                 using <code className="basic-code">&lt;script&gt;</code> tags. At Chatham, we're distributing our
                 Stencil component library using script tags. The huge benefit of this approach is that we can add
-                a versioning scheme to the script tags. Whenever we make minor and patch versions changes to the
+                a <a href="https://semver.org/">versioning scheme</a> to the script tags. Whenever we make minor and patch versions changes to the
                 component library, every single web app immediately gets the latest changes.
             </p>
             <p>
@@ -258,7 +284,7 @@ export class MyComponent {
                 Conclusion
             </h3>
             <p>
-                Let's revisit the problems we talked about earlier.
+                Let's revisit the mission we set out to accomplish.
             </p>
             <p>
                 Chatham has dozens of apps that make up our ChathamDirect platform. We wanted to create a shared
@@ -266,19 +292,22 @@ export class MyComponent {
                 consistent UI across Chatham.
             </p>
             <p>
-                The biggest problem standing in our way was that our apps run on different frameworks, and many
-                different versions of those frameworks. In the worst-case scenario, we would've needed to keep every
-                app on one framework, and one version. The maintenance and refactoring required would have made
-                that impossible. Plus, we like having the freedom to use different frameworks for different use cases.
+                The biggest problems standing in our way were that 1) our apps run on different frameworks, and 2) there are many
+                versions of those frameworks. In the worst-case scenario, we would've needed to keep every
+                app on one framework, and one version. The maintenance and refactoring required would've made
+                that impossible. Plus, it's not wise to rely on a single framework forever.
             </p>
-            <p>
-                Instead of requiring every app to be in sync, we decided to make our library
-                compatible with any app.
-            </p>
+            <div class="emphatic-point-wrapper">
+                <EmphaticPoint content="
+                Instead of synchronizing every app, we made our library
+                universally compatible.
+                ">
+                </EmphaticPoint>
+            </div>
             <p>
                 By using the new technology of Web Components, we let browsers do the hard work for us. We used
-                StencilJS, which made it simple and familiar to write the components. The Web Components we created
-                are compatible with every framework, regardless of their version.
+                StencilJS, which made it simple and familiar to write our Web Components. The shared component library
+                we created is compatible with every app, regardless of framework and version.
             </p>
             <p>
                 Chatham finally has a shared component library that supports every framework our teams choose,

@@ -35,3 +35,14 @@ iframe {
     margin-top: 20px;
     margin-bottom: -10px;
 }
+
+.emphatic-point-wrapper {
+    width: 100%;
+    max-width: 900px;
+    
+    .emphatic-point {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
