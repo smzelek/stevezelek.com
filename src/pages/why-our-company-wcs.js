@@ -93,8 +93,10 @@ function WhyOurCompanyWCs() {
                 apps written using React, and Vue, as well.
             </p>
             <div class="emphatic-point-wrapper">
-                <EmphaticPoint content="At Chatham, we believe in giving our teams the freedom to make their own technical
-                    decisions.">
+                <EmphaticPoint 
+                    content="
+                        At Chatham, we believe in giving our teams the freedom to make their own technical decisions.
+                    ">
                 </EmphaticPoint>
             </div>
             <p>
@@ -123,7 +125,10 @@ function WhyOurCompanyWCs() {
                 upgrading an app from Angular 5 to 6 will remember the woes brought on by their RxJS major version bump.
             </p>
             <div class="emphatic-point-wrapper">
-                <EmphaticPoint content="For any sufficiently large web app, a major version increase is bittersweet news.">
+                <EmphaticPoint 
+                    content="
+                        For any sufficiently large web app, a major version increase is bittersweet news.
+                    ">
                 </EmphaticPoint>
             </div>
             <p>
@@ -154,7 +159,10 @@ function WhyOurCompanyWCs() {
                 to think what that migration would look like.
             </p>
             <div class="emphatic-point-wrapper">
-                <EmphaticPoint content="Picking a single framework and version doesn't solve compatibility, it just guarantees technical debt.">
+                <EmphaticPoint 
+                    content="
+                        Picking a single framework and version doesn't solve compatibility, it just guarantees technical debt.
+                    ">
                 </EmphaticPoint>
             </div>
             <p>
@@ -195,7 +203,9 @@ function WhyOurCompanyWCs() {
             </p>
             <div class="emphatic-point-wrapper">
                 <EmphaticPoint
-                    content="Web Components pave the way to simple shared components.">
+                    content="
+                        Web Components pave the way to simple shared components.
+                    ">
                 </EmphaticPoint>
             </div>
             <p>
@@ -299,8 +309,7 @@ export class MyComponent {
             </p>
             <div class="emphatic-point-wrapper">
                 <EmphaticPoint content="
-                Instead of synchronizing every app, we made our library
-                universally compatible.
+                    Instead of synchronizing every app, we made our library universally compatible.
                 ">
                 </EmphaticPoint>
             </div>
