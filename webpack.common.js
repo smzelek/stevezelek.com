@@ -11,6 +11,7 @@ module.exports = {
         blog: './src/pages/blog.js',
         apps: './src/pages/apps.js',
         ticMetacToe: './src/pages/tic-metac-toe.js',
+        takeMeApart: './src/pages/take-me-apart.js',
         whyOurCompanyWCs: './src/pages/why-our-company-wcs.js'
     },
     output: {
@@ -49,6 +50,12 @@ module.exports = {
             filename: 'apps/tic-metac-toe/index.html',
             inject: 'body',
             chunks: ['ticMetacToe']
+        }),
+        new HtmlWebpackPlugin({
+            template: './www/apps/take-me-apart/index.html',
+            filename: 'apps/take-me-apart/index.html',
+            inject: 'body',
+            chunks: ['takeMeApart']
         }),
         new HtmlWebpackPlugin({
             template: './www/blog/why-our-company-needed-web-components/index.html',

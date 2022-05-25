@@ -28,6 +28,10 @@
         justify-content: center;
         max-height: 100px;
         max-width: 100px;
+
+        img {
+            object-fit: contain;
+        }
     }
 
     &:focus-within {

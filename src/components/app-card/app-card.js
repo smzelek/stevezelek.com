@@ -5,7 +5,7 @@ export default function AppCard() {
     return (
         <a className="app-card" href={this.props.url}>
             <div className="img-wrapper">
-                <img src={this.props.imgPath} alt={this.props.imgAltText} />
+                <img src={this.props.imgPath} />
             </div>
             <h3>
                 {this.props.header}
