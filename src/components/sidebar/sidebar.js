@@ -90,12 +90,6 @@ class Sidebar extends Component {
             <div className="identifiers">
                 <picture>
                     <source srcSet="
-                        ./assets/me/me-3x.webp 3x,
-                        ./assets/me/me-2x.webp 2x,
-                        ./assets/me/me-1x.webp 1x,
-                        "
-                        type="image/webp" />
-                    <source srcSet="
                         ./assets/me/me-3x.jpg 3x,
                         ./assets/me/me-2x.jpg 2x,
                         ./assets/me/me-1x.jpg 1x,

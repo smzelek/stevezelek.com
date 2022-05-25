@@ -9,6 +9,10 @@
         "postbuild": "react-snap",
         "watch": "webpack --config webpack.prod.js --watch"
     },
+    "engines": {
+        "node": "^16",
+        "npm": "^8"
+    },
     "reactSnap": {
         "source": "public",
         "viewport": {
@@ -35,10 +39,10 @@
         "css-loader": "3.4.2",
         "file-loader": "^6.0.0",
         "html-webpack-plugin": "4.0.0-beta.11",
-        "node-sass": "^4.14.1",
         "react-snap": "^1.23.0",
         "resize-observer-polyfill": "^1.5.1",
         "rxjs": "^6.5.5",
+        "sass": "^1.50.0",
         "sass-loader": "8.0.2",
         "style-loader": "0.23.1",
         "svg-inline-loader": "^0.8.0",

@@ -87,6 +87,16 @@
 @include larger-than(mobile-screen) {
     .sidebar {
         height: 100%;
+
+        .identifiers {
+            flex-shrink: 1;
+            min-height: 30px;
+        }
+            
+        picture {
+            flex-shrink: 1;
+            min-height: 0px;
+        }
     
         .menu-toggle {
             display: none;
