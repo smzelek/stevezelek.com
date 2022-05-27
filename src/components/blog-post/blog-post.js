@@ -36,16 +36,11 @@ function BlogPost(props) {
                         <div className="detailed-sign-off">
                             <picture>
                                 <source srcSet="
-                                        ./assets/me/me-3x.webp 3x,
-                                        ./assets/me/me-2x.webp 2x,
-                                        ./assets/me/me-1x.webp 1x,
-                                        " type="image/webp" />
-                                <source srcSet="
-                                        ./assets/me/me-3x.jpg 3x,
-                                        ./assets/me/me-2x.jpg 2x,
-                                        ./assets/me/me-1x.jpg 1x,
+                                        /assets/me/me-3x.jpg 3x,
+                                        /assets/me/me-2x.jpg 2x,
+                                        /assets/me/me-1x.jpg 1x,
                                         " type="image/jpeg" />
-                                <img src="./assets/me/me-1x.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
+                                <img src="/assets/me/me-1x.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
                             </picture>
                             <h3>steve zelek</h3>
                             <h4>software maker</h4>

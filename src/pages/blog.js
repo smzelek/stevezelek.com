@@ -23,8 +23,4 @@ function Blog() {
     )
 };
 
-
-render(
-    <Blog />,
-    document.body
-);
+export default Blog;

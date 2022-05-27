@@ -4,7 +4,7 @@ import { take } from 'rxjs/operators';
 import './sidebar.scss';
 import TwitterIcon from '../icons/twitter-icon';
 import LinkedInIcon from '../icons/linkedin-icon';
-const bars = './assets/icons/bars.svg';
+const bars = '/assets/icons/bars.svg';
 
 class Sidebar extends Component {
     linkWrapperRef;
@@ -90,12 +90,12 @@ class Sidebar extends Component {
             <div className="identifiers">
                 <picture>
                     <source srcSet="
-                        ./assets/me/me-3x.jpg 3x,
-                        ./assets/me/me-2x.jpg 2x,
-                        ./assets/me/me-1x.jpg 1x,
+                        /assets/me/me-3x.jpg 3x,
+                        /assets/me/me-2x.jpg 2x,
+                        /assets/me/me-1x.jpg 1x,
                         "
                         type="image/jpeg" />
-                    <img src="./assets/me/me-1x.jpg"
+                    <img src="/assets/me/me-1x.jpg"
                         type="image/jpeg"
                         alt="A headshot of Steve Zelek." />
                 </picture>

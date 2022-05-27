@@ -14,7 +14,4 @@ function TicMetacToe() {
     )
 };
 
-render(
-    <TicMetacToe />,
-    document.body
-);
+export default TicMetacToe;

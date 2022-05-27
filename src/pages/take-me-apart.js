@@ -14,7 +14,4 @@ function TakeMeApart() {
     )
 };
 
-render(
-    <TakeMeApart />,
-    document.body
-);
+export default TakeMeApart;

@@ -39,6 +39,7 @@
         "css-loader": "3.4.2",
         "file-loader": "^6.0.0",
         "html-webpack-plugin": "4.0.0-beta.11",
+        "preact-router": "^4.0.1",
         "react-snap": "^1.23.0",
         "resize-observer-polyfill": "^1.5.1",
         "rxjs": "^6.5.5",

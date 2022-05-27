@@ -7,12 +7,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
     entry:
     {
-        bio: './src/pages/bio.js',
-        blog: './src/pages/blog.js',
-        apps: './src/pages/apps.js',
-        ticMetacToe: './src/pages/tic-metac-toe.js',
-        takeMeApart: './src/pages/take-me-apart.js',
-        whyOurCompanyWCs: './src/pages/why-our-company-wcs.js'
+        main: './src/routes.js',
     },
     output: {
         path: path.resolve('public'),
@@ -31,37 +26,37 @@ module.exports = {
             template: './www/index.html',
             filename: 'index.html',
             inject: 'body',
-            chunks: ['bio']
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './www/blog/index.html',
             filename: 'blog/index.html',
             inject: 'body',
-            chunks: ['blog']
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './www/apps/index.html',
             filename: 'apps/index.html',
             inject: 'body',
-            chunks: ['apps']
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './www/apps/tic-metac-toe/index.html',
             filename: 'apps/tic-metac-toe/index.html',
             inject: 'body',
-            chunks: ['ticMetacToe']
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './www/apps/take-me-apart/index.html',
             filename: 'apps/take-me-apart/index.html',
             inject: 'body',
-            chunks: ['takeMeApart']
+            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './www/blog/why-our-company-needed-web-components/index.html',
             filename: 'blog/why-our-company-needed-web-components/index.html',
             inject: 'body',
-            chunks: ['whyOurCompanyWCs']
+            chunks: ['main']
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({

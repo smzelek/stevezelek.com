@@ -3,8 +3,8 @@ import Sidebar from '../components/sidebar/sidebar';
 import AppCard from '../components/app-card/app-card';
 import '../global.scss';
 import './apps.scss';
-const takemeapart = './assets/icons/wrench.png';
-const tictactoe = './assets/icons/times.svg';
+const takemeapart = '/assets/icons/wrench.png';
+const tictactoe = '/assets/icons/times.svg';
 
 function Apps() {
     return (
@@ -31,8 +31,4 @@ function Apps() {
     )
 };
 
-
-render(
-    <Apps />,
-    document.body
-);
+export default Apps;

@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import './icons.scss';
-const twitter = './assets/icons/twitter.svg';
+const twitter = '/assets/icons/twitter.svg';
 
 export default function TwitterIcon() {
     return (
