@@ -1,8 +1,8 @@
 import { h, render } from 'preact';
-import Sidebar from '../components/sidebar/sidebar';
-import BlogCard from '../components/blog-card/blog-card';
-import { WHY_OUR_COMPANY_META } from './why-our-company-wcs';
-import '../global.scss';
+import Sidebar from 'src/components/sidebar/sidebar';
+import BlogCard from 'src/components/blog-card/blog-card';
+import { WHY_OUR_COMPANY_META } from './why-our-company-wcs/why-our-company-wcs'
+import 'src/global.scss';
 import './blog.scss';
 
 const BLOG_POSTS = [WHY_OUR_COMPANY_META];

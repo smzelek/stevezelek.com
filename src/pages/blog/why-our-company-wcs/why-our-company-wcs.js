@@ -1,9 +1,9 @@
 import { h, render } from 'preact';
-import BlogPost from '../components/blog-post/blog-post';
-import './why-our-company-wcs.scss';
-import '../global.scss';
+import BlogPost from 'src/components/blog-post/blog-post';
+import EmphaticPoint from 'src/components/emphatic-point/emphatic-point';
 import Prism from 'prismjs';
-import EmphaticPoint from '../components/emphatic-point/emphatic-point';
+import './why-our-company-wcs.scss';
+import 'src/global.scss';
 
 export const WHY_OUR_COMPANY_META = {
     title: "Why our company needed web components – and yours might too",
@@ -27,7 +27,7 @@ const canIUseUrl = "https://caniuse.com/#feat=custom-elementsv1";
 const customElementsEverywhereUrl = "https://custom-elements-everywhere.com/";
 const webComponentsUrl = "https://www.webcomponents.org/introduction";
 const stencilJSUrl = "https://stenciljs.com/docs/introduction";
-const stencilRepoUrl = "https://gitlab.com/smzelek/example-web-component";
+const stencilRepoUrl = "https://github.com/smzelek/example-web-component";
 
 function WhyOurCompanyWCs() {
     setTimeout(() => {
@@ -267,7 +267,7 @@ export class MyComponent {
                         {
                             `<head>
     ...
-    <script type="module" src="https://smzelek.gitlab.io/example-web-component/example-web-component/example-web-component.esm.js">
+    <script type="module" src="https://smzelek.github.io/example-web-component/build/example-web-component.esm.js">
     </script>
     ...
 </head>

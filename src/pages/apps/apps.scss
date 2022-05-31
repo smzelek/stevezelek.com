@@ -1,6 +1,6 @@
-@import '../mixins';
+@import 'src/mixins';
 
-.blog {
+.apps-gallery {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -25,16 +25,30 @@
 
     main {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        padding: 30px;
+    }
+
+    .app-card {
+        max-height: 300px;
+        max-width: 300px;
+        margin: 30px;
+    }
+}
+
+@include larger-than(mobile-screen) {
+    .apps-gallery {
+        main {
+            overflow-y: auto;
+        }
     }
 }
 
 @include smaller-than(mobile-screen) {
-    .blog {
+    .apps-gallery {
         header {
             justify-content: center;
+        
             .title {
                 padding: 0;
             }
@@ -43,18 +57,5 @@
         main {
             justify-content: center;
         }
-    }
-}
-
-@include larger-than(mobile-screen) {
-    .blog main {
-        overflow-y: auto;
-    }
-}
-
-@include larger-than(small-screen) {
-    .blog main {
-        padding: 15px;
-        justify-content: unset;
     }
 }

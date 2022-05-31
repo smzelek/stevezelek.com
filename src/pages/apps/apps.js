@@ -1,7 +1,7 @@
 import { h, render } from 'preact';
-import Sidebar from '../components/sidebar/sidebar';
-import AppCard from '../components/app-card/app-card';
-import '../global.scss';
+import Sidebar from 'src/components/sidebar/sidebar';
+import AppCard from 'src/components/app-card/app-card';
+import 'src/global.scss';
 import './apps.scss';
 const takemeapart = '/assets/icons/wrench.png';
 const tictactoe = '/assets/icons/times.svg';

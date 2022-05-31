@@ -1,11 +1,11 @@
 import { h, render } from 'preact';
-import Sidebar from '../components/sidebar/sidebar';
-import InfoCard from '../components/info-card/info-card';
-import ContactCard from '../components/contact-card/contact-card';
-import '../global.scss';
-import './bio.scss';
+import Sidebar from 'src/components/sidebar/sidebar';
+import InfoCard from 'src/components/info-card/info-card';
+import ContactCard from 'src/components/contact-card/contact-card';
+import 'src/global.scss';
+import './website.scss';
 
-function Bio() {
+function Website() {
     return (
         <div className="layout">
             <Sidebar></Sidebar>
@@ -97,4 +97,4 @@ function Bio() {
     )
 };
 
-export default Bio;
+export default Website;

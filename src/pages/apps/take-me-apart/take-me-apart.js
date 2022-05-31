@@ -1,6 +1,6 @@
 import { h, render } from 'preact';
-import Sidebar from '../components/sidebar/sidebar';
-import '../global.scss';
+import Sidebar from 'src/components/sidebar/sidebar';
+import 'src/global.scss';
 import './take-me-apart.scss';
 
 function TakeMeApart() {

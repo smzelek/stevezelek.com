@@ -13,6 +13,11 @@ module.exports = {
         path: path.resolve('public'),
         filename: '[name].js'
     },
+    resolve: {
+        alias: {
+            src: path.resolve(__dirname, './src'),
+        },
+    },
     module: {
         rules: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
