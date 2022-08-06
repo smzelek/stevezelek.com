@@ -1,12 +1,24 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import Sidebar from '../sidebar/sidebar';
-import Tag from '../tag/tag';
+import Tag, { TAGS } from '../tag/tag';
 import TwitterIcon from '../icons/twitter-icon';
 import LinkedInIcon from '../icons/linkedin-icon';
 import '../../global.scss';
 import './blog-post.scss';
 
-function BlogPost(props) {
+export interface BlogPostProps {
+    meta: {
+        img: string;
+        imgAltText: string;
+        title: string;
+        date: string;
+        length: string;
+        tags: (keyof typeof TAGS)[];
+    }
+    children: JSX.Element[];
+}
+
+export default function BlogPost(props: BlogPostProps) {
     return (
         <div className="layout">
             <Sidebar></Sidebar>
@@ -55,5 +67,3 @@ function BlogPost(props) {
         </div>
     );
 }
-
-export default BlogPost;

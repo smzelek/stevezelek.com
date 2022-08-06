@@ -36,8 +36,8 @@ function Website() {
                         /assets/pa/pa-1x.jpg 1x 
                     "
                         jpegFallback="/assets/pa/pa-1x.jpg"
-                        imgAltText="The state seal of Pennsylvania.">
-                    </InfoCard>
+                        imgAltText="The state seal of Pennsylvania."
+                    />
                     <div className="separator"></div>
                     <InfoCard
                         header="In college, I was a devoted academic."
@@ -61,8 +61,7 @@ function Website() {
                         /assets/mu/mu-1x.jpg 1x 
                     "
                         jpegFallback="/assets/mu/mu-1x.jpg"
-                        imgAltText="The logo for Millersville University of Pennsylvania.">
-                    </InfoCard>
+                        imgAltText="The logo for Millersville University of Pennsylvania." />
                     <div className="separator"></div>
                     <InfoCard
                         header="I'm always learning something new."
@@ -86,10 +85,9 @@ function Website() {
                         /assets/bulb/bulb-1x.jpg 1x 
                     "
                         jpegFallback="/assets/bulb/bulb-1x.jpg"
-                        imgAltText="A lightbulb.">
-                    </InfoCard>
+                        imgAltText="A lightbulb." />
                     <div className="separator"></div>
-                    <ContactCard></ContactCard>
+                    <ContactCard/>
                     <div className="separator"></div>
                 </main>
             </div>

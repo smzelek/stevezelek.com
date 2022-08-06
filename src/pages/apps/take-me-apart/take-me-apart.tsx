@@ -6,7 +6,7 @@ import './take-me-apart.scss';
 function TakeMeApart() {
     return (
         <div className="layout">
-            <Sidebar></Sidebar>
+            <Sidebar/>
             <div className="take-me-apart">
                 <iframe src="https://take-me-apart.stevezelek.com"></iframe>
             </div>

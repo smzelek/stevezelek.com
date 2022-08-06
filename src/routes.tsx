@@ -5,16 +5,16 @@ import TakeMeApart from './pages/apps/take-me-apart/take-me-apart';
 import TicMetacToe from './pages/apps/tic-metac-toe/tic-metac-toe';
 import Blog from './pages/blog/blog';
 import WhyOurCompanyWCs from './pages/blog/why-our-company-wcs/why-our-company-wcs';
-import Router from 'preact-router';
+import { Router, Route } from 'preact-router';
 
 const Main = () => (
     <Router>
-        <Website path="/" />
-        <Apps path="/apps" />
-        <TakeMeApart path="/apps/take-me-apart" />
-        <TicMetacToe path="/apps/tic-metac-toe" />
-        <Blog path="/blog/" />
-        <WhyOurCompanyWCs path="/blog/why-our-company-needed-web-components" />
+        <Route path="/" component={Website} />
+        <Route path="/apps" component={Apps} />
+        <Route path="/apps/take-me-apart" component={TakeMeApart} />
+        <Route path="/apps/tic-metac-toe" component={TicMetacToe} />
+        <Route path="/blog/" component={Blog} />
+        <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />
     </Router>
 );
 

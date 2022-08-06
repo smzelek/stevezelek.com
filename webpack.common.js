@@ -7,21 +7,21 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
     entry:
     {
-        main: './src/routes.js',
+        main: './src/routes.tsx',
     },
     output: {
         path: path.resolve('public'),
         filename: '[name].js'
     },
     resolve: {
+        extensions: ['.js', '.ts', '.tsx'],
         alias: {
             src: path.resolve(__dirname, './src'),
         },
     },
     module: {
         rules: [
-            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.tsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.css$/, loader: 'style-loader!css-loader' },
             { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
         ]

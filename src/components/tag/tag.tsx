@@ -1,7 +1,7 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import './tag.scss';
 
-const TAG_TO_STYLES = {
+export const TAGS = {
     "teamwork": {
         "background": "#2b833f",
         "color": "#ffffff"
@@ -22,10 +22,10 @@ const TAG_TO_STYLES = {
         "background": "#c94321",
         "color": "#ffffff"
     }
-}
+} as const;
 
-export default function Tag(props) {
+export default function Tag({ name }: { name: keyof typeof TAGS }): JSX.Element {
     return (
-        <li className="my-tag" style={TAG_TO_STYLES[props.name]}>{props.name}</li>
+        <li className="my-tag" style={TAGS[name]}>{name}</li>
     );
 }

@@ -4,8 +4,9 @@ import EmphaticPoint from 'src/components/emphatic-point/emphatic-point';
 import Prism from 'prismjs';
 import './why-our-company-wcs.scss';
 import 'src/global.scss';
+import { BlogPostMeta } from 'src/models/blog-meta';
 
-export const WHY_OUR_COMPANY_META = {
+export const WHY_OUR_COMPANY_META: BlogPostMeta = {
     title: "Why our company needed web components – and yours might too",
     img: "/assets/web-components-logo.png",
     imgAltText: "A logo for Web Components technology.",
@@ -76,8 +77,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         icon="🏆"
                         title=" Mission:"
-                        content="Create a shared component library we can use across all of Chatham.">
-                    </EmphaticPoint>
+                        content="Create a shared component library we can use across all of Chatham." />
                 </div>
                 <p>
                     There's just two problems...
@@ -97,8 +97,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         At Chatham, we believe in giving our teams the freedom to make their own technical decisions.
-                    ">
-                    </EmphaticPoint>
+                    "/>
                 </div>
                 <p>
                     How can we create a component library that supports all frameworks? Most framework apps are compiled in some
@@ -129,8 +128,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         For any sufficiently large web app, a major version increase is bittersweet news.
-                    ">
-                    </EmphaticPoint>
+                    "/>
                 </div>
                 <p>
                     Google, for their part, is not shy about their intention to forge bravely onwards into the web development
@@ -163,8 +161,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         Picking a single framework and version doesn't solve compatibility, it just guarantees technical debt.
-                    ">
-                    </EmphaticPoint>
+                    "/>
                 </div>
                 <p>
                     So, is it possible for us to create a shared component library that supports every framework our teams
@@ -206,8 +203,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         Web Components pave the way to simple shared components.
-                    ">
-                    </EmphaticPoint>
+                    "/>
                 </div>
                 <p>
                     The best part? Clever developers have already created tools to generate standards-based Web Components for
@@ -283,7 +279,7 @@ export class MyComponent {
                     title="MWKVxwj"
                     src="https://codepen.io/Kelez/embed/MWKVxwj?height=341&theme-id=dark&default-tab=result"
                     frameBorder="no"
-                    allowtransparency="true"
+                    allowTransparency={true}
                     allowFullScreen={true}>
                     See the Pen <a href='https://codepen.io/Kelez/pen/MWKVxwj'>MWKVxwj</a> by Steve Zelek
                     (<a href='https://codepen.io/Kelez'>@Kelez</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -309,10 +305,7 @@ export class MyComponent {
                     that impossible. Plus, it's not wise to rely on a single framework forever.
                 </p>
                 <div class="emphatic-point-wrapper">
-                    <EmphaticPoint content="
-                    Instead of synchronizing every app, we made our library universally compatible.
-                ">
-                    </EmphaticPoint>
+                    <EmphaticPoint content="Instead of synchronizing every app, we made our library universally compatible." />
                 </div>
                 <p>
                     By using the new technology of Web Components, we let browsers do the hard work for us. We used

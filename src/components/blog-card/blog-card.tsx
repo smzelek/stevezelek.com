@@ -1,8 +1,13 @@
-import { h } from 'preact';
-import Tag from '../tag/tag';
+import { h, JSX } from 'preact';
+import { BlogPostMeta } from 'src/models/blog-meta';
+import Tag, { TAGS } from '../tag/tag';
 import './blog-card.scss';
 
-function BlogCard(props) {
+export interface BlogCardProps {
+    meta: BlogPostMeta;
+}
+
+export default function BlogCard(props: BlogCardProps) {
     return (
         <div className="blog-card-wrapper">
             <a className="blog-card" href={props.meta.url}>
@@ -27,5 +32,3 @@ function BlogCard(props) {
         </div>
     );
 }
-
-export default BlogCard;
