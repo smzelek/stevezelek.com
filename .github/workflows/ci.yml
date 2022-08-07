@@ -43,8 +43,8 @@ jobs:
           gsutil -m rsync -d -r public/ gs://${{ secrets.GCS_BUCKET }}
           
           # gzip js files locally
-          find public -type f -name "*.js" -exec gzip '{}' \;
-          find public -type f -name "*.js.gz" -exec bash -c 'mv $0 ${0/.js.gz/.js}' {} \;
+          find public -type f -name "*.js" -exec gzip -v '{}' \;
+          find public -type f -name "*.js.gz" -exec bash -c 'mv -v $0 ${0/.js.gz/.js}' {} \;
 
           # Overwrite js with gzip js
           gsutil -m -h "content-encoding:gzip" cp -r "public/**/*.js" gs://www.stevezelek.com
