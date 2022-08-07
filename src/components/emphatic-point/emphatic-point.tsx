@@ -1,13 +1,13 @@
 import { h } from 'preact';
 import './emphatic-point.scss';
 
-interface EmphaticPoint {
+interface EmphaticPointProps {
     icon?: string;
     title?: string;
     content: string;
 }
 
-export default function EmphaticPoint(props: EmphaticPoint) {
+export default function EmphaticPoint(props: EmphaticPointProps) {
     return (
         <blockquote class="emphatic-point">
             <p class="title">

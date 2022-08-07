@@ -112,7 +112,7 @@ export default function Sidebar(): JSX.Element {
                     <img src={bars} alt="" />
                 </button>
             </div>
-            <div className="spacer"></div>
+            <div className="spacer" />
             <div className="contact">
                 <LinkedInIcon />
                 <TwitterIcon />

@@ -8,14 +8,14 @@ import WhyOurCompanyWCs from './pages/blog/why-our-company-wcs/why-our-company-w
 import { Router, Route } from 'preact-router';
 
 const Main = () => (
-    <Router>
-        <Route path="/" component={Website} />
-        <Route path="/apps" component={Apps} />
-        <Route path="/apps/take-me-apart" component={TakeMeApart} />
-        <Route path="/apps/tic-metac-toe" component={TicMetacToe} />
-        <Route path="/blog/" component={Blog} />
-        <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />
-    </Router>
+  <Router>
+    <Route path="/" component={Website} />
+    <Route path="/apps" component={Apps} />
+    <Route path="/apps/take-me-apart" component={TakeMeApart} />
+    <Route path="/apps/tic-metac-toe" component={TicMetacToe} />
+    <Route path="/blog/" component={Blog} />
+    <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />
+  </Router>
 );
 
 render(<Main />, document.body);

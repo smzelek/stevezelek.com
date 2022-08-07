@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { h } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import InfoCard from 'src/components/info-card/info-card';
 import ContactCard from 'src/components/contact-card/contact-card';
@@ -8,13 +8,13 @@ import './website.scss';
 function Website() {
     return (
         <div className="layout">
-            <Sidebar></Sidebar>
+            <Sidebar />
             <div className="bio">
                 <header>
                     <h2 className="title">about me</h2>
                 </header>
                 <main>
-                    <div className="separator"></div>
+                    <div className="separator" />
                     <InfoCard
                         header="I'm a computer scientist from Pennsylvania."
                         paragraphs={[
@@ -38,7 +38,7 @@ function Website() {
                         jpegFallback="/assets/pa/pa-1x.jpg"
                         imgAltText="The state seal of Pennsylvania."
                     />
-                    <div className="separator"></div>
+                    <div className="separator" />
                     <InfoCard
                         header="In college, I was a devoted academic."
                         paragraphs={[
@@ -62,7 +62,7 @@ function Website() {
                     "
                         jpegFallback="/assets/mu/mu-1x.jpg"
                         imgAltText="The logo for Millersville University of Pennsylvania." />
-                    <div className="separator"></div>
+                    <div className="separator" />
                     <InfoCard
                         header="I'm always learning something new."
                         paragraphs={[
@@ -86,13 +86,13 @@ function Website() {
                     "
                         jpegFallback="/assets/bulb/bulb-1x.jpg"
                         imgAltText="A lightbulb." />
-                    <div className="separator"></div>
-                    <ContactCard/>
-                    <div className="separator"></div>
+                    <div className="separator" />
+                    <ContactCard />
+                    <div className="separator" />
                 </main>
             </div>
         </div>
     )
-};
+}
 
 export default Website;

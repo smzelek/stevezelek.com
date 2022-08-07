@@ -1,76 +1,76 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-    entry:
+  entry:
     {
-        main: './src/routes.tsx',
+      main: './src/routes.tsx',
     },
-    output: {
-        path: path.resolve('public'),
-        filename: '[name].js'
+  output: {
+    path: path.resolve('public'),
+    filename: '[name].js',
+  },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx'],
+    alias: {
+      src: path.resolve(__dirname, './src'),
     },
-    resolve: {
-        extensions: ['.js', '.ts', '.tsx'],
-        alias: {
-            src: path.resolve(__dirname, './src'),
-        },
-    },
-    module: {
-        rules: [
-            { test: /\.tsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './www/index.html',
-            filename: 'index.html',
-            inject: 'body',
-            chunks: ['main']
-        }),
-        new HtmlWebpackPlugin({
-            template: './www/blog/index.html',
-            filename: 'blog/index.html',
-            inject: 'body',
-            chunks: ['main']
-        }),
-        new HtmlWebpackPlugin({
-            template: './www/apps/index.html',
-            filename: 'apps/index.html',
-            inject: 'body',
-            chunks: ['main']
-        }),
-        new HtmlWebpackPlugin({
-            template: './www/apps/tic-metac-toe/index.html',
-            filename: 'apps/tic-metac-toe/index.html',
-            inject: 'body',
-            chunks: ['main']
-        }),
-        new HtmlWebpackPlugin({
-            template: './www/apps/take-me-apart/index.html',
-            filename: 'apps/take-me-apart/index.html',
-            inject: 'body',
-            chunks: ['main']
-        }),
-        new HtmlWebpackPlugin({
-            template: './www/blog/why-our-company-needed-web-components/index.html',
-            filename: 'blog/why-our-company-needed-web-components/index.html',
-            inject: 'body',
-            chunks: ['main']
-        }),
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: 'assets', to: 'assets' }
-            ]
-        }),
-        new CompressionPlugin({
-            test: /.*.js$/,
-        })
-    ]
-}
+  },
+  module: {
+    rules: [
+      {test: /\.tsx?$/, loader: 'babel-loader', exclude: /node_modules/},
+      {test: /\.css$/, loader: 'style-loader!css-loader'},
+      {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './www/index.html',
+      filename: 'index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './www/blog/index.html',
+      filename: 'blog/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './www/apps/index.html',
+      filename: 'apps/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './www/apps/tic-metac-toe/index.html',
+      filename: 'apps/tic-metac-toe/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './www/apps/take-me-apart/index.html',
+      filename: 'apps/take-me-apart/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './www/blog/why-our-company-needed-web-components/index.html',
+      filename: 'blog/why-our-company-needed-web-components/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: 'assets', to: 'assets'},
+      ],
+    }),
+    new CompressionPlugin({
+      test: /.*.js$/,
+    }),
+  ],
+};

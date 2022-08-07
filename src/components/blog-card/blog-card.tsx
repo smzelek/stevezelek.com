@@ -1,6 +1,6 @@
-import { h, JSX } from 'preact';
+import { h } from 'preact';
 import { BlogPostMeta } from 'src/models/blog-meta';
-import Tag, { TAGS } from '../tag/tag';
+import Tag from '../tag/tag';
 import './blog-card.scss';
 
 export interface BlogCardProps {

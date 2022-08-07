@@ -11,7 +11,7 @@ export default function ContactCard() {
 
     return (
         <div className="contact-card">
-            <div className="collapsible-spacer"></div>
+            <div className="collapsible-spacer" />
             <div className="content">
                 <h3>
                     Now that we're friends...
@@ -38,8 +38,7 @@ export default function ContactCard() {
                         <label htmlFor="message">Message</label>
                         <textarea required
                             id="message"
-                            name="_message">
-                        </textarea>
+                            name="_message" />
                         <button type="submit">Send</button>
                     </form>
                     <p className={`form-complete-message ${!wasMessageSent ? 'form-hidden' : ''}`}>
@@ -47,7 +46,7 @@ export default function ContactCard() {
                     </p>
                 </div>
             </div>
-            <div className="collapsible-spacer-2"></div>
+            <div className="collapsible-spacer-2" />
         </div>
     );
 }

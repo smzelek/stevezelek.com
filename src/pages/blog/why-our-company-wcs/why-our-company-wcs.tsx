@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { h } from 'preact';
 import BlogPost from 'src/components/blog-post/blog-post';
 import EmphaticPoint from 'src/components/emphatic-point/emphatic-point';
 import Prism from 'prismjs';
@@ -97,7 +97,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         At Chatham, we believe in giving our teams the freedom to make their own technical decisions.
-                    "/>
+                    " />
                 </div>
                 <p>
                     How can we create a component library that supports all frameworks? Most framework apps are compiled in some
@@ -128,7 +128,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         For any sufficiently large web app, a major version increase is bittersweet news.
-                    "/>
+                    " />
                 </div>
                 <p>
                     Google, for their part, is not shy about their intention to forge bravely onwards into the web development
@@ -161,7 +161,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         Picking a single framework and version doesn't solve compatibility, it just guarantees technical debt.
-                    "/>
+                    " />
                 </div>
                 <p>
                     So, is it possible for us to create a shared component library that supports every framework our teams
@@ -203,7 +203,7 @@ function WhyOurCompanyWCs() {
                     <EmphaticPoint
                         content="
                         Web Components pave the way to simple shared components.
-                    "/>
+                    " />
                 </div>
                 <p>
                     The best part? Clever developers have already created tools to generate standards-based Web Components for

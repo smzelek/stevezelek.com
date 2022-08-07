@@ -21,7 +21,7 @@ export interface BlogPostProps {
 export default function BlogPost(props: BlogPostProps) {
     return (
         <div className="layout">
-            <Sidebar></Sidebar>
+            <Sidebar />
             <div className="blog-post-wrapper">
                 <div className="blog-post">
                     <header>

@@ -13,7 +13,7 @@ interface InfoCardProps {
 export default function InfoCard(props: InfoCardProps): JSX.Element {
     return (
         <div className="info-card">
-            <div className="collapsible-spacer"></div>
+            <div className="collapsible-spacer" />
             <div className="text">
                 <h3>
                     {props.header}
@@ -22,8 +22,7 @@ export default function InfoCard(props: InfoCardProps): JSX.Element {
                     <p key={i}>{paragraph}</p>
                 )}
             </div>
-            <div className="collapsible-spacer">
-            </div>
+            <div className="collapsible-spacer" />
             <div className="img-wrapper">
                 <picture>
                     <source srcSet={props.webpPaths}
@@ -33,7 +32,7 @@ export default function InfoCard(props: InfoCardProps): JSX.Element {
                     <img src={props.jpegFallback} type="image/jpeg" alt={props.imgAltText} />
                 </picture>
             </div>
-            <div className="collapsible-spacer"></div>
+            <div className="collapsible-spacer" />
         </div>
     );
 }
