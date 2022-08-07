@@ -34,12 +34,20 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCS_SA_KEY }}
 
-      - name: Setup gcloud CLI
+      - name: Setup gcloud and gsutil
         uses: google-github-actions/setup-gcloud@v0
 
       - name: Deploy to GCP
         run: |
-          gsutil -m rsync -R public gs://${{ secrets.GCS_BUCKET }}
+          # Destructively synchronize without gzip js
+          gsutil -m rsync -d -r public/ gs://${{ secrets.GCS_BUCKET }}
           
-        # gcloud compute url-maps invalidate-cdn-cache \
-        #   ${{ secrets.GCS_LB }} --path "/*"
+          # gzip js files locally
+          find public -type f -name "*.js" -exec gzip '{}' \;
+          find public -type f -name "*.js.gz" -exec bash -c 'mv $0 ${0/.js.gz/.js}' {} \;
+
+          # Overwrite js with gzip js
+          gsutil -m -h "content-encoding:gzip" cp -r "public/**/*.js" gs://www.stevezelek.com
+
+      - name: Clear GCP Cache
+        run: gcloud compute url-maps invalidate-cdn-cache ${{ secrets.GCS_LB }} --path "/*" --async

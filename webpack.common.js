@@ -3,7 +3,6 @@ const { DefinePlugin } = require("webpack");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 
 const commitHash = require('child_process')
   .execSync('git rev-parse --short HEAD')
@@ -79,9 +78,6 @@ module.exports = {
       patterns: [
         { from: 'assets', to: 'assets' },
       ],
-    }),
-    new CompressionPlugin({
-      test: /.*.js$/,
-    }),
+    })
   ],
 };
