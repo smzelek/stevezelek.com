@@ -7,34 +7,39 @@ on:
 
 jobs:
   build:
-    env:
-      AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Cache NPM
         uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'npm'
+
       - name: Install
         run: npm ci
+
       - name: Build
         run: npm run build
         timeout-minutes: 5
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v0
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - name: Deploy Build
+          credentials_json: ${{ secrets.GCS_SA_KEY }}
+
+      - name: Setup gcloud CLI
+        uses: google-github-actions/setup-gcloud@v0
+
+      - name: Deploy to GCP
         run: |
-          cd public/
-          zip -r build.zip .
-          aws s3 cp build.zip s3://steve-zelek/${{ github.sha }}.zip --content-type "application/zip; charset=utf-8"
-          URL=$(aws s3 presign s3://steve-zelek/${{ github.sha }}.zip)
-          aws amplify start-deployment --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} --branch-name prod --source-url $URL
+          gsutil -m rsync -R public gs://${{ secrets.GCS_BUCKET }}
+          
+        # gcloud compute url-maps invalidate-cdn-cache \
+        #   ${{ secrets.GCS_LB }} --path "/*"
