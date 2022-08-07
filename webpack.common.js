@@ -1,14 +1,20 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { DefinePlugin } = require("webpack");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
+const commitHash = require('child_process')
+  .execSync('git rev-parse --short HEAD')
+  .toString()
+  .trim();
+
 module.exports = {
   entry:
-    {
-      main: './src/routes.tsx',
-    },
+  {
+    main: './src/routes.tsx',
+  },
   output: {
     path: path.resolve('public'),
     filename: '[name].js',
@@ -21,12 +27,17 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.tsx?$/, loader: 'babel-loader', exclude: /node_modules/},
-      {test: /\.css$/, loader: 'style-loader!css-loader'},
-      {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
+      { test: /\.tsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
     ],
   },
   plugins: [
+    new DefinePlugin({
+      'process.env': {
+        COMMIT_HASH: JSON.stringify(commitHash),
+      },
+    }),
     new HtmlWebpackPlugin({
       template: './www/index.html',
       filename: 'index.html',
@@ -66,7 +77,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        {from: 'assets', to: 'assets'},
+        { from: 'assets', to: 'assets' },
       ],
     }),
     new CompressionPlugin({
