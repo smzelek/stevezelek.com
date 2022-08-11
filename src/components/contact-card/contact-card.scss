@@ -1,7 +1,7 @@
-@import '../../mixins';
+@import "src/mixins";
 
 .contact-card {
-    background: #443f3f;
+    background: var(--primary-bg);
     color: #e3e2e6;
     font-family: "Cairo", sans-serif;
     box-sizing: border-box;
@@ -9,17 +9,10 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-
-    input,
-    textarea,
-    button {
-        border: 0;
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0px 3px #a2c0e6;
-        }
-    }
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 
     label {
         display: block;
@@ -28,37 +21,9 @@
         margin-bottom: 5px;
     }
 
-    input {
-        font-family: monospace;
-        padding: 4px;
-        width: 200px;
-        font-size: 19px;
-    }
-
-    textarea {
-        display: block;
-        font-size: 19px;
-        font-family: monospace;
-        resize: none;
-        width: 450px;
-        height: 140px;
-    }
-
     label {
         font-family: "Cairo", sans-serif;
         font-size: 18px;
-    }
-
-    button {
-        background-color: #7897BF;
-        color: #fff;
-        border: none;
-        font-family: "Cairo", sans-serif;
-        width: 100px;
-        font-size: 25px;
-        height: 35px;
-        line-height: 25px;
-        margin-top: 30px;
     }
 
     .field {
@@ -68,53 +33,103 @@
         }
     }
 
-    .collapsible-spacer {
-        flex: 1 1 auto;
-        max-width: 100px;
-        width: 100px;
-        min-width: 1px;
-    }
-
-    .collapsible-spacer-2 {
-        flex: 1 1 auto;
-        max-width: 800px;
-        width: 800px;
-        min-width: 1px;
-    }
-
     .form-wrapper {
-        position: relative;
+        width: 100%;
+        display: grid;
+
+        .form-complete-message {
+            grid-area: 1 / 1;
+            margin: 0;
+            font-size: 18px;
+            line-height: 33px;
+        }
+
+        form {
+            grid-area: 1 / 1;
+        }
+
+        .form-hidden {
+            visibility: hidden;
+        }
     }
 
-    .form-complete-message {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
+    input {
+        width: 200px;
+        border: none;
+        outline: none;
         font-size: 18px;
-        line-height: 33px;
-    }
+        color: var(--primary-text);
+        background: var(--secondary-bg);
+        border-radius: 5px;
+        border: 1px solid var(--secondary-text);
+        font-family: "Courier", monospace;
+        flex-grow: 1;
+        padding: 0 6px;
+        line-height: 18px;
 
-    .form-hidden {
-        visibility: hidden;
-    }
-}
-
-@include smaller-than(mobile-screen) {
-    .contact-card {
-        textarea {
-            box-sizing: border-box;
-            width: 100%;
-        }
-        
-        .content {
-            width: 100%;
+        &::placeholder {
+            font-style: italic;
         }
 
-        .collapsible-spacer,
-        .collapsible-spacer-2 {
-            display: none;
+        &:active:not(:disabled),
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0px 2px var(--focus-shadow);
+            border-color: var(--focus-shadow);
         }
     }
 
+    textarea {
+        display: block;
+        resize: none;
+        width: 100%;
+        height: 140px;
+        max-width: 450px;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 18px;
+        color: var(--primary-text);
+        background: var(--secondary-bg);
+        border-radius: 5px;
+        border: 1px solid var(--secondary-text);
+        font-family: "Courier", monospace;
+        flex-grow: 1;
+        padding: 0 6px;
+        line-height: 18px;
+
+        &:active:not(:disabled),
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0px 2px var(--focus-shadow);
+            border-color: var(--focus-shadow);
+        }
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--quaternary-bg-active);
+        color: var(--primary-text);
+        border: 1px solid var(--secondary-text);
+        border-radius: 5px;
+        padding: 2px 5px;
+        font-family: "Cairo";
+        font-size: 16px;
+        outline: none;
+        cursor: pointer;
+        margin-top: 20px;
+
+        &:focus,
+        &:active {
+            outline: none;
+            box-shadow: 0 0 0px 2px var(--focus-shadow);
+        }
+
+        &:focus,
+        &:active,
+        &:hover {
+            background: var(--quaternary-bg-intent);
+        }
+    }
 }

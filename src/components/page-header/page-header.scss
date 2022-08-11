@@ -1,0 +1,29 @@
+@import 'src/mixins';
+
+.page-header {
+    min-height: 80px;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-bg);
+
+    .title {
+        font-size: 48px;
+        line-height: 48px;
+        margin: 0;
+        padding-left: 32px;
+        font-family: Cairo, sans-serif;
+        color: #fff;
+    }
+}
+
+
+@include smaller-than(mobile-screen) {
+    .page-header {
+        justify-content: center;
+
+        .title {
+            padding: 0;
+        }
+    }
+}

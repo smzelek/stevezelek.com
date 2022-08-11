@@ -1,19 +1,21 @@
 .app-card {
+    background: var(--quaternary-bg);
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 30px;
-    background: white;
     text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
 
-    h3,
-    p {
-        color: #465061;
+    h3 {
+        color: var(--primary-text);
     }
 
     p {
+        color: var(--secondary-text);
         margin-top: 10px;
         font-size: 18px;
         line-height: 33px;
@@ -35,20 +37,17 @@
     }
 
     &:focus-within {
-        box-shadow: 0 0 0px 3px #a2c0e6 inset;
+        box-shadow: 0 0 0px 3px var(--focus-shadow);
     }
 
     &:focus,
     &:hover,
     &:focus-within {
-        background: #ecf1f8;
+        background: var(--quaternary-bg-active-light);
         outline: none;
 
         h3 {
             text-decoration: underline;
         }
     }
-
-    text-decoration: none;
-    
 }

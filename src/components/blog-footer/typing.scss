@@ -1,0 +1,65 @@
+.typing {
+    position: relative;
+    padding-left: 2px;
+
+    .dots {
+        position: absolute;
+        left: 0;
+        opacity: 1;
+    }
+
+    .typed {
+        opacity: 0;
+    }
+
+    &.done {
+        .dots {
+            animation: vanish 1.5s steps(1, end) forwards;
+        }
+
+        .typed {
+            animation: appear 1.5s steps(1, end) forwards;
+        }
+    }
+
+    .dots {
+        span {
+            animation: jump 1.5s infinite;
+            position: relative;
+            bottom: 0;
+        }
+        .dot-1 {
+            animation-delay: 200ms;
+        }
+        .dot-2 {
+            animation-delay: 400ms;
+        }
+        .dot-3 {
+            animation-delay: 600ms;
+        }
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0px;
+    }
+    20% {
+        bottom: 5px;
+    }
+    40% {
+        bottom: 0px;
+    }
+}
+
+@keyframes vanish {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+    }
+}

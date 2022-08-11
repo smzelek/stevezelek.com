@@ -1,0 +1,189 @@
+@import "src/mixins";
+
+.blog-footer {
+    background: var(--secondary-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    picture {
+        height: 100px;
+    }
+
+    img {
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    h4 {
+        font-size: 16px;
+        color: var(--secondary-text);
+    }
+
+    .contact {
+        margin-top: 10px;
+    }
+
+    .contact .icon {
+        margin: 0 5px;
+    }
+
+    .identifiers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+
+        picture {
+            height: 100px;
+        }
+
+        img {
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        h4 {
+            font-size: 16px;
+            color: var(--secondary-text);
+        }
+
+        .contact {
+            margin-top: 10px;
+        }
+
+        .contact .icon {
+            margin: 0 5px;
+        }
+    }
+}
+
+.newsletter-chat {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    border: 1px solid var(--secondary-text);
+    border-radius: 5px;
+    padding: 10px;
+    background: #0e1721;
+
+    .chat-header {
+        grid-column: 1/4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .time {
+        color: var(--secondary-text);
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .user {
+        color: var(--accent-text);
+        font-size: 20px;
+        text-align: right;
+    }
+
+    .logout {
+        grid-column: 2 / 4;
+        text-align: left;
+        font-size: 16px;
+        color: var(--secondary-text);
+        font-style: italic;
+    }
+
+    .email {
+        display: inline-flex;
+
+        &.signed-up {
+            input {
+                border: none;
+                box-shadow: none;
+                background: transparent;
+            }
+
+            button {
+                display: none;
+            }
+        }
+
+        input {
+            border: none;
+            outline: none;
+            font-size: 18px;
+            color: var(--primary-text);
+            background: var(--secondary-bg);
+            border-radius: 5px;
+            border: 1px solid var(--secondary-text);
+            font-family: "Courier", monospace;
+            flex-grow: 1;
+            padding: 0 6px;
+            line-height: 18px;
+            height: 24px;
+            box-sizing: border-box;
+
+            &::placeholder {
+                font-style: italic;
+            }
+
+            &:active:not(:disabled),
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0px 2px var(--focus-shadow);
+                border-color: var(--focus-shadow);
+            }
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--quaternary-bg-active);
+            color: var(--primary-text);
+            border: 1px solid var(--secondary-text);
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 2px 10px;
+            font-family: "Cairo";
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+            height: 24px;
+            box-sizing: border-box;
+
+            &:focus,
+            &:active {
+                outline: none;
+                box-shadow: 0 0 0px 2px var(--focus-shadow);
+            }
+            &:focus, &:active, &:hover {
+                background: var(--quaternary-bg-intent);
+            }
+        }
+    }
+
+    .chat {
+        display: contents;
+        visibility: hidden;
+        font-size: 18px;
+        line-height: 20px;
+
+        &.show {
+            visibility: visible;
+        }
+    }
+}
+
+@include larger-than(mobile-screen) {
+    .blog-footer .identifiers {
+        display: none;
+    }
+}

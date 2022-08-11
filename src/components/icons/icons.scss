@@ -1,9 +1,9 @@
-
 a.icon {
     display: inline-block;
     border-radius: 5px;
     width: 40px;
     height: 40px;
+    border: 1px solid var(--secondary-text);
 
     img {
         display: block;
@@ -12,27 +12,36 @@ a.icon {
         margin: 0 auto;
         padding: 5px 0;
         box-sizing: border-box;
+        object-fit: contain;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0px 3px var(--focus-shadow);
+    }
+}
+
+a.icon.github {
+    background-color: black;
+    
+    &:hover,
+    &:focus {
+        background: var(--dark-bg-1);
     }
 }
 
 a.icon.linkedin {
-    background-color: #007bb6;
+    background: #006a9d;
     &:hover,
     &:focus {
-        outline: none;
-        background: #006a9d;
+        background-color: #007bb6;
     }
 }
 
-a.icon:focus {
-    box-shadow: 0 0 0px 3px #a2c0e6;
-}
-
 a.icon.twitter {
-    background-color: #1da1f2;
+    background-color: #1a91da;
     &:hover,
     &:focus {
-        outline: none;
-        background-color: #1a91da;
+        background-color: #1da1f2;
     }
 }

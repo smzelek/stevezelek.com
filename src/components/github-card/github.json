@@ -1,0 +1,1399 @@
+{
+    "data": {
+        "user": {
+            "contributionsCollection": {
+                "contributionYears": [
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015
+                ],
+                "contributionCalendar": {
+                    "totalContributions": 1332,
+                    "colors": [
+                        "#9be9a8",
+                        "#40c463",
+                        "#30a14e",
+                        "#216e39"
+                    ],
+                    "months": [
+                        {
+                            "name": "Aug",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Sep",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Oct",
+                            "totalWeeks": 5
+                        },
+                        {
+                            "name": "Nov",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Dec",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Jan",
+                            "totalWeeks": 5
+                        },
+                        {
+                            "name": "Feb",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Mar",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Apr",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "May",
+                            "totalWeeks": 5
+                        },
+                        {
+                            "name": "Jun",
+                            "totalWeeks": 4
+                        },
+                        {
+                            "name": "Jul",
+                            "totalWeeks": 5
+                        },
+                        {
+                            "name": "Aug",
+                            "totalWeeks": 1
+                        }
+                    ],
+                    "weeks": [
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FOURTH_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "THIRD_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "NONE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "SECOND_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                }
+                            ]
+                        },
+                        {
+                            "contributionDays": [
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "FIRST_QUARTILE"
+                                },
+                                {
+                                    "contributionLevel": "NONE"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -28,6 +28,8 @@ jobs:
       - name: Build
         run: npm run build
         timeout-minutes: 5
+        env:
+          SAFE_TOKEN: ${{ secrets.SAFE_TOKEN }}
 
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v0

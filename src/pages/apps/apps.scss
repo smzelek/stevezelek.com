@@ -1,27 +1,10 @@
-@import 'src/mixins';
+@import "src/mixins";
 
-.apps-gallery {
+.apps {
     display: flex;
     flex-direction: column;
     width: 100%;
     min-width: 1px;
-
-    header {
-        min-height: 80px;
-        max-height: 80px;
-        display: flex;
-        align-items: center;
-        background-color: #7897BF;
-
-        .title {
-            font-size: 48px;
-            line-height: 48px;
-            margin: 0;
-            padding-left: 32px;
-            font-family: Cairo, sans-serif;
-            color: #fff;
-        }
-    }
 
     main {
         display: flex;
@@ -37,23 +20,13 @@
 }
 
 @include larger-than(mobile-screen) {
-    .apps-gallery {
-        main {
-            overflow-y: auto;
-        }
+    .apps {
+        overflow-y: auto;
     }
 }
 
 @include smaller-than(mobile-screen) {
-    .apps-gallery {
-        header {
-            justify-content: center;
-        
-            .title {
-                padding: 0;
-            }
-        }
-        
+    .apps {
         main {
             justify-content: center;
         }

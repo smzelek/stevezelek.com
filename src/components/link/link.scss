@@ -1,0 +1,28 @@
+.link {    
+    padding: 4px;
+    background: hsl(226deg 50% 15%);
+    border: none;
+    color: #b1ffff;
+    text-decoration: none;
+    line-height: 22px;
+    display: inline-block;
+    box-shadow: 0px -2px 0px -1px var(--accent-text) inset;
+
+    &:hover {
+        background: hsl(226deg 50% 23%);
+    }
+
+    &:focus {
+        outline: none;
+        border-radius: 6px;
+        background: hsl(226deg 50% 23%);
+        box-shadow: 0px -2px 0px -1px var(--accent-text) inset, 0px 0px 0px 2px var(--focus-shadow) inset;
+    }
+
+    &.demure {
+        font-size: 12px;
+        line-height: 12px;
+        color: var(--secondary-text);
+        box-shadow: 0px -2px 0px -1px var(--secondary-text) inset;
+    }
+}

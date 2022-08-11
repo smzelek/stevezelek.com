@@ -1,27 +1,53 @@
 import { h, JSX } from 'preact';
 import './sidebar.scss';
-import TwitterIcon from '../icons/twitter-icon';
-import LinkedInIcon from '../icons/linkedin-icon';
-import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
+import TwitterIcon from 'src/components/icons/twitter-icon';
+import LinkedInIcon from 'src/components/icons/linkedin-icon';
+import GithubIcon from 'src/components/icons/github-icon';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'preact/hooks';
+import Link from 'src/components/link/link';
 const bars = '/assets/icons/bars.svg';
 
 export default function Sidebar(): JSX.Element {
     const [currentPath, setCurrentPath] = useState<string | null>(null);
+    const [linkDecoratorStyle, setLinkDecoratorStyle] = useState<string | null>(null);
     const [isMobileMenuExpanded, setIsMobileMenuExpanded] = useState(false);
-    const linkWrapperRef = useRef<HTMLDivElement>();
+    const usrAnchorRef = useRef<HTMLSpanElement>();
+    const blogAnchorRef = useRef<HTMLSpanElement>();
+    const appsAnchorRef = useRef<HTMLSpanElement>();
+    const sidebarRef = useRef<HTMLDivElement>();
 
-    const isCondensed = (): boolean => {
+    const links = useMemo(() => [
+        {
+            href: "/",
+            activeRegex: /^\/$/i,
+            text: "~/usr",
+            ref: usrAnchorRef,
+        },
+        {
+            href: "/blog",
+            activeRegex: /^\/blog.*/i,
+            text: "~/blog",
+            ref: blogAnchorRef,
+        },
+        {
+            href: "/apps",
+            activeRegex: /^\/apps.*/i,
+            text: "~/apps",
+            ref: appsAnchorRef
+        },
+    ], []);
+
+    const isCondensed = (path: string | null): boolean => {
         return [
             /^\/apps\/.+/i,
-        ].some(path => currentPath && path.test(currentPath));
+        ].some(regex => path && regex.test(path));
     }
 
-    const isActive = (regex: RegExp): boolean => {
-        return !!currentPath && regex.test(currentPath);
-    }
+    const isActive = useCallback((regex: RegExp, path: string | null): boolean => {
+        return !!path && regex.test(path);
+    }, []);
 
     const toggleMobileMenu = () => {
-        console.log('toggleMobileMenu -> set', !isMobileMenuExpanded)
         setIsMobileMenuExpanded(!isMobileMenuExpanded)
     };
 
@@ -40,28 +66,42 @@ export default function Sidebar(): JSX.Element {
         }
     }
 
+    const setDecoratorPosition = useCallback((target: HTMLElement | undefined) => {
+        const bounds = target?.getBoundingClientRect();
+        if (!bounds) {
+            return;
+        }
+        setLinkDecoratorStyle(`top: ${bounds.y}px; left: ${bounds.x}px;`);
+    }, []);
+
+
     useEffect(() => {
         const handleNavigation = () => {
-            setCurrentPath(window.location.pathname)
+            setCurrentPath(window.location.pathname);
             setIsMobileMenuExpanded(false);
-        }
+        };
+
+        const clickOut = (e: MouseEvent) => {
+            console.log(sidebarRef.current, e.target)
+            if (sidebarRef.current && e.target && !sidebarRef.current.contains(e.target as HTMLElement)) {
+                setIsMobileMenuExpanded(false);
+            }
+        };
 
         window.addEventListener('popstate', handleNavigation);
+        window.addEventListener('click', clickOut)
         handleNavigation();
 
         return () => {
             window.removeEventListener('popstate', handleNavigation);
-        }
-    }, []);
-
-    useLayoutEffect(() => {
-        if (isMobileMenuExpanded) {
-            linkWrapperRef?.current?.querySelectorAll('a')[0]?.focus();
-        }
-    }, [isMobileMenuExpanded, linkWrapperRef])
+            window.removeEventListener('click', clickOut)
+        };
+    }, [sidebarRef]);
 
     return (
-        <div className={`sidebar ${isCondensed() ? 'condensed' : ''}`}>
+        <div
+            ref={sidebarRef}
+            className={`sidebar ${isCondensed(currentPath) ? 'condensed' : ''}`}>
             <div className="identifiers">
                 <picture>
                     <source srcSet="
@@ -81,30 +121,35 @@ export default function Sidebar(): JSX.Element {
                     software maker
                 </p>
             </div>
-            <div className="navigation-wrapper"
-                ref={linkWrapperRef}>
-                <ul className={`navigation ${isMobileMenuExpanded ? 'mobile-expanded' : ''}`} >
-                    <li>
-                        <a href="/"
-                            className={`${isActive(/^\/$/i) ? 'active' : ''}`}
-                            onKeyDown={(e) => handleMenuItemKeydown(e)}>
-                            bio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/apps"
-                            className={`${isActive(/^\/apps.*/i) ? 'active' : ''}`}
-                            onKeyDown={(e) => handleMenuItemKeydown(e)}>
-                            apps
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/blog"
-                            className={`${isActive(/^\/blog.*/i) ? 'active' : ''}`}
-                            onKeyDown={(e) => handleMenuItemKeydown(e)}>
-                            blog
-                        </a>
-                    </li>
+            <div className="navigation-wrapper">
+                <ul className={`navigation ${isMobileMenuExpanded ? 'mobile-expanded' : ''}`}
+                    onMouseLeave={() => setLinkDecoratorStyle('')}>
+                    {linkDecoratorStyle && (
+                        <span className="link-decorator" style={linkDecoratorStyle}>$ cd</span>
+                    )}
+                    {links.map((link) => (
+                        <li key={link.href}>
+                            <a href={link.href}
+                                className={`${isActive(link.activeRegex, currentPath) ? 'active' : ''}`}
+                                onMouseEnter={() => setDecoratorPosition(link.ref.current)}
+                                onFocus={() => {
+                                    setDecoratorPosition(link.ref.current)
+                                }}
+                                onBlur={() => {
+                                    setLinkDecoratorStyle('')
+                                }}
+                                onKeyDown={(e) => handleMenuItemKeydown(e)}>
+                                <span className="link-text">
+                                    <span
+                                        className="link-decorator-anchor"
+                                        ref={link.ref}>
+                                        $ cd
+                                    </span>
+                                    {link.text}
+                                </span>
+                            </a>
+                        </li>
+                    ))}
                 </ul>
                 <button className="menu-toggle" type="button" aria-label="Show Navigation Menu"
                     onClick={() => toggleMobileMenu()}
@@ -114,8 +159,12 @@ export default function Sidebar(): JSX.Element {
             </div>
             <div className="spacer" />
             <div className="contact">
-                <LinkedInIcon />
                 <TwitterIcon />
+                <GithubIcon />
+                <LinkedInIcon />
+            </div>
+            <div className="privacy">
+                <Link className="demure" href="/privacy">privacy</Link>
             </div>
         </div>
     );
