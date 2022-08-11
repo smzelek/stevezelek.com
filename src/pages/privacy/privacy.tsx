@@ -156,7 +156,7 @@ export default function Privacy() {
                         <p>
                             I may send you direct marketing communications as permitted by law,
                             including by email. You may opt-out of my marketing communications as described
-                            in the <Link href="#opt-out-of-marketing-communications">Opt-out of marketing communications</Link> section below.
+                            in the Opt-out of marketing communications section below.
                         </p>
                         <h4>
                             Compliance and protection

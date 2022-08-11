@@ -24,13 +24,13 @@ export default function Sidebar(): JSX.Element {
             ref: usrAnchorRef,
         },
         {
-            href: "/blog",
+            href: "/blog/",
             activeRegex: /^\/blog.*/i,
             text: "~/blog",
             ref: blogAnchorRef,
         },
         {
-            href: "/apps",
+            href: "/apps/",
             activeRegex: /^\/apps.*/i,
             text: "~/apps",
             ref: appsAnchorRef
@@ -164,7 +164,7 @@ export default function Sidebar(): JSX.Element {
                 <LinkedInIcon />
             </div>
             <div className="privacy">
-                <Link className="demure" href="/privacy">privacy</Link>
+                <Link className="demure" href="/privacy/">privacy</Link>
             </div>
         </div>
     );

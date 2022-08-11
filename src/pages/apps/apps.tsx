@@ -17,35 +17,11 @@ export default function Apps() {
                     <AppCard header="take me apart"
                         paragraphs={['A fun way for beginners, or even children to visualize web development.']}
                         imgPath={takemeapart}
-                        url="/apps/take-me-apart" />
+                        url="/apps/take-me-apart/" />
                     <AppCard header="tic-metac-toe"
                         paragraphs={['A meta variant of tic-tac-toe featuring 9 boards and special rules.']}
                         imgPath={tictactoe}
-                        url="/apps/tic-metac-toe" />
-                        <AppCard header="take me apart"
-                            paragraphs={['A fun way for beginners, or even children to visualize web development.']}
-                            imgPath={takemeapart}
-                            url="/apps/take-me-apart" />
-                        <AppCard header="tic-metac-toe"
-                            paragraphs={['A meta variant of tic-tac-toe featuring 9 boards and special rules.']}
-                            imgPath={tictactoe}
-                            url="/apps/tic-metac-toe" />
-                            <AppCard header="take me apart"
-                                paragraphs={['A fun way for beginners, or even children to visualize web development.']}
-                                imgPath={takemeapart}
-                                url="/apps/take-me-apart" />
-                            <AppCard header="tic-metac-toe"
-                                paragraphs={['A meta variant of tic-tac-toe featuring 9 boards and special rules.']}
-                                imgPath={tictactoe}
-                                url="/apps/tic-metac-toe" />
-                                <AppCard header="take me apart"
-                                    paragraphs={['A fun way for beginners, or even children to visualize web development.']}
-                                    imgPath={takemeapart}
-                                    url="/apps/take-me-apart" />
-                                <AppCard header="tic-metac-toe"
-                                    paragraphs={['A meta variant of tic-tac-toe featuring 9 boards and special rules.']}
-                                    imgPath={tictactoe}
-                                    url="/apps/tic-metac-toe" />
+                        url="/apps/tic-metac-toe/" />
                 </main>
             </div>
         </div>

@@ -20,7 +20,7 @@ export const WHY_OUR_COMPANY_META: BlogPostMeta = {
         Is it possible to create a shared component library that supports every framework our teams choose,
         without ever needing to update legacy apps? That's the riddle that a large company like ours faces.
     `,
-    url: "/blog/why-our-company-needed-web-components"
+    url: "/blog/why-our-company-needed-web-components/"
 }
 
 const angularSupportUrl = "https://angular.io/guide/releases#support-policy-and-schedule";

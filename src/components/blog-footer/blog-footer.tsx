@@ -170,7 +170,7 @@ export default function BlogFooter() {
                     <GithubIcon />
                     <LinkedInIcon />
                 </div>
-                <Link className="demure" href="/privacy">privacy</Link>
+                <Link className="demure" href="/privacy/">privacy</Link>
             </div>
         </footer>
     );

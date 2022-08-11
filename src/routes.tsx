@@ -17,10 +17,10 @@ const Main = () => {
       <Route path="/" component={Usr} />
       <Route path="/blog/" component={Blog} />
       <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />
-      <Route path="/apps" component={Apps} />
+      <Route path="/apps/" component={Apps} />
       <Route path="/apps/take-me-apart" component={TakeMeApart} />
       <Route path="/apps/tic-metac-toe" component={TicMetacToe} />
-      <Route path="/privacy" component={Privacy} />
+      <Route path="/privacy/" component={Privacy} />
     </Router>
   </div>)
 };
