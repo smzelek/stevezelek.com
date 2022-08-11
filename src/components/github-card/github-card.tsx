@@ -1,13 +1,51 @@
 import { h } from "preact";
-import github from './github.json';
 import './github-card.scss';
 import Link from "../link/link";
+import { useEffect, useState } from "preact/hooks";
 const githubIcon = '/assets/icons/github.png';
 
+interface GithubResponse {
+    data: {
+        user: {
+            contributionsCollection: {
+                contributionYears: number[];
+                contributionCalendar: {
+                    totalContributions: number;
+                    colors: string[];
+                    months: {
+                        name: string;
+                        totalWeeks: number;
+                    }[];
+                    weeks: {
+                        contributionDays: {
+                            contributionLevel: string;
+                        }[];
+                    }[];
+                };
+            };
+        };
+    };
+}
+
 export default function GithubCard() {
-    console.log(github);
-    const calendar = github.data.user.contributionsCollection.contributionCalendar;
-    const colors = github.data.user.contributionsCollection.contributionCalendar.colors;
+    const [githubData, setGithubData] = useState<GithubResponse | null>(null);
+
+    useEffect(() => {
+        loadData();
+    }, []);
+
+    const loadData = async () => {
+        const data = await fetch('/assets/github.json');
+        const json = await data.json();
+        setGithubData(json);
+    }
+
+    if (!githubData) {
+        return;
+    }
+
+    const calendar = githubData.data.user.contributionsCollection.contributionCalendar;
+    const colors = githubData.data.user.contributionsCollection.contributionCalendar.colors;
     const colorMap = {
         FIRST_QUARTILE: colors[0],
         SECOND_QUARTILE: colors[1],

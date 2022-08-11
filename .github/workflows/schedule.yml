@@ -1,12 +1,13 @@
-name: CI
+name: Refresh GitHub Contribution Data
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  schedule:
+    # (see https://crontab.guru) -> “At 03:00 AM UTC every day.”
+    - cron: '0 3 * * *'
 
 jobs:
-  build:
+  refresh_github:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -25,9 +26,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Build
-        run: npm run build
-        timeout-minutes: 5
+      - name: Reload data
+        run: node github.mjs
         env:
           SAFE_TOKEN: ${{ secrets.SAFE_TOKEN }}
 
@@ -41,15 +41,7 @@ jobs:
 
       - name: Deploy to GCP
         run: |
-          # Destructively synchronize without gzip js
-          gsutil -m rsync -d -r public/ gs://${{ secrets.GCS_BUCKET }}
-          
-          # gzip js files locally
-          find public -type f -name "*.js" -exec gzip -v '{}' \;
-          find public -type f -name "*.js.gz" -exec bash -c 'mv -v $0 ${0/.js.gz/.js}' {} \;
-
-          # Overwrite js with gzip js
-          gsutil -m -h "content-encoding:gzip" cp -r "public/**/*.js" gs://www.stevezelek.com
+          gsutil -m cp "assets/github.json" gs://www.stevezelek.com/assets
 
       - name: Clear GCP Cache
-        run: gcloud compute url-maps invalidate-cdn-cache ${{ secrets.GCS_LB }} --path "/*" --async
+        run: gcloud compute url-maps invalidate-cdn-cache ${{ secrets.GCS_LB }} --path "/assets/github.json" --async
