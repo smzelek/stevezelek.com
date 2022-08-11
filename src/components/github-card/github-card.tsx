@@ -65,14 +65,14 @@ export default function GithubCard() {
                 </p>
             </div>
             <div className="contributions" style={`grid-template-columns: repeat(${calendar.weeks.length}, max-content);`}>
-                {calendar.months.reverse().map((month, i) => (
+                {[...calendar.months].reverse().map((month, i) => (
                     <span key={i}
                         className="month"
                         style={`grid-area: span 1 / span ${month.totalWeeks};`}>
                         {month.name}
                     </span>
                 ))}
-                {calendar.weeks.reverse().map((week, i) => (
+                {[...calendar.weeks].reverse().map((week, i) => (
                     <div key={i} className="week">
                         {week.contributionDays.concat(new Array(7 - week.contributionDays.length).fill({ contributionLevel: "NONE" }))
                             .map((day, i) => (
