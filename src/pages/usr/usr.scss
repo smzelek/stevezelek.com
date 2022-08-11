@@ -1,0 +1,120 @@
+@import "src/mixins";
+
+$separator-height: 60px;
+$card-margin: 30px;
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-width: 1px;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 30px 70px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+
+        > p {
+            max-width: 450px;
+            font-size: 22px;
+            text-align: center;
+        }
+        > p + p {
+            margin-top: 5px;
+        }
+    }
+
+    .separator {
+        height: $separator-height;
+    }
+
+    .competencies {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        justify-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+
+        .competency-card {
+            max-width: 450px;
+        }
+    }
+
+    .resume-card {
+        max-width: 450px;
+    }
+
+    .contact-card {
+        max-width: 450px;
+    }
+
+    .github-card {
+        max-width: 450px;
+    }
+}
+
+@include larger-than(mobile-screen) {
+    .bio {
+        overflow-y: auto;
+
+        main {
+            align-items: center;
+            max-width: 100%;
+            > p {
+                max-width: 550px;
+            }
+        }
+
+        .resume-card {
+            max-width: 100%;
+        }
+
+        .contact-card {
+            max-width: 100%;
+        }
+
+        .github-card {
+            max-width: max-content;
+        }
+    }
+}
+
+@include larger-than(small-screen) {
+    .bio {
+        main {
+            max-width: 1200px;
+            >p {
+                max-width: 850px;
+            }
+        }
+
+        .competencies {
+            grid-template-columns: repeat(3, 1fr);
+
+            .competency-card {
+                max-width: 600px;
+            }
+        }
+    }
+}
+
+@include larger-than(large-screen) {
+    .bio {
+        main {
+            max-width: 1350px;
+        }
+
+        .competencies {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

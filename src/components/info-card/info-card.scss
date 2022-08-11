@@ -1,4 +1,4 @@
-@import '../../mixins';
+@import 'src/mixins';
 
 .info-card {
     padding: 30px;
@@ -7,10 +7,10 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background: white;
+    background: var(--secondary-bg);
 
     h3 {
-        color: #465061;
+        color: var(--secondary-text);
     }
 
     .text {

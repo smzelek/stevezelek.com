@@ -3,7 +3,7 @@ import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
 import './tic-metac-toe.scss';
 
-function TicMetacToe() {
+export default function TicMetacToe() {
     return (
         <div className="layout">
             <Sidebar />
@@ -13,5 +13,3 @@ function TicMetacToe() {
         </div>
     )
 }
-
-export default TicMetacToe;

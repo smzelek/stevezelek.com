@@ -9,7 +9,7 @@
         ["prismjs", {
             "languages": ["tsx", "html"],
             "plugins": ["line-numbers"],
-            "theme": "okaidia",
+            "theme": "prism-themes/coldark-dark",
             "css": true
         }],
         ["@babel/plugin-transform-react-jsx", { "pragma": "h" }]

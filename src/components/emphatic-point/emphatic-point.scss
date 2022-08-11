@@ -1,25 +1,24 @@
 .emphatic-point {
-    background: #f9f3ec;
-    box-shadow: 4px 4px #a39e96;
-    margin: 0;
-    padding: 20px;
+    color: var(--accent-text);
+    display: flex;
+    justify-content: center;
 
-    .title {
+    .quote {
+        max-width: 600px;
+        width: 600px;
+        border: 2px solid;
+        border-radius: 8px;
         margin: 0;
-        text-align: left;
-        font-size: 26px;
-        line-height: 26px;
-    }
-
-    .icon {
-        font-size: 20px;
-        vertical-align: bottom;
+        padding: 20px;
+        background: var(--secondary-bg);
     }
 
     .content {
         margin: 0;
         text-align: left;
         font-style: italic;
+        text-align: center;
         line-height: 26px;
+        font-size: 18px;
     }
 }

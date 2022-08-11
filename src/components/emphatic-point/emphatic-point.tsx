@@ -1,22 +1,18 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import './emphatic-point.scss';
 
 interface EmphaticPointProps {
-    icon?: string;
-    title?: string;
-    content: string;
+    children: string | (string | JSX.Element)[];
 }
 
-export default function EmphaticPoint(props: EmphaticPointProps) {
+export default function EmphaticPoint({ children }: EmphaticPointProps) {
     return (
-        <blockquote class="emphatic-point">
-            <p class="title">
-                <span class="icon">{props.icon}</span>
-                {props.title}
-            </p>
-            <p class="content">
-                {props.content}
-            </p>
-        </blockquote>
+        <div className="emphatic-point">
+            <blockquote className="quote">
+                <p className="content">
+                    {children}
+                </p>
+            </blockquote>
+        </div>
     );
 }

@@ -1,0 +1,47 @@
+@import 'src/mixins';
+
+.resume-card {
+    display: flex;
+    background: var(--primary-bg);
+    border-radius: 5px;
+    width: 100%;
+
+    img {
+        padding: 20px;
+        height: 100px;
+        width: 100px;
+    }
+
+    .job-info {
+        padding: 20px;
+        padding-left: 0;
+    }
+
+    .position {
+        display: flex;
+        line-height: 30px;
+    }
+
+    .time {
+        padding-left: 5px;
+        color: var(--secondary-text);
+    }
+
+    .dates {
+        font-style: italic;
+    }
+}
+
+@include smaller-than(tiny-screen) {
+    .resume-card {
+        flex-direction: column;
+        img {
+            padding-bottom: 0;
+            align-self: center;
+        }
+
+        .job-info {
+            padding-left: 20px;
+        }
+    }
+}

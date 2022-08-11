@@ -1,0 +1,58 @@
+.competency-card {
+    width: 100%;
+
+    .title {
+        padding: 0 10px;
+        background: var(--primary-bg);
+        border: 1px solid var(--secondary-text);
+        border-radius: 5px;
+        border-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: inline;
+    }
+
+    .bars {
+        display: grid;
+        row-gap: 10px;
+        padding: 20px;
+        background: hsl(213deg 39% 11%);
+        border: 1px solid var(--secondary-text);
+        border-radius: 5px;
+        border-top-left-radius: 0;
+    }
+
+    .bars.frontend .proficiency-bar {
+        background: linear-gradient(90deg, rgb(66, 17, 17) 0%, rgb(121, 37, 9) 30%, rgb(249 183 0) 100%);
+    }
+
+    .bars.backend .proficiency-bar {
+        background: linear-gradient(90deg, rgb(17, 66, 48) 0%, rgb(37 119 84) 30%, rgb(104, 255, 0) 100%);
+    }
+
+    .bars.devops .proficiency-bar {
+        background: linear-gradient(90deg, rgb(33 27 105) 0%, rgb(31 96 163) 30%, rgb(0 229 255) 100%);
+    }
+}
+
+.technology {
+    line-height: 18px;
+    color: var(--secondary-text);
+    font-size: 14px;
+
+    .proficiency-bar {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .segment {
+        height: 8px;
+        box-shadow: 0 0px 2px 0px black inset;
+    }
+
+    .segment.empty {
+        background-color: black;
+    }
+}

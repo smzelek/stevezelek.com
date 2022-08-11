@@ -3,7 +3,7 @@ import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
 import './take-me-apart.scss';
 
-function TakeMeApart() {
+export default function TakeMeApart() {
     return (
         <div className="layout">
             <Sidebar />
@@ -13,5 +13,3 @@ function TakeMeApart() {
         </div>
     )
 }
-
-export default TakeMeApart;
