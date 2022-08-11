@@ -82,7 +82,6 @@ export default function Sidebar(): JSX.Element {
         };
 
         const clickOut = (e: MouseEvent) => {
-            console.log(sidebarRef.current, e.target)
             if (sidebarRef.current && e.target && !sidebarRef.current.contains(e.target as HTMLElement)) {
                 setIsMobileMenuExpanded(false);
             }
