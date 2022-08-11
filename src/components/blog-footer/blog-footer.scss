@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 
     h3 {
         margin-top: 0;
@@ -64,13 +65,15 @@
 
 .newsletter-chat {
     display: grid;
-    grid-template-columns: max-content max-content auto;
+    grid-template-columns: max-content max-content 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     border: 1px solid var(--secondary-text);
     border-radius: 5px;
     padding: 10px;
     background: #0e1721;
+    box-sizing: border-box;
+    max-width: 100%;
 
     .chat-header {
         grid-column: 1/4;
@@ -101,6 +104,7 @@
 
     .email {
         display: inline-flex;
+        min-width: 0px;
 
         &.signed-up {
             input {
@@ -128,6 +132,7 @@
             line-height: 18px;
             height: 24px;
             box-sizing: border-box;
+            min-width: 0px;
 
             &::placeholder {
                 font-style: italic;
@@ -185,5 +190,13 @@
 @include larger-than(mobile-screen) {
     .blog-footer .identifiers {
         display: none;
+    }
+}
+
+@include smaller-than(tiny-screen) {
+    .blog-footer {
+        .chat, .user, input, button {
+            font-size: 16px;
+        }
     }
 }

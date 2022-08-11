@@ -108,6 +108,14 @@
     }
 }
 
+@include smaller-than(tiny-screen) {
+    .blog-post {
+        footer {
+            padding: 30px 10px 50px;
+        }
+    }
+}
+
 @include larger-than(mobile-screen) {
     .blog-post {
         overflow-y: auto;
