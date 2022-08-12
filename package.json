@@ -6,7 +6,6 @@
         "start": "webpack-dev-server --open --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js",
         "stats": "webpack --config webpack.stats.js",
-        "prebuild": "node github.mjs",
         "postbuild": "react-snap",
         "watch": "webpack --config webpack.prod.js --watch"
     },

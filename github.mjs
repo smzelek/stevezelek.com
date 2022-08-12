@@ -1,6 +1,8 @@
 import fetch from 'node-fetch';
 import { writeFileSync } from 'fs';
 
+// If building locally, this file will fail without a github token defined.
+
 const query = `query { 
 user(login:"smzelek") { 
   contributionsCollection {

@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h, JSX } from "preact";
 import { useMemo } from "preact/hooks";
 import './competency-card.scss';
 
@@ -7,10 +7,17 @@ export interface TechnologyProps {
     proficiency: number;
 }
 const Technology = ({ name, proficiency }: TechnologyProps) => {
+    const titles: Record<number, string> = {
+        2: 'Personal Use',
+        3: 'Production Use',
+        4: 'Thorough Understanding',
+        5: 'Expert Understanding',
+    };
+
     return (
         <div className="technology">
             {name}
-            <div className="proficiency-bar">
+            <div className="proficiency-bar" title={titles[proficiency]}>
                 {new Array(5).fill("").map((p, i) => (i + 1 > proficiency) ? <div className="segment empty" /> : <div className="segment" />)}
             </div>
         </div>
