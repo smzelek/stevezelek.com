@@ -5,7 +5,7 @@ import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
 import './privacy.scss';
 
-export default function Privacy() {
+export default function Privacy(): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />

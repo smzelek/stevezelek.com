@@ -5,7 +5,7 @@ interface EmphaticPointProps {
     children: string | (string | JSX.Element)[];
 }
 
-export default function EmphaticPoint({ children }: EmphaticPointProps) {
+export default function EmphaticPoint({ children }: EmphaticPointProps): JSX.Element {
     return (
         <div className="emphatic-point">
             <blockquote className="quote">

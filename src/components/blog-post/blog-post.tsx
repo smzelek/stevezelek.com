@@ -16,7 +16,7 @@ export interface BlogPostProps {
     children: JSX.Element[];
 }
 
-export default function BlogPost(props: BlogPostProps) {
+export default function BlogPost(props: BlogPostProps): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />

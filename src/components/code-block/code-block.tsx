@@ -7,7 +7,7 @@ interface CodeBlockProps {
     caption?: string | JSX.Element | (string | JSX.Element)[];
 }
 
-export default function CodeBlock({ title, caption, children }: CodeBlockProps) {
+export default function CodeBlock({ title, caption, children }: CodeBlockProps): JSX.Element {
     return (
         <div className={`code-block ${caption ? 'has-caption' : ''}`}>
             <span className="title">{title}</span>

@@ -7,7 +7,7 @@ import './blog-footer.scss';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import Typing from './typing';
 
-export default function BlogFooter() {
+export default function BlogFooter(): JSX.Element {
     const [formInView, setFormInView] = useState(false);
     const [showChat2, setShowChat2] = useState(false);
     const [showChat3, setShowChat3] = useState(false);

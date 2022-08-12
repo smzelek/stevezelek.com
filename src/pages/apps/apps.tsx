@@ -7,7 +7,7 @@ import PageHeader from 'src/components/page-header/page-header';
 const takemeapart = '/assets/icons/wrench.png';
 const tictactoe = '/assets/icons/times.svg';
 
-export default function Apps() {
+export default function Apps(): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />

@@ -17,7 +17,7 @@ const Technology = ({ name, proficiency }: TechnologyProps) => {
     );
 }
 
-export default function CompetencyCard({ title, type, technologies }: { title: string, type: string, technologies: TechnologyProps[] }) {
+export default function CompetencyCard({ title, type, technologies }: { title: string, type: string, technologies: TechnologyProps[] }): JSX.Element {
     const sortedTechnologies = useMemo(() => {
         return technologies.sort((t1, t2) => {
             if (t1.proficiency === t2.proficiency) {

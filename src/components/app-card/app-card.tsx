@@ -7,7 +7,7 @@ interface AppCardProps {
     header: string;
     paragraphs: string[];
 }
-export default function AppCard(props: AppCardProps) {
+export default function AppCard(props: AppCardProps): JSX.Element {
     return (
         <a className="app-card" href={props.url}>
             <div className="img-wrapper">

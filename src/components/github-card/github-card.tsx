@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { Fragment, h, JSX } from "preact";
 import './github-card.scss';
 import Link from "../link/link";
 import { useEffect, useState } from "preact/hooks";
@@ -27,7 +27,7 @@ interface GithubResponse {
     };
 }
 
-export default function GithubCard() {
+export default function GithubCard(): JSX.Element {
     const [githubData, setGithubData] = useState<GithubResponse | null>(null);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export default function GithubCard() {
     }
 
     if (!githubData) {
-        return;
+        return <Fragment />;
     }
 
     const calendar = githubData.data.user.contributionsCollection.contributionCalendar;

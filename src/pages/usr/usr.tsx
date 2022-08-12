@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import ContactCard from 'src/components/contact-card/contact-card';
 import 'src/global.scss';
@@ -8,7 +8,7 @@ import GithubCard from 'src/components/github-card/github-card';
 import ResumeCard, { ResumeCardProps } from 'src/components/resume-card/resume-card';
 import CompetencyCard, { TechnologyProps } from 'src/components/competency-card/competency-card';
 
-export default function Usr() {
+export default function Usr(): JSX.Element {
 
     const jobs: ResumeCardProps[] = [
         {
@@ -88,7 +88,7 @@ export default function Usr() {
         },
         {
             name: "SQL",
-            proficiency: 3
+            proficiency: 4
         },
         {
             name: "Swift",
@@ -114,7 +114,7 @@ export default function Usr() {
         },
         {
             name: "Bash",
-            proficiency: 3
+            proficiency: 4
         },
         {
             name: "Git",

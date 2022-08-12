@@ -7,7 +7,7 @@ export interface BlogCardProps {
     meta: BlogPostMeta;
 }
 
-export default function BlogCard(props: BlogCardProps) {
+export default function BlogCard(props: BlogCardProps): JSX.Element {
     return (
         <a className="blog-card" href={props.meta.url}>
             <div className="img-wrapper">

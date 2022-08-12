@@ -43,7 +43,7 @@ declare module 'preact/src/jsx' {
     }
 }
 
-export default function WhyOurCompanyWCs() {
+export default function WhyOurCompanyWCs(): JSX.Element {
     setTimeout(() => {
         Prism.highlightAll()
     }, 0);

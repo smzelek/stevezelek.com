@@ -8,7 +8,7 @@ export interface ResumeCardProps {
     start: Date;
     end: Date | null;
 }
-export default function ResumeCard({ icon, company, position, start, end }: ResumeCardProps) {
+export default function ResumeCard({ icon, company, position, start, end }: ResumeCardProps): JSX.Element {
     const dateToString = (date: Date | null) => {
         if (!date) {
             return '';

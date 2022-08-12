@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import './contact-card.scss';
 
-export default function ContactCard() {
+export default function ContactCard(): JSX.Element {
     const [wasMessageSent, setWasMessageSent] = useState(false);
 
     const onMessageSent = () => {

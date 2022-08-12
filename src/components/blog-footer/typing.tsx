@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import './typing.scss';
 
-export default function Typing({ done, text }: { done: boolean; text: string }) {
+export default function Typing({ done, text }: { done: boolean; text: string }): JSX.Element {
     return (
         <span className={`typing ${done ? 'done' : ''}`}>
             <span class="dots">

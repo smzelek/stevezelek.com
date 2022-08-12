@@ -3,7 +3,7 @@ import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
 import './tic-metac-toe.scss';
 
-export default function TicMetacToe() {
+export default function TicMetacToe(): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />

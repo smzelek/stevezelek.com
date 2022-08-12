@@ -3,7 +3,7 @@ import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
 import './take-me-apart.scss';
 
-export default function TakeMeApart() {
+export default function TakeMeApart(): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />

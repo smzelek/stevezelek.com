@@ -8,7 +8,7 @@ import PageHeader from 'src/components/page-header/page-header';
 
 const BLOG_POSTS = [WHY_OUR_COMPANY_META];
 
-export default function Blog() {
+export default function Blog(): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />
