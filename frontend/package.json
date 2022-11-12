@@ -1,0 +1,75 @@
+{
+    "name": "stevezelek.com",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "webpack serve --open --config ./webpack.dev.js --stats-error-details",
+        "compile": "webpack --config ./webpack.prod.js",
+        "preview": "http-server public/",
+        "stats": "webpack --config ./webpack.stats.js",
+        "lint": "eslint . --fix",
+        "build": "webpack --config ./webpack.prod.js --stats verbose",
+        "postbuild": "react-snap"
+    },
+    "engines": {
+        "node": "^16",
+        "npm": "^8"
+    },
+    "reactSnap": {
+        "source": "public",
+        "sourceMaps": false,
+        "viewport": {
+            "width": 1280,
+            "height": 720
+        }
+    },
+    "dependencies": {
+        "http-server": "^14.1.1",
+        "preact": "^10.4.5",
+        "preact-router": "^4.0.1",
+        "prismjs": "^1.20.0"
+    },
+    "devDependencies": {
+        "@babel/core": "7.9.0",
+        "@babel/plugin-proposal-class-properties": "^7.10.1",
+        "@babel/plugin-transform-arrow-functions": "^7.10.4",
+        "@babel/plugin-transform-react-jsx": "^7.10.4",
+        "@babel/plugin-transform-runtime": "^7.10.3",
+        "@babel/preset-env": "^7.10.3",
+        "@babel/preset-typescript": "^7.18.6",
+        "@types/copy-webpack-plugin": "^10.1.0",
+        "@types/node": "^18.11.9",
+        "@types/prismjs": "^1.26.0",
+        "@types/webpack": "^5.28.0",
+        "@types/webpack-bundle-analyzer": "^4.6.0",
+        "@types/webpack-dev-server": "^4.7.2",
+        "@typescript-eslint/eslint-plugin": "^5.32.0",
+        "@typescript-eslint/parser": "^5.32.0",
+        "babel-loader": "8.1.0",
+        "babel-plugin-prismjs": "^2.1.0",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "3.4.2",
+        "eslint": "^8.21.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-preact": "^1.3.0",
+        "file-loader": "^6.0.0",
+        "html-webpack-plugin": "^5.5.0",
+        "node-fetch": "^2.6.7",
+        "prism-themes": "^1.9.0",
+        "react-snap": "^1.23.0",
+        "sass": "^1.50.0",
+        "sass-loader": "8.0.2",
+        "style-loader": "0.23.1",
+        "svg-inline-loader": "^0.8.0",
+        "svg-url-loader": "^2.1.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.8.4",
+        "url-loader": "^4.1.0",
+        "webpack": "^5.75.0",
+        "webpack-bundle-analyzer": "^4.7.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.11.1",
+        "webpack-merge": "^5.8.0"
+    }
+}

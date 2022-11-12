@@ -1,0 +1,15 @@
+import { h, JSX } from 'preact';
+import Sidebar from '~frontend/components/sidebar/sidebar';
+import '~frontend/global.scss';
+import './tic-metac-toe.scss';
+
+export default function TicMetacToe(): JSX.Element {
+    return (
+        <div className="layout">
+            <Sidebar />
+            <div className={`tic-tac-toe`}>
+                <iframe src="https://tic-metac-toe.stevezelek.com" />
+            </div>
+        </div>
+    )
+}
