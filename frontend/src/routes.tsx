@@ -7,11 +7,12 @@ import Blog from './pages/blog/blog';
 import WhyOurCompanyWCs from './pages/blog/why-our-company-needed-web-components/why-our-company-wcs';
 import { Router, Route } from 'preact-router';
 import Privacy from './pages/privacy/privacy';
+import { COMMIT_HASH } from '~frontend/env';
 
 const Main = () => {
   return (<div style="display:contents;">
     <span style="display:none;">
-      {process.env['COMMIT_HASH']}
+      {COMMIT_HASH}
     </span>
     <Router>
       <Route path="/" component={Usr} />

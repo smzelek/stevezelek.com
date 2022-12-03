@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import { useState } from 'preact/hooks';
 import './contact-card.scss';
 
@@ -18,7 +18,9 @@ export default function ContactCard(): JSX.Element {
                 I'd love to hear from you!
             </h3>
             <div className="form-wrapper">
-                <form onSubmit={() => onMessageSent()}
+                <form
+                    autocomplete="off"
+                    onSubmit={() => onMessageSent()}
                     className={`contact-form ${wasMessageSent ? 'form-hidden' : ''}`}
                     action="https://formspree.io/smzelek@gmail.com"
                     method="POST"

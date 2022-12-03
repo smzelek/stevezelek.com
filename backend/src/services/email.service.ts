@@ -1,7 +1,7 @@
 import { injectable } from 'inversify';
-import { Contact, IEmailService } from 'src/interfaces';
+import { Contact, IEmailService } from '~backend/interfaces';
 import sendgridClient from '@sendgrid/client';
-import { isValidEmail } from '~core';
+import { core } from '~core';
 
 @injectable()
 export class EmailService implements IEmailService {
@@ -10,7 +10,7 @@ export class EmailService implements IEmailService {
     }
 
     async addContact({ email }: Contact): Promise<void> {
-        if (!isValidEmail(email)) {
+        if (!core.isValidEmail(email)) {
             throw Error(`email is not valid must be less than 50 chars, got ${email}`);
         }
         if (email.length > 254) {

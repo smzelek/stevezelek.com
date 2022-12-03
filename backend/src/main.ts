@@ -8,7 +8,7 @@ import { InversifyExpressServer } from 'inversify-express-utils';
 import { IEmailService } from './interfaces';
 import { EmailService } from './services';
 import { TOKENS } from './tokens';
-import { APIError, APIResponse } from '~core';
+import { core } from '~core';
 
 const IOC = new Container();
 IOC.bind<IEmailService>(TOKENS.EmailService).to(EmailService);
@@ -29,8 +29,8 @@ server.setConfig((app) => {
         const originalSendFunc = res.send.bind(res);
         res.send = (body) => {
             if (res.statusCode < 400) {
-                const apiResponse = APIResponse.fromContent(body)
-                APIResponse.log(apiResponse, req.path);
+                const apiResponse = core.APIResponse.fromContent(body)
+                core.APIResponse.log(apiResponse, req.path);
             }
             res.send = originalSendFunc;
             return originalSendFunc(body);
@@ -45,9 +45,9 @@ server.setConfig((app) => {
 const app = server.build();
 
 app.use((err: Error, req: express.Request, res: express.Response, __: any) => {
-    const apiError = APIError.fromError(err);
-    APIError.log(apiError, req.path)
-    res.status(apiError.code).send(APIError.toResponse(apiError));
+    const apiError = core.APIError.fromError(err);
+    core.APIError.log(apiError, req.path)
+    res.status(apiError.code).send(core.APIError.toResponse(apiError));
 });
 
 if (process.env.NODE_ENV !== 'test') {

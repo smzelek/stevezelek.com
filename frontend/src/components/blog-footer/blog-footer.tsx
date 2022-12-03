@@ -110,6 +110,7 @@ export default function BlogFooter(): JSX.Element {
     return (
         <footer className="blog-footer">
             <form
+                autocomplete="off"
                 className="newsletter-chat"
                 ref={formRef}
                 onSubmit={onSubmitForm}
@@ -161,14 +162,7 @@ export default function BlogFooter(): JSX.Element {
             </form>
             {/* TODO: Add "Share" buttons here. */}
             <div className="identifiers">
-                <picture>
-                    <source srcSet="
-                                        /assets/me/me-3x.jpg 3x,
-                                        /assets/me/me-2x.jpg 2x,
-                                        /assets/me/me-1x.jpg 1x,
-                                        " type="image/jpeg" />
-                    <img src="/assets/me/me-1x.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
-                </picture>
+                <img src="/assets/me/me.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
                 <h3>steve zelek</h3>
                 <h4>software maker</h4>
                 <div className="contact">

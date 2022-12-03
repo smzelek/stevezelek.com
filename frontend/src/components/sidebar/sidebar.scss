@@ -1,4 +1,4 @@
-@import "src/mixins";
+@import "~frontend/mixins";
 
 .sidebar {
     z-index: 1;
@@ -110,13 +110,9 @@
         flex-direction: column;
         align-items: center;
 
-        picture {
+        > img {
             width: 150px;
             height: 150px;
-        }
-
-        img {
-            height: 100%;
             border-radius: 50%;
         }
 
@@ -146,7 +142,7 @@
             min-height: 30px;
         }
 
-        picture {
+        > img {
             flex-shrink: 1;
             min-height: 0px;
         }
@@ -164,7 +160,7 @@
             justify-content: center;
             margin: 10px 0;
 
-            picture {
+            > img {
                 width: 50px;
                 height: 50px;
             }
@@ -283,7 +279,7 @@
                 border: 0;
             }
 
-            img {
+            > img {
                 width: 35px;
                 height: 35px;
                 filter: invert(1);

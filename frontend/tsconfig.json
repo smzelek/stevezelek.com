@@ -9,17 +9,6 @@
         "jsx": "preserve",
         "jsxFactory": "h",
         "jsxFragmentFactory": "Fragment",
-        "paths": {
-            "~core": [
-                "../core"
-            ],
-            "~backend*": [
-                "../backend/src*"
-            ],
-            "~frontend*": [
-                "./src*"
-            ]
-        }
     },
     "include": [
         "src",

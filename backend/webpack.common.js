@@ -2,10 +2,16 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const dotenv = require('dotenv');
-const { DefinePlugin } = require("webpack");
+const commitHash = require('child_process')
+    .execSync('git rev-parse --short HEAD')
+    .toString()
+    .trim();
+
+process.env.COMMIT_HASH = commitHash;
+dotenv.config();
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: path.resolve(__dirname, './src/main.ts'),
     output: {
         path: path.resolve('dist'),
         filename: 'server.js',
@@ -15,9 +21,9 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts'],
         alias: {
-            "~core": path.resolve('core'),
-            "~frontend": path.resolve('frontend/src'),
-            "~backend": path.resolve('backend/src'),
+            "~core": path.resolve(__dirname, '../core'),
+            "~frontend": path.resolve(__dirname, '../frontend/src'),
+            "~backend": path.resolve(__dirname, './src'),
         },
     },
     module: {
@@ -30,9 +36,6 @@ module.exports = {
         ],
     },
     plugins: [
-        new DefinePlugin({
-            'process.env': JSON.stringify(dotenv.config().parsed)
-        }),
         new CleanWebpackPlugin(),
     ],
     mode: 'development',

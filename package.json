@@ -3,20 +3,21 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "start": "webpack serve --open --config ./webpack.dev.js --stats-error-details",
-        "compile": "webpack --config ./webpack.prod.js",
-        "preview": "http-server public/",
-        "stats": "webpack --config ./webpack.stats.js",
-        "lint": "eslint . --fix",
-        "build": "webpack --config ./webpack.prod.js --stats verbose",
-        "postbuild": "react-snap"
+        "start:site": "webpack serve --open --config ./frontend/webpack.dev.js --stats-error-details",
+        "start:server": "webpack serve --config ./backend/webpack.dev.js --stats-error-details",
+        "compile:site": "webpack --config ./frontend/webpack.prod.js",
+        "preview:site": "http-server ./frontend/public/",
+        "stats:site": "webpack --config ./frontend/webpack.stats.js",
+        "lint:site": "eslint ./frontend/ --fix",
+        "build:site": "webpack --config ./frontend/webpack.prod.js --stats verbose",
+        "postbuild:site": "react-snap"
     },
     "engines": {
         "node": "^16",
         "npm": "^8"
     },
     "reactSnap": {
-        "source": "public",
+        "source": "frontend/public",
         "sourceMaps": false,
         "viewport": {
             "width": 1280,
@@ -24,10 +25,17 @@
         }
     },
     "dependencies": {
+        "@sendgrid/client": "^7.7.0",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
         "http-server": "^14.1.1",
+        "inversify": "^6.0.1",
+        "inversify-express-utils": "^6.4.3",
         "preact": "^10.4.5",
         "preact-router": "^4.0.1",
-        "prismjs": "^1.20.0"
+        "prismjs": "^1.20.0",
+        "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
         "@babel/core": "7.9.0",
@@ -37,12 +45,10 @@
         "@babel/plugin-transform-runtime": "^7.10.3",
         "@babel/preset-env": "^7.10.3",
         "@babel/preset-typescript": "^7.18.6",
-        "@types/copy-webpack-plugin": "^10.1.0",
+        "@types/cookie-parser": "^1.4.3",
+        "@types/cors": "^2.8.12",
         "@types/node": "^18.11.9",
         "@types/prismjs": "^1.26.0",
-        "@types/webpack": "^5.28.0",
-        "@types/webpack-bundle-analyzer": "^4.6.0",
-        "@types/webpack-dev-server": "^4.7.2",
         "@typescript-eslint/eslint-plugin": "^5.32.0",
         "@typescript-eslint/parser": "^5.32.0",
         "babel-loader": "8.1.0",
@@ -50,12 +56,14 @@
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "3.4.2",
+        "dotenv": "^16.0.3",
         "eslint": "^8.21.0",
         "eslint-config-google": "^0.14.0",
         "eslint-config-preact": "^1.3.0",
         "file-loader": "^6.0.0",
         "html-webpack-plugin": "^5.5.0",
         "node-fetch": "^2.6.7",
+        "nodemon-webpack-plugin": "^4.8.1",
         "prism-themes": "^1.9.0",
         "react-snap": "^1.23.0",
         "sass": "^1.50.0",
@@ -63,6 +71,8 @@
         "style-loader": "0.23.1",
         "svg-inline-loader": "^0.8.0",
         "svg-url-loader": "^2.1.1",
+        "ts-loader": "^9.4.1",
+        "ts-mockito": "^2.6.1",
         "ts-node": "^10.9.1",
         "typescript": "^4.8.4",
         "url-loader": "^4.1.0",
@@ -70,6 +80,7 @@
         "webpack-bundle-analyzer": "^4.7.0",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.11.1",
-        "webpack-merge": "^5.8.0"
+        "webpack-merge": "^5.8.0",
+        "webpack-node-externals": "^3.0.0"
     }
 }

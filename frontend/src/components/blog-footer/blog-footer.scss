@@ -1,4 +1,4 @@
-@import "src/mixins";
+@import "~frontend/mixins";
 
 .blog-footer {
     background: var(--secondary-bg);
@@ -11,12 +11,8 @@
         margin-top: 0;
     }
 
-    picture {
+    > img {
         height: 100px;
-    }
-
-    img {
-        height: 100%;
         border-radius: 50%;
     }
 
@@ -39,12 +35,8 @@
         align-items: center;
         margin-top: 40px;
 
-        picture {
+        > img {
             height: 100px;
-        }
-
-        img {
-            height: 100%;
             border-radius: 50%;
         }
 
@@ -169,7 +161,9 @@
                 outline: none;
                 box-shadow: 0 0 0px 2px var(--focus-shadow);
             }
-            &:focus, &:active, &:hover {
+            &:focus,
+            &:active,
+            &:hover {
                 background: var(--quaternary-bg-intent);
             }
         }
@@ -195,7 +189,10 @@
 
 @include smaller-than(tiny-screen) {
     .blog-footer {
-        .chat, .user, input, button {
+        .chat,
+        .user,
+        input,
+        button {
             font-size: 16px;
         }
     }

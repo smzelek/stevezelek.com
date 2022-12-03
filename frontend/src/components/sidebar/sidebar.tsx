@@ -102,17 +102,7 @@ export default function Sidebar(): JSX.Element {
             ref={sidebarRef}
             className={`sidebar ${isCondensed(currentPath) ? 'condensed' : ''}`}>
             <div className="identifiers">
-                <picture>
-                    <source srcSet="
-                /assets/me/me-3x.jpg 3x,
-                /assets/me/me-2x.jpg 2x,
-                /assets/me/me-1x.jpg 1x,
-                "
-                        type="image/jpeg" />
-                    <img src="/assets/me/me-1x.jpg"
-                        type="image/jpeg"
-                        alt="A headshot of Steve Zelek." />
-                </picture>
+                <img src="/assets/me/me.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
                 <h1 className="name">
                     Steve Zelek
                 </h1>
@@ -124,7 +114,7 @@ export default function Sidebar(): JSX.Element {
                 <ul className={`navigation ${isMobileMenuExpanded ? 'mobile-expanded' : ''}`}
                     onMouseLeave={() => setLinkDecoratorStyle('')}>
                     {linkDecoratorStyle && (
-                        <span className="link-decorator" style={linkDecoratorStyle}>$ cd</span>
+                        <span className="link-decorator" style={linkDecoratorStyle}>cd</span>
                     )}
                     {links.map((link) => (
                         <li key={link.href}>
@@ -142,7 +132,7 @@ export default function Sidebar(): JSX.Element {
                                     <span
                                         className="link-decorator-anchor"
                                         ref={link.ref}>
-                                        $ cd
+                                        cd
                                     </span>
                                     {link.text}
                                 </span>
