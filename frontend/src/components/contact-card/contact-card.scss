@@ -1,0 +1,135 @@
+@import "~frontend/mixins";
+
+.contact-card {
+    background: var(--primary-bg);
+    color: #e3e2e6;
+    font-family: "Cairo", sans-serif;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    label {
+        display: block;
+        line-height: 18px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    label {
+        font-family: "Cairo", sans-serif;
+        font-size: 18px;
+    }
+
+    .field {
+        display: inline-block;
+        &:first-of-type {
+            margin-right: 30px;
+        }
+    }
+
+    .form-wrapper {
+        width: 100%;
+        display: grid;
+
+        .form-complete-message {
+            grid-area: 1 / 1;
+            margin: 0;
+            font-size: 18px;
+            line-height: 33px;
+        }
+
+        form {
+            grid-area: 1 / 1;
+        }
+
+        .form-hidden {
+            visibility: hidden;
+        }
+    }
+
+    input {
+        width: 200px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        color: var(--primary-text);
+        background: var(--secondary-bg);
+        border-radius: 5px;
+        border: 1px solid var(--secondary-text);
+        font-family: "Courier", monospace;
+        flex-grow: 1;
+        padding: 0 6px;
+        line-height: 18px;
+
+        &::placeholder {
+            font-style: italic;
+        }
+
+        &:active:not(:disabled),
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0px 2px var(--focus-shadow);
+            border-color: var(--focus-shadow);
+        }
+    }
+
+    textarea {
+        display: block;
+        resize: none;
+        width: 100%;
+        height: 140px;
+        max-width: 450px;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 18px;
+        color: var(--primary-text);
+        background: var(--secondary-bg);
+        border-radius: 5px;
+        border: 1px solid var(--secondary-text);
+        font-family: "Courier", monospace;
+        flex-grow: 1;
+        padding: 0 6px;
+        line-height: 18px;
+
+        &:active:not(:disabled),
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0px 2px var(--focus-shadow);
+            border-color: var(--focus-shadow);
+        }
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--quaternary-bg-active);
+        color: var(--primary-text);
+        border: 1px solid var(--secondary-text);
+        border-radius: 5px;
+        padding: 2px 5px;
+        font-family: "Cairo";
+        font-size: 16px;
+        outline: none;
+        cursor: pointer;
+        margin-top: 20px;
+
+        &:focus,
+        &:active {
+            outline: none;
+            box-shadow: 0 0 0px 2px var(--focus-shadow);
+        }
+
+        &:focus,
+        &:active,
+        &:hover {
+            background: var(--quaternary-bg-intent);
+        }
+    }
+}
