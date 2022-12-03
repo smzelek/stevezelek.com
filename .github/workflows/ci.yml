@@ -5,8 +5,11 @@ on:
     branches:
       - main
 
+env:
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+
 jobs:
-  build:
+  build:    
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -31,25 +34,16 @@ jobs:
         env:
           SAFE_TOKEN: ${{ secrets.SAFE_TOKEN }}
 
-      - name: Authenticate to GCP
-        uses: google-github-actions/auth@v0
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          credentials_json: ${{ secrets.GCS_SA_KEY }}
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Setup gcloud and gsutil
-        uses: google-github-actions/setup-gcloud@v0
-
-      - name: Deploy to GCP
+      - name: Deploy Build
         run: |
-          # Destructively synchronize without gzip js
-          gsutil -m rsync -d -r public/ gs://${{ secrets.GCS_BUCKET }}
-          
-          # gzip js files locally
-          find public -type f -name "*.js" -exec gzip -v '{}' \;
-          find public -type f -name "*.js.gz" -exec bash -c 'mv -v $0 ${0/.js.gz/.js}' {} \;
-
-          # Overwrite js with gzip js
-          gsutil -m -h "content-encoding:gzip" cp -r "public/**/*.js" gs://www.stevezelek.com
-
-      - name: Clear GCP Cache
-        run: gcloud compute url-maps invalidate-cdn-cache ${{ secrets.GCS_LB }} --path "/*" --async
+          cd public/
+          zip -r build.zip .
+          aws s3 cp build.zip s3://${{ secrets.AWS_S3_BUCKET }}/${{ github.sha }}.zip --content-type "application/zip; charset=utf-8"
+          URL=$(aws s3 presign s3://${{ secrets.AWS_S3_BUCKET }}/${{ github.sha }}.zip)
+          aws amplify start-deployment --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }} --branch-name prod --source-url $URL

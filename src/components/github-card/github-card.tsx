@@ -35,7 +35,7 @@ export default function GithubCard(): JSX.Element {
     }, []);
 
     const loadData = async () => {
-        const data = await fetch('/assets/github.json');
+        const data = await fetch('https://files.stevezelek.com/github.json');
         const json = await data.json();
         setGithubData(json);
     }

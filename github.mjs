@@ -1,8 +1,6 @@
 import fetch from 'node-fetch';
 import { writeFileSync } from 'fs';
 
-// If building locally, this file will fail without a github token defined.
-
 const query = `query { 
 user(login:"smzelek") { 
   contributionsCollection {
@@ -40,8 +38,8 @@ const cacheGithubData = async () => {
   const json = await data.json();
 
   console.log("Loaded data")
-  writeFileSync('./assets/github.json', JSON.stringify(json));
-  console.log("Wrote data to ./assets/github.json")
+  writeFileSync('github.json', JSON.stringify(json));
+  console.log("Wrote data to github.json")
 }
 
 await cacheGithubData();
