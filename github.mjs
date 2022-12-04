@@ -27,7 +27,7 @@ const cacheGithubData = async () => {
   const data = await fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
-      Authorization: `token ${process.env.SAFE_TOKEN}`,
+      Authorization: `token ${process.env.CONTRIBUTION_HISTORY_TOKEN}`,
     },
     body: JSON.stringify({
       query,
@@ -38,6 +38,7 @@ const cacheGithubData = async () => {
   const json = await data.json();
 
   console.log("Loaded data")
+  console.log(JSON.stringify(json))
   writeFileSync('github.json', JSON.stringify(json));
   console.log("Wrote data to github.json")
 }
