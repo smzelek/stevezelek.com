@@ -1,0 +1,11 @@
+.pokegrader {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+    iframe {
+        border: none;
+        flex-grow: 1;
+    }
+}
