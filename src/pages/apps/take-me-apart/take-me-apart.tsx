@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
 import './take-me-apart.scss';

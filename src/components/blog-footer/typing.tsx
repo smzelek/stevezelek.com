@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import './typing.scss';
 
 export default function Typing({ done, text }: { done: boolean; text: string }): JSX.Element {

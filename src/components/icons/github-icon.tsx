@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import './icons.scss';
 const github = '/assets/icons/github.png';
 

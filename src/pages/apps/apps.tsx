@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import AppCard from 'src/components/app-card/app-card';
 import 'src/global.scss';

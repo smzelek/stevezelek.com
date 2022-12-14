@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import './app-card.scss';
 
 interface AppCardProps {

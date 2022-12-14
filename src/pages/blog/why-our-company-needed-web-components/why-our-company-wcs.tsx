@@ -1,4 +1,4 @@
-import { Fragment, h } from 'preact';
+import { Fragment, h, JSX } from 'preact';
 import BlogPost from 'src/components/blog-post/blog-post';
 import EmphaticPoint from 'src/components/emphatic-point/emphatic-point';
 import Prism from 'prismjs';

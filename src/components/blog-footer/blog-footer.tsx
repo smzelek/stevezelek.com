@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import TwitterIcon from 'src/components/icons/twitter-icon';
 import LinkedInIcon from 'src/components/icons/linkedin-icon';
 import GithubIcon from 'src/components/icons/github-icon';

@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import { BlogPostMeta } from 'src/models/blog-meta';
 import Tag from 'src/components/tag/tag';
 import './blog-card.scss';

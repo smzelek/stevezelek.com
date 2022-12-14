@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import './page-header.scss';
 
 export default function PageHeader({ children }: { children: string }): JSX.Element {

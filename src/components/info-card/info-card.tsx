@@ -10,7 +10,7 @@ interface InfoCardProps {
     imgAltText: string;
 }
 
-export default function InfoCard(props: InfoCardProps): JSX.Element: JSX.Element {
+export default function InfoCard(props: InfoCardProps): JSX.Element {
     return (
         <div className="info-card">
             <div className="collapsible-spacer" />

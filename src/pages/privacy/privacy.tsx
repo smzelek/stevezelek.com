@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import Link from 'src/components/link/link';
 import PageHeader from 'src/components/page-header/page-header';
 import Sidebar from 'src/components/sidebar/sidebar';

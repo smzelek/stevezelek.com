@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, JSX } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import BlogCard from 'src/components/blog-card/blog-card';
 import { WHY_OUR_COMPANY_META } from './why-our-company-needed-web-components/why-our-company-wcs'
