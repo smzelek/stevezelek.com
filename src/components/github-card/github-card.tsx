@@ -23,8 +23,8 @@ interface GithubResponse {
                     }[];
                 };
             };
-        };
-    };
+        }
+    }
 }
 
 export default function GithubCard(): JSX.Element {
@@ -35,9 +35,12 @@ export default function GithubCard(): JSX.Element {
     }, []);
 
     const loadData = async () => {
-        const data = await fetch('https://files.stevezelek.com/github.json');
-        const json = await data.json();
-        setGithubData(json);
+        try {
+            const data = await fetch('https://files.stevezelek.com/github.json');
+            const json = await data.json();
+            setGithubData(json);
+        } catch {
+        }
     }
 
     if (!githubData) {

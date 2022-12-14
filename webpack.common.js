@@ -74,6 +74,12 @@ module.exports = {
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
+      template: './src/pages/apps/pokegrader/index.html',
+      filename: 'apps/pokegrader/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/blog/why-our-company-needed-web-components/index.html',
       filename: 'blog/why-our-company-needed-web-components/index.html',
       inject: 'body',
