@@ -1,16 +1,16 @@
-@import 'src/mixins';
+@import "src/mixins";
 
 :root {
-    --dark-bg-1: hsl(213deg 29% 9%);  
+    --dark-bg-1: hsl(213deg 29% 9%);
     --primary-bg: hsl(211deg 41% 14%);
     --secondary-bg: #111b27;
     --tertiary-bg: hsl(218deg 43% 30%);
     --quaternary-bg: hsl(219deg 37% 16%);
-  
+
     --quaternary-bg-active: #27385a;
     --quaternary-bg-intent: #324873;
     --quaternary-bg-active-light: #202d46;
-  
+
     --primary-text: rgb(228, 228, 231);
     --secondary-text: #abb7cb;
     --accent-text: #66cccc;
@@ -19,6 +19,8 @@
 
 html {
     color: var(--primary-text);
+    height: fill-available;
+    height: -webkit-fill-available;
 }
 
 .layout {
@@ -41,6 +43,8 @@ body {
     padding: 0px;
     font-family: "Cairo", sans-serif;
     height: 100vh;
+    height: fill-available;
+    height: -webkit-fill-available;
 }
 
 h1,
