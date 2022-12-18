@@ -25,7 +25,8 @@ html {
 
 .layout {
     display: flex;
-    height: 100%;
+    height: fill-available;
+    height: -webkit-fill-available;
     background: var(--dark-bg-1);
 
     @include smaller-than(mobile-screen) {
