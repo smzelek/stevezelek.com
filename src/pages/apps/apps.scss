@@ -1,4 +1,5 @@
 @import "src/mixins";
+$separator-height: 60px;
 
 .apps {
     display: flex;
@@ -6,10 +7,29 @@
     width: 100%;
     min-width: 1px;
 
+    .separator {
+        height: $separator-height;
+    }
+
     main {
         display: flex;
-        flex-wrap: wrap;
-        padding: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 30px 70px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        width: 100%;
+
+        >p {
+            max-width: 450px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        >p+p {
+            margin-top: 5px;
+        }
     }
 
     .app-card {
@@ -19,16 +39,46 @@
     }
 }
 
-@include larger-than(mobile-screen) {
+@include smaller-than(small-screen) {
     .apps {
-        overflow-y: auto;
+        .apps-list {
+            text-align: center;
+        }
     }
 }
 
-@include smaller-than(mobile-screen) {
+
+@include larger-than(mobile-screen) {
+    .apps {
+        overflow-y: auto;
+
+        main {
+            align-items: center;
+            max-width: 100%;
+
+            >p {
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+@include larger-than(small-screen) {
     .apps {
         main {
-            justify-content: center;
+            max-width: 1200px;
+
+            >p {
+                max-width: 850px;
+            }
+        }
+    }
+}
+
+@include larger-than(large-screen) {
+    .apps {
+        main {
+            max-width: 1350px;
         }
     }
 }

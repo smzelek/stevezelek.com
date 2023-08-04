@@ -16,22 +16,34 @@ export default function Apps(): JSX.Element {
             <div className="apps">
                 <PageHeader>~/apps</PageHeader>
                 <main>
-                    <AppCard header="raid cd planner"
-                        paragraphs={['Plan your raid CDs in World of Warcraft.']}
-                        imgPath={raidcdplanner}
-                        url="/apps/raid-cd-planner/" />
-                    <AppCard header="pokégrader"
-                        paragraphs={['pokégrader grades your pokémon teams!']}
-                        imgPath={pokegrader}
-                        url="/apps/pokegrader/" />
-                    <AppCard header="take me apart"
-                        paragraphs={['A fun way for beginners, or even children to visualize web development.']}
-                        imgPath={takemeapart}
-                        url="/apps/take-me-apart/" />
-                    <AppCard header="tic-metac-toe"
-                        paragraphs={['A meta variant of tic-tac-toe featuring 9 boards and special rules.']}
-                        imgPath={tictactoe}
-                        url="/apps/tic-metac-toe/" />
+                    <p>
+                        I make niche apps that entertain me and let me solve interesting problems in both coding, and UI design.
+                        Most of them were made on rainy weekends for fun.
+                    </p>
+                    <div className="separator" />
+                    <p>
+                        They're usually relevant to one of my hobbies, and give me a chance to try new technologies to stay trendy for the folks on Twitter.
+                        Please send "Take Me Apart!" to a kid you know looking for a wonderful career.
+                    </p>
+                    <div className="separator" />
+                    <div className="apps-list">
+                        <AppCard header="Raid CD Planner"
+                            paragraphs={['Plan your raid CDs in World of Warcraft!']}
+                            imgPath={raidcdplanner}
+                            url="/apps/raid-cd-planner/" />
+                        <AppCard header="pokégrader"
+                            paragraphs={['pokégrader grades your pokémon teams!']}
+                            imgPath={pokegrader}
+                            url="/apps/pokegrader/" />
+                        <AppCard header="Take Me Apart!"
+                            paragraphs={['Use interactive fun to learn what web development is!']}
+                            imgPath={takemeapart}
+                            url="/apps/take-me-apart/" />
+                        <AppCard header="Tic-meTac-Toe"
+                            paragraphs={['A version of tic-tac-toe with 9 boards at once!']}
+                            imgPath={tictactoe}
+                            url="/apps/tic-metac-toe/" />
+                    </div>
                 </main>
             </div>
         </div>

@@ -105,8 +105,8 @@ export default function Usr(): JSX.Element {
             proficiency: 3
         },
         {
-            name: "GCP",
-            proficiency: 2
+            name: "Debugging and Profiling",
+            proficiency: 3
         },
         {
             name: "Networking",
@@ -140,20 +140,20 @@ export default function Usr(): JSX.Element {
                         Hi, I'm Steve. I'm a collaborative developer with a passion for making excellent things.
                     </p>
                     <p>
-                        I spend most of my free time teaching myself new stuff (I'm addicted to side projects).
+                        I spend most of my free time teaching myself new stuff, technical or otherwise.
                     </p>
                     <p>
-                        I've led short and long-term projects, and I always find ways to innovate in or out of tech.
+                        One summer in college, I did two internships at once!
                     </p>
                     <div className="separator" />
                     <p>
-                        One summer in college, I did two internships at once.
+                        I've led short and long-term projects, and I always find ways to innovate on the job.
                     </p>
                     <p>
-                        New developments in technology constantly present interesting problems to solve.
+                        The pace of tech work means there is always an interesting problem to solve,
                     </p>
                     <p>
-                        I love having the opportunity to do challenging work with a positive impact.
+                        and I love having the opportunity to do challenging work with a positive impact.
                     </p>
                     <div className="separator" />
                     <div className="competencies">

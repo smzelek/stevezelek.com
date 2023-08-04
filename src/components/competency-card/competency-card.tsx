@@ -8,8 +8,8 @@ export interface TechnologyProps {
 }
 const Technology = ({ name, proficiency }: TechnologyProps) => {
     const titles: Record<number, string> = {
-        2: 'Personal Use',
-        3: 'Production Use',
+        2: 'Frequent Personal Use',
+        3: 'Heavy Production Use',
         4: 'Thorough Understanding',
         5: 'Expert Understanding',
     };
@@ -28,7 +28,7 @@ export default function CompetencyCard({ title, type, technologies }: { title: s
     const sortedTechnologies = useMemo(() => {
         return technologies.sort((t1, t2) => {
             if (t1.proficiency === t2.proficiency) {
-                return t1.name.localeCompare(t2.name);
+                return 0;
             }
             return t2.proficiency - t1.proficiency;
         })
