@@ -86,6 +86,12 @@ module.exports = {
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
+      template: './src/pages/apps/guildvaults/index.html',
+      filename: 'apps/guildvaults/index.html',
+      inject: 'body',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
       template: './src/pages/blog/why-our-company-needed-web-components/index.html',
       filename: 'blog/why-our-company-needed-web-components/index.html',
       inject: 'body',

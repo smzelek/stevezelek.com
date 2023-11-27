@@ -1,0 +1,12 @@
+.guildvaults {
+    display: flex;
+    width: 100%;
+    height: fill-available;
+    height: -webkit-fill-available;
+    max-width: 100%;
+
+    iframe {
+        border: none;
+        flex-grow: 1;
+    }
+}

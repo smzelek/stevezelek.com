@@ -8,6 +8,7 @@ const raidcdplanner = '/assets/icons/raid-cd-planner.png';
 const pokegrader = '/assets/icons/pokegrader.png';
 const takemeapart = '/assets/icons/wrench.png';
 const tictactoe = '/assets/icons/times.svg';
+const guildvaults = '/assets/icons/guildvaults.png';
 
 export default function Apps(): JSX.Element {
     return (
@@ -43,6 +44,10 @@ export default function Apps(): JSX.Element {
                             paragraphs={['A version of tic-tac-toe with 9 boards at once!']}
                             imgPath={tictactoe}
                             url="/apps/tic-metac-toe/" />
+                        <AppCard header="Guild Vaults"
+                            paragraphs={[`A way to check on your World of Warcraft guild's vaults!`]}
+                            imgPath={guildvaults}
+                            url="/apps/guildvaults/" />
                     </div>
                 </main>
             </div>
