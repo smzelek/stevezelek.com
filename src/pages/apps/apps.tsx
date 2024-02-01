@@ -4,7 +4,7 @@ import AppCard from 'src/components/app-card/app-card';
 import 'src/global.scss';
 import './apps.scss';
 import PageHeader from 'src/components/page-header/page-header';
-const raidcdplanner = '/assets/icons/raid-cd-planner.png';
+const raidtimers = '/assets/icons/raidtimer.png';
 const pokegrader = '/assets/icons/pokegrader.png';
 const takemeapart = '/assets/icons/wrench.png';
 const tictactoe = '/assets/icons/times.svg';
@@ -28,9 +28,13 @@ export default function Apps(): JSX.Element {
                     </p>
                     <div className="separator" />
                     <div className="apps-list">
-                        <AppCard header="Raid CD Planner"
+                        <AppCard header="raidtimers"
                             paragraphs={['Plan your raid CDs in World of Warcraft!']}
-                            imgPath={raidcdplanner}
+                            imgPath={raidtimers}
+                            url="https://www.raidtimers.com" />
+                        <AppCard header="Raid CD Planner"
+                            paragraphs={['the first prototype of raidtimers']}
+                            imgPath={raidtimers}
                             url="/apps/raid-cd-planner/" />
                         <AppCard header="pokégrader"
                             paragraphs={['pokégrader grades your pokémon teams!']}

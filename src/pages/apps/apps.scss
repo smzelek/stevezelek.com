@@ -32,9 +32,15 @@ $separator-height: 60px;
         }
     }
 
+    .apps-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .app-card {
-        max-height: 300px;
-        max-width: 300px;
+        height: 270px;
+        width: 270px;
         margin: 30px;
     }
 }

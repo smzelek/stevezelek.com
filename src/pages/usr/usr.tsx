@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import { Fragment, h, JSX } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import ContactCard from 'src/components/contact-card/contact-card';
 import 'src/global.scss';
@@ -12,11 +12,18 @@ export default function Usr(): JSX.Element {
 
     const jobs: ResumeCardProps[] = [
         {
+            icon: "/assets/outsystems_logo.png",
+            company: "OutSystems (acquisition)",
+            position: "Sr. Full Stack Developer",
+            start: new Date(2024, 0, 1),
+            end: null,
+        },
+        {
             icon: "/assets/ionic_logo.png",
             company: "Ionic",
             position: "Full Stack Developer",
             start: new Date(2021, 2, 1),
-            end: null,
+            end: new Date(2024, 0, 31),
         },
         {
             icon: "/assets/cf_logo.jpeg",
@@ -163,10 +170,12 @@ export default function Usr(): JSX.Element {
                     </div>
                     <div className="separator" />
                     <GithubCard />
-                    <div className="separator" />
-                    <ResumeCard {...jobs[1]} />
-                    <div className="separator" />
-                    <ResumeCard {...jobs[0]} />
+                    {jobs.map(j => (
+                        <Fragment>
+                            <div className="separator" />
+                            <ResumeCard {...j} />
+                        </Fragment>
+                    ))}
                     <div className="separator" />
                     <ContactCard />
                 </main>

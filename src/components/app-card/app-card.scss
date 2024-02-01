@@ -2,7 +2,7 @@
     background: var(--quaternary-bg);
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     padding: 30px;
@@ -22,17 +22,13 @@
     }
 
     .img-wrapper {
-        height: 100%;
-        width: 100%;
-        min-height: 1px;
-        min-width: 1px;
-        display: flex;
-        justify-content: center;
-        max-height: 100px;
-        max-width: 100px;
+        height: 75px;
+        width: 75px;
 
         img {
             object-fit: contain;
+            height: 75px;
+            width: 75px;
         }
     }
 

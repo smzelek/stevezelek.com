@@ -22,8 +22,8 @@ export default function ResumeCard({ icon, company, position, start, end }: Resu
     }
 
     const timeWorking = (start: Date, end: Date) => {
-        const yrs = (end.getFullYear() - start.getFullYear()) - (end.getMonth() <= start.getMonth() ? 1 : 0) + 1;
-        return `(${yrs}yr)`
+        const yrs = Math.max((end.getFullYear() - start.getFullYear()) - (end.getMonth() <= start.getMonth() ? 1 : 0) + 1, 1);
+        return `(~${yrs}yr)`
     }
 
     return (
