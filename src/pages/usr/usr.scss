@@ -17,15 +17,15 @@ $card-margin: 30px;
         align-items: center;
         padding: 50px 30px 70px;
         margin: 0 auto;
-        box-sizing: border-box;
         width: 100%;
 
-        > p {
+        >p {
             max-width: 450px;
             font-size: 22px;
             text-align: center;
         }
-        > p + p {
+
+        >p+p {
             margin-top: 5px;
         }
     }
@@ -69,7 +69,8 @@ $card-margin: 30px;
         main {
             align-items: center;
             max-width: 100%;
-            > p {
+
+            >p {
                 max-width: 550px;
             }
         }
@@ -92,6 +93,7 @@ $card-margin: 30px;
     .bio {
         main {
             max-width: 1200px;
+
             >p {
                 max-width: 850px;
             }

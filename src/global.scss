@@ -17,6 +17,10 @@
     --focus-shadow: #a2c0e6;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     color: var(--primary-text);
     height: fill-available;
@@ -36,6 +40,8 @@ html {
 
     @include larger-than(mobile-screen) {
         height: 100%;
+        display: grid;
+        grid-template-columns: min-content auto;
     }
 }
 

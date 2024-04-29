@@ -13,6 +13,7 @@ export default function Sidebar(): JSX.Element {
     const [isMobileMenuExpanded, setIsMobileMenuExpanded] = useState(false);
     const usrAnchorRef = useRef<HTMLSpanElement>();
     const blogAnchorRef = useRef<HTMLSpanElement>();
+    const shareAnchorRef = useRef<HTMLSpanElement>();
     const appsAnchorRef = useRef<HTMLSpanElement>();
     const sidebarRef = useRef<HTMLDivElement>();
 
@@ -24,16 +25,22 @@ export default function Sidebar(): JSX.Element {
             ref: usrAnchorRef,
         },
         {
-            href: "/blog/",
-            activeRegex: /^\/blog.*/i,
-            text: "~/blog",
-            ref: blogAnchorRef,
-        },
-        {
             href: "/apps/",
             activeRegex: /^\/apps.*/i,
             text: "~/apps",
             ref: appsAnchorRef
+        },
+        {
+            href: "/share/",
+            activeRegex: /^\/share.*/i,
+            text: "~/share",
+            ref: shareAnchorRef,
+        },
+        {
+            href: "/blog/",
+            activeRegex: /^\/blog.*/i,
+            text: "~/blog",
+            ref: blogAnchorRef,
         },
     ], []);
 

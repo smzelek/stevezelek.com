@@ -120,7 +120,6 @@
 @include larger-than(small-screen) {
     .blog-card {
         display: flex;
-        box-sizing: border-box;
     }
 
     .description {

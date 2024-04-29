@@ -7,7 +7,6 @@ $cell-size: 15px;
     border: 1px solid var(--secondary-text);
     border-radius: 5px;
     width: 100%;
-    box-sizing: border-box;
     padding-top: 15px;
 
     &:hover,
@@ -58,7 +57,6 @@ $cell-size: 15px;
         direction: rtl;
         justify-items: flex-end;
         padding: 15px;
-        box-sizing: border-box;
     }
 
     .month {

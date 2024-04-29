@@ -10,6 +10,7 @@ import Blog from './pages/blog/blog';
 import WhyOurCompanyWCs from './pages/blog/why-our-company-needed-web-components/why-our-company-wcs';
 import { Router, Route } from 'preact-router';
 import Privacy from './pages/privacy/privacy';
+import Share from './pages/share/share';
 
 const Main = () => {
   return (<div style="display:contents;">
@@ -18,6 +19,7 @@ const Main = () => {
     </span>
     <Router>
       <Route path="/" component={Usr} />
+      <Route path="/share/" component={Share} />
       <Route path="/blog/" component={Blog} />
       <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />
       <Route path="/apps/" component={Apps} />
