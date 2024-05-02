@@ -1,13 +1,19 @@
 name: Refresh GitHub Contribution Data
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     # (see https://crontab.guru) -> “At 07:00 AM UTC every day.”
     - cron: '0 7 * * *'
 
 env:
-  AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+  AWS_ACCOUNT_ID: 590184101838
+  AWS_REGION: us-east-1
+  AWS_APP: stevezelek-com
+  NODE_VERSION: 16
 
 jobs:
   refresh_github:
@@ -19,27 +25,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       - name: Cache NPM
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-
       - name: Install
         run: npm ci
-
       - name: Reload data
         run: node github.mjs
         env:
           CONTRIBUTION_HISTORY_TOKEN: ${{ secrets.CONTRIBUTION_HISTORY_TOKEN }}
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/${{ env.AWS_APP }}-github-role
+          aws-region: ${{ env.AWS_REGION }}
+          mask-aws-account-id: 'no'
       - name: Deploy Contribution File
         run: |
-          aws s3 cp github.json s3://${{ secrets.AWS_S3_BUCKET }}/github.json --content-type "application/json; charset=utf-8"
+          aws s3 cp github.json s3://${{ env.AWS_APP }}/files/github.json --content-type "application/json; charset=utf-8"
