@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "start": "webpack-dev-server --open --config webpack.dev.js",
-        "build": "webpack --config webpack.prod.js",
+        "start:app": "webpack-dev-server --open --config webpack.dev.js",
+        "build:app": "webpack --config webpack.prod.js",
         "stats": "webpack --config webpack.stats.js",
         "watch": "webpack --config webpack.prod.js --watch"
     },
