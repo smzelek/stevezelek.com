@@ -32,10 +32,6 @@ export default function Apps(): JSX.Element {
                             paragraphs={['Plan your raid CDs in World of Warcraft!']}
                             imgPath={raidtimers}
                             url="https://www.raidtimers.com" />
-                        <AppCard header="Raid CD Planner"
-                            paragraphs={['the first prototype of raidtimers']}
-                            imgPath={raidtimers}
-                            url="/apps/raid-cd-planner/" />
                         <AppCard header="pokégrader"
                             paragraphs={['pokégrader grades your pokémon teams!']}
                             imgPath={pokegrader}

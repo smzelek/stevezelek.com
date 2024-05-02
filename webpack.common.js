@@ -80,12 +80,6 @@ module.exports = {
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/apps/raid-cd-planner/index.html',
-      filename: 'apps/raid-cd-planner/index.html',
-      inject: 'body',
-      chunks: ['main'],
-    }),
-    new HtmlWebpackPlugin({
       template: './src/pages/apps/guildvaults/index.html',
       filename: 'apps/guildvaults/index.html',
       inject: 'body',
