@@ -11,6 +11,7 @@ env:
   AWS_APP: stevezelek-com
   NODE_VERSION: 16
   BUILD_DIR: public/
+  CLOUDFLARE_ZONE: c272b1a950675498138a374bcbf3fe0f
 
 jobs:
   install:
@@ -54,3 +55,11 @@ jobs:
         run: |
           cd ${{ env.BUILD_DIR }}
           aws s3 cp . s3://${{ env.AWS_APP }} --recursive
+      - name: Purge Cloudflare Cache
+        run: |
+          curl -fsSL "https://api.cloudflare.com/client/v4/zones/${{ env.CLOUDFLARE_ZONE }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything": true}' \
+            --fail --show-error
+        shell: bash
