@@ -2,8 +2,8 @@ import { h, render } from 'preact';
 import Usr from './pages/usr/usr';
 import Apps from './pages/apps/apps';
 import Pokegrader from './pages/apps/pokegrader/pokegrader';
-import TakeMeApart from './pages/apps/take-me-apart/take-me-apart';
-import TicMetacToe from './pages/apps/tic-metac-toe/tic-metac-toe';
+import TakeMeApart from './pages/apps/takemeapart/takemeapart';
+import TicMetacToe from './pages/apps/ticmetactoe/ticmetactoe';
 import Guildvaults from './pages/apps/guildvaults/guildvaults';
 import Blog from './pages/blog/blog';
 import WhyOurCompanyWCs from './pages/blog/why-our-company-needed-web-components/why-our-company-wcs';
@@ -23,8 +23,8 @@ const Main = () => {
       <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />
       <Route path="/apps/" component={Apps} />
       <Route path="/apps/pokegrader/" component={Pokegrader} />
-      <Route path="/apps/take-me-apart" component={TakeMeApart} />
-      <Route path="/apps/tic-metac-toe" component={TicMetacToe} />
+      <Route path="/apps/takemeapart" component={TakeMeApart} />
+      <Route path="/apps/ticmetactoe" component={TicMetacToe} />
       <Route path="/apps/guildvaults" component={Guildvaults} />
       <Route path="/privacy/" component={Privacy} />
     </Router>

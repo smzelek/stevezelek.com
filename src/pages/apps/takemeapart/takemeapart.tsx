@@ -1,14 +1,14 @@
 import { h, JSX } from 'preact';
 import Sidebar from 'src/components/sidebar/sidebar';
 import 'src/global.scss';
-import './tic-metac-toe.scss';
+import './takemeapart.scss';
 
-export default function TicMetacToe(): JSX.Element {
+export default function TakeMeApart(): JSX.Element {
     return (
         <div className="layout">
             <Sidebar />
-            <div className={`tic-tac-toe`}>
-                <iframe src="https://tic-metac-toe.stevezelek.com" />
+            <div className="takemeapart">
+                <iframe src="https://takemeapart.com" />
             </div>
         </div>
     )

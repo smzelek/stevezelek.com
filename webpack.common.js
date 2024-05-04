@@ -62,14 +62,14 @@ module.exports = {
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/apps/tic-metac-toe/index.html',
-      filename: 'apps/tic-metac-toe/index.html',
+      template: './src/pages/apps/ticmetactoe/index.html',
+      filename: 'apps/ticmetactoe/index.html',
       inject: 'body',
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/apps/take-me-apart/index.html',
-      filename: 'apps/take-me-apart/index.html',
+      template: './src/pages/apps/takemeapart/index.html',
+      filename: 'apps/takemeapart/index.html',
       inject: 'body',
       chunks: ['main'],
     }),
