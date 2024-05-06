@@ -1,9 +1,6 @@
 name: Refresh GitHub Contribution Data
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
     # (see https://crontab.guru) -> “At 07:00 AM UTC every day.”
@@ -24,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Cache NPM
         uses: actions/setup-node@v3
         with:
@@ -36,7 +33,7 @@ jobs:
         run: node github.mjs
         env:
           CONTRIBUTION_HISTORY_TOKEN: ${{ secrets.CONTRIBUTION_HISTORY_TOKEN }}
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/${{ env.AWS_APP }}-github-role
           aws-region: ${{ env.AWS_REGION }}
