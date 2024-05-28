@@ -12,7 +12,7 @@ export default function Pokegrader(): JSX.Element {
             <Sidebar />
             <div className="pokegrader">
                 <iframe
-                    src={`https://pokegrader.stevezelek.com/${capturedParams}`}
+                    src={`https://pokegrader.com/${capturedParams}`}
                     referrerpolicy="unsafe-url"
                 />
             </div>
