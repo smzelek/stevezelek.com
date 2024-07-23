@@ -1,5 +1,4 @@
 import { h, JSX } from 'preact';
-import TwitterIcon from 'src/components/icons/twitter-icon';
 import LinkedInIcon from 'src/components/icons/linkedin-icon';
 import GithubIcon from 'src/components/icons/github-icon';
 import Link from 'src/components/link/link';
@@ -166,7 +165,7 @@ export default function BlogFooter(): JSX.Element {
                 <h3>steve zelek</h3>
                 <h4>software maker</h4>
                 <div className="contact">
-                    <TwitterIcon />
+                    {/* TODO: Add email link here, use same form as homepage */}
                     <GithubIcon />
                     <LinkedInIcon />
                 </div>

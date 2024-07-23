@@ -1,6 +1,5 @@
 import { h, JSX } from 'preact';
 import './sidebar.scss';
-import TwitterIcon from 'src/components/icons/twitter-icon';
 import LinkedInIcon from 'src/components/icons/linkedin-icon';
 import GithubIcon from 'src/components/icons/github-icon';
 import { useEffect, useRef, useState, useMemo, useCallback } from 'preact/hooks';
@@ -165,7 +164,7 @@ export default function Sidebar(): JSX.Element {
             </div>
             <div className="spacer" />
             <div className="contact">
-                <TwitterIcon />
+                {/* TODO: Add email link here, use same form as homepage */}
                 <GithubIcon />
                 <LinkedInIcon />
             </div>
