@@ -42,11 +42,17 @@ $border-color: #a8a8a8;
     }
 
     pre.line-numbers {
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-bottom: calc(1em - 4px);
+
+        code {    
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
         .line-numbers-rows {
             top: -2px;
+            padding-bottom: 10px;
+            padding-top: 10px;
         }
     }
 

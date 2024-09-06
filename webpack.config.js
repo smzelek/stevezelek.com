@@ -96,7 +96,7 @@ const config = {
       patterns: [
         { from: 'assets', to: 'assets' },
       ],
-    })
+    }),
   ],
 };
 

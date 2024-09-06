@@ -31,10 +31,6 @@ declare module 'preact/src/jsx' {
 }
 
 export default function WhyOurCompanyWCs(): JSX.Element {
-    setTimeout(() => {
-        Prism.highlightAll()
-    }, 0);
-
     return (
         <div className="why-wcs">
             <BlogPost meta={WHY_OUR_COMPANY_META}>
@@ -200,29 +196,29 @@ export default function WhyOurCompanyWCs(): JSX.Element {
                 </p>
                 <CodeBlock
                     title="my-component.tsx"
+                    showLines={true}
+                    language='tsx'
+                    content={`
+                        import { Component, h } from '@stencil/core';
+
+                        @Component({
+                            tag: 'my-component',
+                            styleUrl: 'my-component.css',
+                            shadow: true
+                        })
+                        export class MyComponent {
+                            render() {
+                                return (
+                                    <button>
+                                        Wonderful Web Component
+                                    </button>
+                                );
+                            }
+                        }
+                    `}
                     caption={<Fragment>
                         Check out <Link href={stencilRepoUrl}>the full code</Link> for this example component.
                     </Fragment>}>
-                    <pre className="line-numbers">
-                        <code className="language-tsx">
-                            {`import { Component, h } from '@stencil/core';
-
-                            @Component({
-                                tag: 'my-component',
-                                styleUrl: 'my-component.css',
-                                shadow: true
-                            })
-                            export class MyComponent {
-                                render() {
-                                    return (
-                                        <button>
-                                            Wonderful Web Component
-                                        </button>
-                                    );
-                                }
-                            }`.replace(/ {28}/g, '').trim()}
-                        </code>
-                    </pre>
                 </CodeBlock>
                 <p>
                     Once you've built your Stencil components, you can distribute them as NPM packages or
@@ -240,22 +236,19 @@ export default function WhyOurCompanyWCs(): JSX.Element {
                 </p>
                 <CodeBlock
                     title="index.html"
-                >
-                    <pre>
-                        <code className="language-html">
-                            {`
-                            <head>
-                            <script 
-                                type="module" 
-                                src="https://smzelek.github.io/web-component/build/web-component.esm.js">
-                            </script>
-                            </head>
+                    language='html'
+                    showLines={false}
+                    content={`
+                        <head>
+                        <script 
+                            type="module" 
+                            src="https://smzelek.github.io/web-component/build/web-component.esm.js">
+                        </script>
+                        </head>
 
-                            <my-component></my-component>
-                        `.replace(/ {28}/g, '').trim()}
-                        </code>
-                    </pre>
-                </CodeBlock>
+                        <my-component></my-component>
+                    `}
+                />
                 <p style="margin-bottom: 20px;">
                     If everything went well, you should see a shiny blue button added to your application.
                 </p>
