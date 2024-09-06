@@ -9,9 +9,12 @@ export default function EmphaticPoint({ children }: EmphaticPointProps): JSX.Ele
     return (
         <div className="emphatic-point">
             <blockquote className="quote">
-                <p className="content">
+                {typeof children === 'string' ? (
+                    <p className="caption" dangerouslySetInnerHTML={{ __html: children }}>
+                    </p>
+                ) : (<p className="caption">
                     {children}
-                </p>
+                </p>)}
             </blockquote>
         </div>
     );

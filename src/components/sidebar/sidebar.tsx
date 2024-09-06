@@ -28,7 +28,7 @@ export default function Sidebar(): JSX.Element {
     const links: SidebarLinks[] = useMemo(() => [
         {
             href: "/",
-            activeRegex: /^\/$/i,
+            activeRegex: /^\/?$/i,
             text: "~/usr",
             ref: usrAnchorRef,
         },
@@ -53,7 +53,7 @@ export default function Sidebar(): JSX.Element {
         ...(window.location.port.includes('8080') ? [
             {
                 href: "/sandbox/",
-                activeRegex: /^\/sandbox$/i,
+                activeRegex: /^\/sandbox\/?$/i,
                 text: "~/sandbox",
                 ref: sandboxAnchorRef,
                 localdevOnly: true,
