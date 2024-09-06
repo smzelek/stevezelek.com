@@ -12,11 +12,18 @@ export default function Usr(): JSX.Element {
 
     const jobs: ResumeCardProps[] = [
         {
+            icon: "/assets/builder_logo.jpg",
+            company: "Builder.io",
+            position: "Software Engineer",
+            start: new Date(2024, 7, 31),
+            end: null,
+        },
+        {
             icon: "/assets/outsystems_logo.png",
-            company: "OutSystems (acquisition)",
+            company: "OutSystems (acquisition of Ionic)",
             position: "Sr. Full Stack Developer",
             start: new Date(2024, 0, 1),
-            end: null,
+            end: new Date(2024, 7, 31),
         },
         {
             icon: "/assets/ionic_logo.png",

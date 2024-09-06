@@ -22,8 +22,14 @@ export default function ResumeCard({ icon, company, position, start, end }: Resu
     }
 
     const timeWorking = (start: Date, end: Date) => {
-        const yrs = Math.max((end.getFullYear() - start.getFullYear()) - (end.getMonth() <= start.getMonth() ? 1 : 0) + 1, 1);
-        return `(~${yrs}yr)`
+        const fullYrs = (end.getFullYear() - start.getFullYear());
+        const months = end.getMonth() - start.getMonth();
+        const totalTime = fullYrs + months / 12;
+
+        console.log({ company, fullYrs, months, totalTime })
+        
+        const displayYrs = Math.round(totalTime * 10) / 10;
+        return `(~${displayYrs}yr)`
     }
 
     return (
