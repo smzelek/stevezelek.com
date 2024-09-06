@@ -3,23 +3,27 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "start:app": "webpack-dev-server --open --config webpack.dev.js",
+        "dev:app": "webpack-dev-server --open --config webpack.dev.js",
         "build:app": "webpack --config webpack.prod.js",
+        "serve:app": "npm run build:app && http-server public/",
         "stats": "webpack --config webpack.stats.js",
         "watch": "webpack --config webpack.prod.js --watch"
     },
     "engines": {
-        "node": "^16",
-        "npm": "^8"
+        "node": "^18",
+        "npm": "^10"
     },
     "dependencies": {
+        "@builder.io/react": "^5.0.1",
         "http-server": "^14.1.1",
         "preact": "^10.4.5",
         "preact-router": "^4.0.1",
-        "prismjs": "^1.20.0"
+        "prismjs": "^1.20.0",
+        "react": "npm:@preact/compat",
+        "react-dom": "npm:@preact/compat"
     },
     "devDependencies": {
-        "@babel/core": "7.9.0",
+        "@babel/core": "^7.25.2",
         "@babel/plugin-proposal-class-properties": "^7.10.1",
         "@babel/plugin-transform-arrow-functions": "^7.10.4",
         "@babel/plugin-transform-react-jsx": "^7.10.4",
@@ -38,7 +42,7 @@
         "eslint-config-google": "^0.14.0",
         "eslint-config-preact": "^1.3.0",
         "file-loader": "^6.0.0",
-        "html-webpack-plugin": "4.0.0-beta.11",
+        "html-webpack-plugin": "^5.6.0",
         "node-fetch": "^2.6.7",
         "prism-themes": "^1.9.0",
         "sass": "^1.50.0",
@@ -46,12 +50,12 @@
         "style-loader": "0.23.1",
         "svg-inline-loader": "^0.8.0",
         "svg-url-loader": "^2.1.1",
-        "typescript": "^4.7.4",
+        "typescript": "^5.5.4",
         "url-loader": "^4.1.0",
-        "webpack": "4.42.0",
+        "webpack": "^5.94.0",
         "webpack-bundle-analyzer": "^3.8.0",
-        "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "3.10.3",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0",
         "webpack-merge": "^4.2.2"
     }
 }

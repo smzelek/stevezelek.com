@@ -7,7 +7,7 @@ on:
 
 env:
   AWS_APP: stevezelek-com
-  NODE_VERSION: 16
+  NODE_VERSION: 18
   BUILD_DIR: public
   CLOUDFLARE_ZONE: c272b1a950675498138a374bcbf3fe0f
 

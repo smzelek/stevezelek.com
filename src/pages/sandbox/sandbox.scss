@@ -1,0 +1,67 @@
+@import "src/mixins";
+
+$separator-height: 60px;
+$card-margin: 30px;
+
+.sandbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-width: 1px;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 30px 70px;
+        margin: 0 auto;
+        width: 100%;
+
+        >p {
+            max-width: 450px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        >p+p {
+            margin-top: 5px;
+        }
+    }
+}
+
+@include larger-than(mobile-screen) {
+    .sandbox {
+        overflow-y: auto;
+
+        main {
+            align-items: center;
+            max-width: 100%;
+
+            >p {
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+@include larger-than(small-screen) {
+    .sandbox {
+        main {
+            max-width: 1200px;
+
+            >p {
+                max-width: 850px;
+            }
+        }
+    }
+}
+
+@include larger-than(large-screen) {
+    .sandbox {
+        main {
+            max-width: 1350px;
+        }
+    }
+}

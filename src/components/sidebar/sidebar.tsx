@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import { h, JSX, RefObject } from 'preact';
 import './sidebar.scss';
 import LinkedInIcon from 'src/components/icons/linkedin-icon';
 import GithubIcon from 'src/components/icons/github-icon';
@@ -10,13 +10,22 @@ export default function Sidebar(): JSX.Element {
     const [currentPath, setCurrentPath] = useState<string | null>(null);
     const [linkDecoratorStyle, setLinkDecoratorStyle] = useState<string | null>(null);
     const [isMobileMenuExpanded, setIsMobileMenuExpanded] = useState(false);
-    const usrAnchorRef = useRef<HTMLSpanElement>();
-    const blogAnchorRef = useRef<HTMLSpanElement>();
-    const shareAnchorRef = useRef<HTMLSpanElement>();
-    const appsAnchorRef = useRef<HTMLSpanElement>();
-    const sidebarRef = useRef<HTMLDivElement>();
+    const usrAnchorRef = useRef<HTMLSpanElement>(null);
+    const blogAnchorRef = useRef<HTMLSpanElement>(null);
+    const sandboxAnchorRef = useRef<HTMLSpanElement>(null);
+    const shareAnchorRef = useRef<HTMLSpanElement>(null);
+    const appsAnchorRef = useRef<HTMLSpanElement>(null);
+    const sidebarRef = useRef<HTMLDivElement>(null);
 
-    const links = useMemo(() => [
+    type SidebarLinks = {
+        href: string;
+        activeRegex: RegExp;
+        text: string;
+        ref: RefObject<HTMLSpanElement>;
+        localdevOnly?: boolean;
+    };
+
+    const links: SidebarLinks[] = useMemo(() => [
         {
             href: "/",
             activeRegex: /^\/$/i,
@@ -41,7 +50,18 @@ export default function Sidebar(): JSX.Element {
             text: "~/blog",
             ref: blogAnchorRef,
         },
+        ...(window.location.port.includes('8080') ? [
+            {
+                href: "/sandbox/",
+                activeRegex: /^\/sandbox$/i,
+                text: "~/sandbox",
+                ref: sandboxAnchorRef,
+                localdevOnly: true,
+            },
+        ] : [])
     ], []);
+
+    links[0].ref
 
     const isCondensed = (path: string | null): boolean => {
         return [
@@ -133,18 +153,21 @@ export default function Sidebar(): JSX.Element {
                         <span className="link-decorator" style={linkDecoratorStyle}>$ cd</span>
                     )}
                     {links.map((link) => (
-                        <li key={link.href}>
+                        <li key={link.href} >
                             <a href={link.href}
                                 className={`${isActive(link.activeRegex, currentPath) ? 'active' : ''}`}
-                                onMouseEnter={() => setDecoratorPosition(link.ref.current)}
+                                onMouseEnter={() => setDecoratorPosition(link.ref.current ?? undefined)}
                                 onFocus={() => {
-                                    setDecoratorPosition(link.ref.current)
+                                    setDecoratorPosition(link.ref.current ?? undefined)
                                 }}
                                 onBlur={() => {
                                     setLinkDecoratorStyle('')
                                 }}
                                 onKeyDown={(e) => handleMenuItemKeydown(e)}>
-                                <span className="link-text">
+                                <span
+                                    className="link-text"
+                                    style={{ color: link.localdevOnly ? 'red' : 'inherit' }}
+                                >
                                     <span
                                         className="link-decorator-anchor"
                                         ref={link.ref}>

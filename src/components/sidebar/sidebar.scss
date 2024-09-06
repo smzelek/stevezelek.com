@@ -57,7 +57,8 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: var(--primary-text);
+            // color: var(--primary-text);
+            color: var(--secondary-text);
 
             .link-text {
                 position: relative;
@@ -72,8 +73,6 @@
                 pointer-events: none;
                 white-space: pre;
             }
-
-            color: var(--secondary-text);
 
             &:hover,
             &:focus,
