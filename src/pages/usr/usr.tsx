@@ -12,18 +12,26 @@ export default function Usr(): JSX.Element {
 
     const jobs: ResumeCardProps[] = [
         {
+            icon: "/assets/abbyy_logo.png",
+            company: "ABBYY",
+            position: "Principal Developer",
+            start: new Date(2025, 2, 10),
+            end: null,
+        },
+        {
             icon: "/assets/builder_logo.jpg",
             company: "Builder.io",
             position: "Software Engineer",
             start: new Date(2024, 7, 31),
-            end: null,
+            end: new Date(2025, 2, 10),
         },
         {
             icon: "/assets/outsystems_logo.png",
-            company: "OutSystems (acquisition of Ionic)",
+            company: "OutSystems (acquisition)",
             position: "Sr. Full Stack Developer",
             start: new Date(2024, 0, 1),
             end: new Date(2024, 7, 31),
+            isAcquisition: true
         },
         {
             icon: "/assets/ionic_logo.png",
@@ -59,11 +67,11 @@ export default function Usr(): JSX.Element {
         },
         {
             name: "Angular",
-            proficiency: 5
+            proficiency: 4
         },
         {
-            name: "Stencil",
-            proficiency: 4
+            name: "NextJS",
+            proficiency: 3
         },
         {
             name: "Vue",
@@ -71,7 +79,7 @@ export default function Usr(): JSX.Element {
         },
         {
             name: "Redux",
-            proficiency: 5
+            proficiency: 4
         },
     ];
 
@@ -116,7 +124,7 @@ export default function Usr(): JSX.Element {
         },
         {
             name: "AWS",
-            proficiency: 3
+            proficiency: 4
         },
         {
             name: "Debugging and Profiling",
@@ -136,7 +144,7 @@ export default function Usr(): JSX.Element {
         },
         {
             name: "Terraform",
-            proficiency: 3
+            proficiency: 4
         },
         {
             name: "Docker",
@@ -151,23 +159,23 @@ export default function Usr(): JSX.Element {
                 <PageHeader>~/usr</PageHeader>
                 <main>
                     <p>
-                        Hi, I'm Steve. I'm a collaborative developer with a passion for making excellent things.
+                        Hi I'm Steve. I like working with talented teams who can have fun while doing great work.
                     </p>
                     <p>
                         I spend most of my free time teaching myself new stuff, technical or otherwise.
                     </p>
                     <p>
-                        One summer in college, I did two internships at once!
+                        I have mastered the art of having too many hobbies.
                     </p>
                     <div className="separator" />
                     <p>
-                        I've led short and long-term projects, and I always find ways to innovate on the job.
+                        I've led short and long-term projects, and I like finding ways to raise the bar at work.
                     </p>
                     <p>
-                        The pace of tech work means there is always an interesting problem to solve,
+                        I'm grateful that working in tech means there is always an interesting problem to solve,
                     </p>
                     <p>
-                        and I love having the opportunity to do challenging work with a positive impact.
+                        and I love getting to do challenging work that makes customers happy.
                     </p>
                     <div className="separator" />
                     <div className="competencies">
@@ -177,13 +185,13 @@ export default function Usr(): JSX.Element {
                     </div>
                     <div className="separator" />
                     <GithubCard />
+                    <div className="separator" />
                     {jobs.map(j => (
                         <Fragment>
-                            <div className="separator" />
                             <ResumeCard {...j} />
+                            {j.isAcquisition ? null : <div className="separator" />}
                         </Fragment>
                     ))}
-                    <div className="separator" />
                     <ContactCard />
                 </main>
             </div>

@@ -1,5 +1,28 @@
 @import 'src/mixins';
 
+.resume-card-wrapper {
+    width: 100%;
+
+    &.acquisition {
+        border-bottom: 2.5px solid white;
+        position: relative;
+
+        .resume-card {
+            background: #263342;
+        }
+
+        &:after {
+            content: "↑";
+            position: absolute;
+            left: 43px;
+            top: calc(100% - 4px);
+            line-height: 0;
+            font-size: 40px;
+            transform: scaleY(1.5);
+        }
+    }
+}
+
 .resume-card {
     display: flex;
     background: var(--primary-bg);
@@ -8,6 +31,7 @@
 
     img {
         margin: 20px;
+        margin-top: 28px;
         height: 70px;
         width: 70px;
         border-radius: 4px;
@@ -21,10 +45,12 @@
     .position {
         display: flex;
         line-height: 30px;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 5px;
     }
 
     .time {
-        padding-left: 5px;
         color: var(--secondary-text);
     }
 
@@ -34,10 +60,23 @@
 }
 
 @include smaller-than(tiny-screen) {
+    .resume-card-wrapper.acquisition {
+        &:after {
+            left: calc(50% - 12px);
+            transform: scaleY(1.1);
+            top: calc(100% - 1px);
+            
+        }
+    }
+
     .resume-card {
         flex-direction: column;
+
         img {
             padding-bottom: 0;
+            margin-bottom: 0;
+            width: 80px;
+            height: 80px;
             align-self: center;
         }
 

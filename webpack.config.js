@@ -47,11 +47,6 @@ const config = {
       inject: 'body',
     }),
     new HtmlWebpackPlugin({
-      template: './src/pages/sandbox/index.html',
-      filename: 'sandbox/index.html',
-      inject: 'body',
-    }),
-    new HtmlWebpackPlugin({
       template: './src/pages/privacy/index.html',
       filename: 'privacy/index.html',
       inject: 'body',

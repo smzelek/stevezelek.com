@@ -163,7 +163,7 @@ export default function BlogFooter(): JSX.Element {
                     <img src="/assets/me/me-1x.jpg" type="image/jpeg" alt="A headshot of Steve Zelek." />
                 </picture>
                 <h3>steve zelek</h3>
-                <h4>software maker</h4>
+                <h4>software dev</h4>
                 <div className="contact">
                     {/* TODO: Add email link here, use same form as homepage */}
                     <GithubIcon />

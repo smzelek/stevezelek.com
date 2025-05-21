@@ -12,7 +12,6 @@ import Privacy from './pages/privacy/privacy';
 import Share from './pages/share/share';
 import Loading from './loading';
 
-const Sandbox = lazy(() => import("./pages/sandbox/sandbox"));
 const WhyOurCompanyWCs = lazy(() => import("./pages/blog/why-our-company-needed-web-components/why-our-company-wcs"));
 
 const Main = () => {
@@ -23,7 +22,6 @@ const Main = () => {
     <Suspense fallback={<Loading />}>
       <Router>
         <Route path="/" component={Usr} />
-        <Route path="/sandbox/" component={Sandbox} />
         <Route path="/share/" component={Share} />
         <Route path="/blog/" component={Blog} />
         <Route path="/blog/why-our-company-needed-web-components" component={WhyOurCompanyWCs} />

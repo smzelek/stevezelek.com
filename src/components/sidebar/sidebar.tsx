@@ -12,7 +12,6 @@ export default function Sidebar(): JSX.Element {
     const [isMobileMenuExpanded, setIsMobileMenuExpanded] = useState(false);
     const usrAnchorRef = useRef<HTMLSpanElement>(null);
     const blogAnchorRef = useRef<HTMLSpanElement>(null);
-    const sandboxAnchorRef = useRef<HTMLSpanElement>(null);
     const shareAnchorRef = useRef<HTMLSpanElement>(null);
     const appsAnchorRef = useRef<HTMLSpanElement>(null);
     const sidebarRef = useRef<HTMLDivElement>(null);
@@ -50,15 +49,6 @@ export default function Sidebar(): JSX.Element {
             text: "~/blog",
             ref: blogAnchorRef,
         },
-        ...(window.location.port.includes('8080') ? [
-            {
-                href: "/sandbox/",
-                activeRegex: /^\/sandbox\/?$/i,
-                text: "~/sandbox",
-                ref: sandboxAnchorRef,
-                localdevOnly: true,
-            },
-        ] : [])
     ], []);
 
     links[0].ref
@@ -143,7 +133,7 @@ export default function Sidebar(): JSX.Element {
                     Steve Zelek
                 </h1>
                 <p className="title">
-                    software maker
+                    software dev
                 </p>
             </div>
             <div className="navigation-wrapper">
